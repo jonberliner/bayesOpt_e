@@ -143,7 +143,14 @@ var drillGame = function(){
     });
 
     groundLine.addEventListener('click', function(){
-        if(roundSection == 'drilling'){
+        if(roundSection==='sampling'){
+            psamX = stage.mouseX;
+            psamY = pY[psamX];
+            samX = pix2mathX([psamX]);
+            samY = pix2mathY([psamY]);
+            miopic_sample(psamX, psamY);
+        }
+        else if(roundSection=== 'drilling'){
             pdrillX = stage.mouseX;
             pdrillY = pY[pdrillX];
             show_roundSummary(pdrillX, pdrillY);
@@ -236,7 +243,8 @@ var drillGame = function(){
     var YMAX = 3;
     var YMIN = -YMAX;
     var YRANGE = YMAX - YMIN;
-    var NROUND, COST2DRILL, STARTPOINTS, W2T, T2W;
+    var NROUND, COST2SAMPLE, COST2DRILL, STARTPOINTS, W2T, T2W;
+    var samX, samY, psamX, psamY;
     var drill, drillX, drillY, pdrillX, pdrillY;
     var samArray, hidFcn;
     var expScore, roundNet, roundGross, roundScore;
@@ -258,6 +266,7 @@ var drillGame = function(){
                     W2T = nX/W;
                     T2W = W/nX;
                     pX = math2pixX(X);
+                    COST2SAMPLE = resp['cost2sample'];
                     COST2DRILL = resp['cost2drill'];
                     STARTPOINTS = resp['startPoints'];
                     LENSCALE = resp['lenscale'];
@@ -307,7 +316,7 @@ var drillGame = function(){
                 });
 
 
-    function setup_newRound(X, Y, xObs, yObs){
+    function setup_newRound(){
         round += 1;
         jsb_recordTurkData(function(){
             // if have more rounds to go...
@@ -345,6 +354,12 @@ var drillGame = function(){
                         drill.visible = false;
                         roundSummary_text.visible = false;
 
+                        // hide move-to-next round button
+                        ulButton.visible = false;
+                        ulButton_text.text =
+                            'Click ground where you would like to sample';
+                        ulButton_text.visible = true;
+
                         // draw new hidden function
                         update_hidFcn(pX, pY);
 
@@ -354,14 +369,12 @@ var drillGame = function(){
                         addSams(pxObs, pyObs);
                         stageArray(samArray);
 
-                        roundSection = 'drilling';
+                        roundSection = 'sampling';
                         stage.update();
                     }  // end round setup
                 );  // end custom route
             }
             else {
-
-                // TODO: endgame goes here
                 roundSection = 'expSummary';
                 // show total feedback
                 roundSummary_text.text = 'You played ' +
@@ -380,6 +393,16 @@ var drillGame = function(){
     } // end setup_newRound
 
 
+    function miopic_sample(psamX, psamY){
+        addSams([psamX], [psamY]);
+        stageArray(samArray);
+        ulButton_text.text = 'Click ground where you would like to drill';
+        roundSection = 'drilling';
+        expScore -= COST2SAMPLE;
+        score_text.text = monify(expScore);
+        stage.update();
+    }
+
     function show_roundSummary(pdrillX, pdrillY){
         // show drill location
         drillX = pix2mathX([pdrillX])[0];
@@ -393,17 +416,25 @@ var drillGame = function(){
 
         // show score
         roundGross = getRoundGross(drillY, YMIN, YRANGE);
-        roundNet = roundGross - COST2DRILL;
+        roundNet = roundGross - COST2DRILL - COST2SAMPLE;
         roundScore = roundNet; // same here bc no cost2sam
 
         // increment experiment score
         expScore += roundScore;
         score_text.text = monify(expScore);
 
-        roundSummary_text.text = '        ' + monify(roundGross) + ' earned drilling\n \n' +
-        '      - ' + monify(COST2DRILL) + ' spent drilling\n \n' +
-        '__________________\n \n     '+
-        monify(roundNet) + ' earned this round';
+        roundSummary_text.text = '        ' +
+                                 monify(roundGross) +
+                                 ' earned drilling\n \n' +
+                                '      - ' +
+                                monify(COST2SAMPLE) +
+                                ' spent sampling\n \n' +
+                                '      - ' +
+                                monify(COST2DRILL) +
+                                ' spent drilling\n \n' +
+                                '__________________\n \n     '+
+                                monify(roundNet) +
+                                ' earned this round';
         roundSummary_text.visible = true;
 
         // show upper left button
@@ -545,14 +576,18 @@ var drillGame = function(){
             'roundNet': roundNet,
             'roundGross': roundGross,
             'nObs': nObs,
+            'samX': samX,
+            'samY': samY,
+            'psamX': psamX,
+            'psamY': psamY,
             'drillX': drillX,
             'drillY': drillY,
             'pdrillX': pdrillX,
             'pdrillY': pdrillY,
-            'xObs': xObs,
-            'yObs': yObs,
             'd2locsX': d2locsX,
             'd2locsY': d2locsY,
+            'xObs': xObs,
+            'yObs': yObs,
             'pxObs': pxObs,
             'pyObs': pyObs,
             'RNGSEED': RNGSEED,

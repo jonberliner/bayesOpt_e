@@ -39,6 +39,7 @@ def init_experiment():
     ## FREE VARS
     # experiment params
     NROUND = 200
+    COST2SAMPLE = 5
     COST2DRILL = 30
     STARTPOINTS = 0
     # gp params
@@ -93,6 +94,7 @@ def init_experiment():
     resp['round'] = -1
     resp['d2i'] = -1
     resp['nRound'] = NROUND
+    resp['cost2sample'] = COST2SAMPLE
     resp['cost2drill'] = COST2DRILL
     resp['startPoints'] = STARTPOINTS
 
