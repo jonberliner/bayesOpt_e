@@ -1,0 +1,2036 @@
+2014-10-07 15:09:15,819 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:15,829 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:15,838 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:15,998 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,132 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,374 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,385 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,450 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,481 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,493 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,567 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,726 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,735 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,749 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,762 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,806 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:09:16,821 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:21,569 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:21,597 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:21,704 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:21,769 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,051 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,080 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,106 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,152 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,163 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,270 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,286 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,292 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,353 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,395 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,414 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,420 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:22,428 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:12:27,219 Exception on /get_nextTrial [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/custom.py", line 127, in get_nextTrial
+    thisTri = gpe.make_trial(nObs, X, lenscale, SIGVAR, NOISEVAR2, d2locsX, d2locsY)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/gpExperiment.py", line 66, in make_trial
+    post_gp = condition(X, xObs, yObs, lenscale, sigvar, noisevar2)
+  File "gpHelpers_cy.pyx", line 60, in gpHelpers_cy.condition (gpHelpers_cy.c:2426)
+    cdef ndarray[double, ndim=2] invKobs = pinv(Kobs)  # invert
+  File "gpHelpers_cy.pyx", line 34, in gpHelpers_cy.K_se (gpHelpers_cy.c:1504)
+    return K
+IndexError: Out of bounds on buffer access (axis 0)
+2014-10-07 15:16:17,072 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,075 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,111 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,299 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,423 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,578 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,579 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,658 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,658 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,831 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,844 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:17,963 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:18,001 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:18,001 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:18,007 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:18,012 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:18,040 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:16:27,047 Exception on /get_nextTrial [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/custom.py", line 119, in get_nextTrial
+    d2locsX = loads(d2locsX)
+  File "/Users/jsb/anaconda/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Users/jsb/anaconda/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+2014-10-07 15:19:52,727 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:52,733 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:52,751 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:52,861 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,085 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,147 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,171 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,203 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,256 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,311 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,322 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,323 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,345 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,376 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,411 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,431 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:19:53,438 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:22:36,188 Exception on /get_nextTrial [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/custom.py", line 138, in get_nextTrial
+    thisTri = gpe.make_trial(nObs, X, lenscale, SIGVAR, NOISEVAR2, d2locsX, d2locsY)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/gpExperiment.py", line 81, in make_trial
+    'iObs': iObs}
+UnboundLocalError: local variable 'iObs' referenced before assignment
+2014-10-07 15:24:58,687 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:58,787 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:58,970 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,056 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,112 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,140 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,225 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,287 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,313 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,331 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,342 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,437 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,511 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,518 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,519 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:24:59,528 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:25:08,508 Exception on /get_nextTrial [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/custom.py", line 142, in get_nextTrial
+    thisTri = gpe.make_trial(nObs, X, lenscale, SIGVAR, NOISEVAR2, d2locsX, d2locsY)
+  File "/Users/jsb/Documents/PSITURK/drilling/chooseSam_noNorm/chooseSam_noNorm_realPrior/gpExperiment.py", line 81, in make_trial
+    'iObs': iObs}
+UnboundLocalError: local variable 'iObs' referenced before assignment
+2014-10-07 15:26:34,527 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,548 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,559 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,643 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,683 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,812 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,943 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:34,981 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,052 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,069 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,101 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,124 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,155 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,160 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,176 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,178 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:26:35,192 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:37,962 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:37,962 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:37,991 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,183 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,365 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,473 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,571 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,597 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,647 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,653 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,704 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,734 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,764 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,843 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,852 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,860 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 15:29:38,880 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78569)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78570)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78571)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78572)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78573)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78574)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78575)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78576)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78577)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78578)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78579)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78580)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78581)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78582)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78583)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78584)
+2014-10-07 19:23:05 [78565] [CRITICAL] WORKER TIMEOUT (pid:78585)
+2014-10-07 19:23:07,765 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,768 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,773 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,772 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,776 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,776 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,780 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,785 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,787 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,788 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,792 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,798 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,809 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,832 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,866 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,871 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 19:23:07,887 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81472)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81473)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81475)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81476)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81477)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81478)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81479)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81480)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81481)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81464)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81465)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81466)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81467)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81468)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81469)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81470)
+2014-10-07 20:25:44 [78565] [CRITICAL] WORKER TIMEOUT (pid:81471)
+2014-10-07 20:25:45,703 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:45,704 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:45,731 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:45,745 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:45,772 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,046 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,092 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,168 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,220 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,250 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,253 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,279 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,323 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,358 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,371 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,406 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:25:46,411 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81537)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81538)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81539)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81540)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81541)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81542)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81543)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81544)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81545)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81528)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81529)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81530)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81531)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81532)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81533)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81534)
+2014-10-07 20:44:08 [78565] [CRITICAL] WORKER TIMEOUT (pid:81535)
+2014-10-07 20:44:09,585 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,614 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,672 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,676 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,683 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,697 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,718 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,774 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,804 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,847 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,918 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,962 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,965 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,989 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:09,999 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 20:44:10,022 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81576)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81586)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81587)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81588)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81589)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81590)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81591)
+2014-10-07 22:58:20 [78565] [CRITICAL] WORKER TIMEOUT (pid:81592)
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 22:58:21,279 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82860)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82861)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82862)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82863)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82864)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82865)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81577)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81578)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81579)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81580)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81581)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81582)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81583)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81584)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:81585)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82866)
+2014-10-07 23:02:02 [78565] [CRITICAL] WORKER TIMEOUT (pid:82867)
+2014-10-07 23:02:04,023 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,026 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,029 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,067 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,080 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,095 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,117 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,118 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,134 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,187 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,282 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,288 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,294 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,312 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,343 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,357 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:02:04,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82915)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82908)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82909)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82910)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82911)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82912)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82913)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82914)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82907)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82917)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82919)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82920)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82921)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82922)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82923)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82924)
+2014-10-07 23:12:38 [78565] [CRITICAL] WORKER TIMEOUT (pid:82925)
+2014-10-07 23:12:40,188 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,203 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,212 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,213 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,229 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,237 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,250 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,297 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,408 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,523 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,557 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,620 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,666 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,669 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,681 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,748 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:12:40,750 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,337 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,365 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,371 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,438 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,580 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,582 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,761 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,788 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,823 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,889 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,900 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,908 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:04,980 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:05,007 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:05,063 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:05,064 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-07 23:17:05,085 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,082 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,082 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,082 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,082 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,118 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,342 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,350 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,379 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,459 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,474 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,486 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,494 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,529 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,607 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,631 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,632 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:23:51,634 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91008)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91009)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91010)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91011)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91012)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91013)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91014)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91015)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:90999)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91000)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91001)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91002)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91003)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91004)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91005)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91006)
+2014-10-08 10:41:53 [90995] [CRITICAL] WORKER TIMEOUT (pid:91007)
+2014-10-08 10:41:55,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,375 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,377 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,399 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,472 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,435 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,428 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,485 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,522 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,599 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,613 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,625 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,636 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,676 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,688 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,693 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:41:55,694 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,145 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,161 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,164 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,221 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,225 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,357 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,391 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,590 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,653 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,727 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,770 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,812 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,846 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,871 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,894 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,931 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 10:52:42,972 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:22,423 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:22,424 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:22,442 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:22,472 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:22,864 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,004 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,072 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,173 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,182 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,233 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,251 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,261 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,268 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,269 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,309 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,309 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:25:23,333 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,420 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,532 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,672 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,696 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,831 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,839 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:07,969 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,025 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,048 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,101 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,157 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,203 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,227 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,228 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,266 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,296 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:33:08,300 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:52,624 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:52,701 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:52,748 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:52,778 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:52,811 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,058 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,100 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,119 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,177 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,193 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,236 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,324 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,330 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,335 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,391 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,429 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 11:55:53,436 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:30:45,665 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-08 12:31:39,360 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-08 12:34:09,391 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,470 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,472 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,582 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,750 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,783 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,800 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,851 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,878 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,905 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,924 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,977 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:09,997 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:10,014 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:10,027 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:10,064 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:10,074 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:34:15,291 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-08 12:36:14,531 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-08 12:38:29 [92770] [CRITICAL] WORKER TIMEOUT (pid:92775)
+2014-10-08 12:38:29 [92770] [CRITICAL] WORKER TIMEOUT (pid:92779)
+2014-10-08 12:38:29 [92770] [CRITICAL] WORKER TIMEOUT (pid:92784)
+2014-10-08 12:38:30,316 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:38:30,317 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 12:38:30,317 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92774)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92776)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92777)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92778)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92780)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92781)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92782)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92783)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92785)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92786)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92787)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92788)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92789)
+2014-10-08 13:25:31 [92770] [CRITICAL] WORKER TIMEOUT (pid:92790)
+2014-10-08 13:25:33,098 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,100 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,106 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,110 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,122 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,196 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,246 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,276 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,335 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,404 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,412 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,435 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,448 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 13:25:33,477 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:92936)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:92937)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:92938)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93072)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93073)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93074)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93075)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93076)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93077)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93078)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93079)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93080)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93081)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93082)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93083)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93085)
+2014-10-08 14:25:55 [92770] [CRITICAL] WORKER TIMEOUT (pid:93086)
+2014-10-08 14:25:56,348 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,395 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,451 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,471 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,476 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,545 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,562 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,565 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,638 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,741 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,782 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,814 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,829 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,834 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,837 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,845 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:25:56,876 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93096)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93097)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93098)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93099)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93100)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93101)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93102)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93103)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93104)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93105)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93106)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93107)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93108)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93109)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93110)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93111)
+2014-10-08 14:36:22 [92770] [CRITICAL] WORKER TIMEOUT (pid:93112)
+2014-10-08 14:36:24,830 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:24,931 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:24,933 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:24,952 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,006 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,008 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,009 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,015 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,056 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,076 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,102 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,128 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,149 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,153 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,167 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,204 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:36:25,214 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93137)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93138)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93139)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93140)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93141)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93142)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93143)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93144)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93145)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93146)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93147)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93149)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93150)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93151)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93152)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93153)
+2014-10-08 14:39:18 [92770] [CRITICAL] WORKER TIMEOUT (pid:93154)
+2014-10-08 14:39:19,625 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,705 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,740 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,741 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,743 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,746 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,749 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,770 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,818 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,842 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,863 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,875 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,910 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,936 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:19,984 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:20,015 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 14:39:20,018 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93214)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93215)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93216)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93217)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93219)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93220)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93221)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93222)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93223)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93224)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93225)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93226)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93227)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93228)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93229)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93230)
+2014-10-08 19:21:49 [92770] [CRITICAL] WORKER TIMEOUT (pid:93231)
+2014-10-08 19:21:50,658 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,658 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,660 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,660 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,660 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,661 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,663 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,664 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,676 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,710 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,798 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,801 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,838 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,859 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,876 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,883 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 19:21:50,904 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98265)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98266)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98267)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98268)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98269)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98270)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98271)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98272)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98273)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98274)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98275)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98276)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98277)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98278)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98279)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98280)
+2014-10-08 20:22:13 [92770] [CRITICAL] WORKER TIMEOUT (pid:98281)
+2014-10-08 20:22:14,861 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:14,946 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:14,954 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,007 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,090 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,212 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,259 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,362 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,363 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,384 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,392 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,431 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,439 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,491 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,516 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,536 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:22:15,548 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98304)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98305)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98306)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98307)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98308)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98309)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98310)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98311)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98312)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98313)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98297)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98298)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98299)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98300)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98301)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98302)
+2014-10-08 20:29:15 [92770] [CRITICAL] WORKER TIMEOUT (pid:98303)
+2014-10-08 20:29:16,940 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:16,947 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:16,968 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:16,980 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,105 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,107 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,182 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,184 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,274 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,276 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,279 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,325 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,358 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,368 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,375 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 20:29:17,377 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98368)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98351)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98352)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98353)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98354)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98355)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98356)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98357)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98358)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98359)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98360)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98361)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98362)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98363)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98364)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98365)
+2014-10-08 21:17:43 [92770] [CRITICAL] WORKER TIMEOUT (pid:98366)
+2014-10-08 21:17:44,494 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-08 21:17:44,494 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,158 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,156 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,168 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,329 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,355 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,522 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,541 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,568 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,661 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,679 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,722 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,776 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,792 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,793 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,836 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,859 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:17,891 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 14:38:22,848 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6464)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6465)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6466)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6467)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6468)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6452)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6453)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6454)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6455)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6456)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6457)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6458)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6459)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6460)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6461)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6462)
+2014-10-09 15:16:41 [6448] [CRITICAL] WORKER TIMEOUT (pid:6463)
+2014-10-09 15:16:50,344 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,430 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,446 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,486 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,500 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,517 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,519 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,594 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,560 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,686 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,728 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,747 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,809 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,948 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:50,970 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:51,167 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:16:51,231 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 15:21:22 [6854] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-09 15:21:22 [6852] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-09 15:21:22 [6855] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6839)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6840)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6841)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6842)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6843)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6844)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6845)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6846)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6847)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6848)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6849)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6850)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6851)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6852)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6853)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6854)
+2014-10-09 16:09:06 [6448] [CRITICAL] WORKER TIMEOUT (pid:6855)
+2014-10-09 16:09:08,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,134 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,134 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,136 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,140 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,145 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,147 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,148 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,155 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,173 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,206 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,318 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,340 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,362 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,382 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 16:09:08,389 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7528)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7529)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7530)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7531)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7532)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7533)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7534)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7535)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7536)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7537)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7538)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7539)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7540)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7541)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7542)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7543)
+2014-10-09 18:45:45 [6448] [CRITICAL] WORKER TIMEOUT (pid:7544)
+2014-10-09 18:45:47,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,143 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,171 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,172 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,182 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,219 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,221 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,314 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,340 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,354 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,366 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,386 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,405 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,447 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,481 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,486 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 18:45:47,489 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8843)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8844)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8845)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8846)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8847)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8848)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8850)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8852)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8853)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8854)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8855)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8856)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8857)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8858)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8860)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8862)
+2014-10-09 19:46:10 [6448] [CRITICAL] WORKER TIMEOUT (pid:8863)
+2014-10-09 19:46:11,030 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,082 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,093 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,149 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,153 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,314 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,409 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,428 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,452 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,507 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,528 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,549 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,557 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,557 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,580 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,600 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 19:46:11,601 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8878)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8879)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8880)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8881)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8882)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8883)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8885)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8886)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8887)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8888)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8889)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8890)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8891)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8892)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8893)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8894)
+2014-10-09 20:45:55 [6448] [CRITICAL] WORKER TIMEOUT (pid:8895)
+2014-10-09 20:45:56,389 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,418 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,437 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,463 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,506 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,595 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,668 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,668 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,711 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,772 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,814 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,828 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,850 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,866 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,872 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,883 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 20:45:56,898 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 21:45:50 [6448] [CRITICAL] WORKER TIMEOUT (pid:8901)
+2014-10-09 21:45:51 [6448] [CRITICAL] WORKER TIMEOUT (pid:8909)
+2014-10-09 21:45:51 [6448] [CRITICAL] WORKER TIMEOUT (pid:8914)
+2014-10-09 21:45:52,318 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 21:45:52,318 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-09 21:45:52,319 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8900)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8902)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8903)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8904)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8905)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8906)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8907)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8908)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8910)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8911)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8912)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8913)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8915)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8916)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8929)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8930)
+2014-10-10 01:29:35 [6448] [CRITICAL] WORKER TIMEOUT (pid:8931)
+2014-10-10 01:29:37,870 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,873 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,873 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,874 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,876 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,880 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,881 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,881 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,938 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,958 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,975 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:37,976 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:38,000 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:29:38,012 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10752)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10753)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10754)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10755)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10756)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10757)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10758)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10759)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10760)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10761)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10762)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10746)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10747)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10748)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10749)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10750)
+2014-10-10 01:31:19 [6448] [CRITICAL] WORKER TIMEOUT (pid:10751)
+2014-10-10 01:31:19,998 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,012 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,066 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,097 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,185 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,325 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,368 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,408 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,481 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,509 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,521 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,575 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,630 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,652 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,668 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,669 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 01:31:20,673 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10774)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10775)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10776)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10777)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10778)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10779)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10780)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10781)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10782)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10783)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10784)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10785)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10786)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10787)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10788)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10789)
+2014-10-10 02:32:31 [6448] [CRITICAL] WORKER TIMEOUT (pid:10790)
+2014-10-10 02:32:32,304 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,408 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,422 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,495 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,536 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,587 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,608 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,666 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,732 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,792 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,834 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,885 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,936 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,945 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,958 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 02:32:32,969 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10816)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10817)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10818)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10819)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10820)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10821)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10822)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10823)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10824)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10825)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10826)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10827)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10828)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10812)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10813)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10814)
+2014-10-10 03:33:13 [6448] [CRITICAL] WORKER TIMEOUT (pid:10815)
+2014-10-10 10:38:32,560 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:32,579 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:32,590 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:32,802 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,084 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,217 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,341 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,352 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,436 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,456 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,478 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,516 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,554 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,563 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,564 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,576 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:38:33,586 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 10:39:56,420 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12064)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12065)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12066)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12067)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12068)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12069)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12070)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12071)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12072)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12073)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12056)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12057)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12058)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12059)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12061)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12062)
+2014-10-10 13:06:25 [12052] [CRITICAL] WORKER TIMEOUT (pid:12063)
+2014-10-10 13:06:27,231 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,231 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,234 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,234 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,235 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,236 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,238 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,240 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,240 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,243 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,252 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,283 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,285 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,317 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,345 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,369 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 13:06:27,373 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13901)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13902)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13903)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13904)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13905)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13906)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13907)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13908)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13909)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13910)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13911)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13912)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13913)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13914)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13916)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13917)
+2014-10-10 15:16:48 [12052] [CRITICAL] WORKER TIMEOUT (pid:13918)
+2014-10-13 11:43:59,452 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,453 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,459 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,604 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,613 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,752 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:43:59,921 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,073 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,146 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,185 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,264 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,329 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,338 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,381 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,393 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,441 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 11:44:00,450 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:16,673 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:16,710 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:16,799 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:16,861 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,017 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,166 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,201 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,255 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,424 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,453 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,485 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,491 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,510 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,523 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,542 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:17,607 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 12:45:24,346 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-13 13:40:12 [49234] [CRITICAL] WORKER TIMEOUT (pid:49249)
+2014-10-13 13:40:12 [49234] [CRITICAL] WORKER TIMEOUT (pid:49254)
+2014-10-13 13:40:13,510 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 13:40:13,511 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,068 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,145 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,253 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,443 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,499 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,632 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,758 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,892 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,896 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,946 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:43,986 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,028 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,052 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,100 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,149 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,186 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:44,209 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 14:44:57,689 Exception on /sync [GET]
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 665, in regularpage
+    return render_template(pagename)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: sync
+2014-10-13 15:08:49,649 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:49,667 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:49,675 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:49,899 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:49,963 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,113 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,122 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,210 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,236 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,252 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,263 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,284 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,286 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,329 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,373 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,418 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:08:50,434 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51168)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51169)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51170)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51171)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51172)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51173)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51156)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51158)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51159)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51160)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51161)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51162)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51163)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51164)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51165)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51166)
+2014-10-13 15:41:50 [51152] [CRITICAL] WORKER TIMEOUT (pid:51167)
+2014-10-13 15:41:52,392 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,394 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,395 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,395 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,398 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,400 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,415 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,443 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,494 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,568 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,585 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,630 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,656 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,703 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,749 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,752 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:41:52,778 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51403)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51404)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51405)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51406)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51407)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51408)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51409)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51410)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51411)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51412)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51413)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51414)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51415)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51416)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51417)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51418)
+2014-10-13 15:49:30 [51152] [CRITICAL] WORKER TIMEOUT (pid:51419)
+2014-10-13 16:54:09,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,505 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,592 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,601 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,741 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,794 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,841 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,867 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,868 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,872 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,939 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,965 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,983 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:09,986 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 16:54:10,011 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51904)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51905)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51906)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51889)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51890)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51891)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51893)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51894)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51895)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51896)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51897)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51898)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51899)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51900)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51901)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51902)
+2014-10-13 22:03:40 [51885] [CRITICAL] WORKER TIMEOUT (pid:51903)
+2014-10-13 22:03:43,298 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,298 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,300 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,301 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,303 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,319 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,319 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,347 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,372 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,405 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,423 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,506 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,553 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,567 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,571 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,581 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-13 22:03:43,583 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57632)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57633)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57634)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57635)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57621)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57636)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57620)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57622)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57623)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57624)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57625)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57626)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57627)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57628)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57629)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57630)
+2014-10-14 05:30:32 [51885] [CRITICAL] WORKER TIMEOUT (pid:57631)
+2014-10-14 05:30:34,429 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,431 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,432 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,433 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,434 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,434 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,437 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,438 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,441 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,505 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,582 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,673 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,693 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,768 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,813 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,843 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 05:30:34,861 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61150)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61151)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61152)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61153)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61154)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61155)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61156)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61157)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61158)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61159)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61160)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61161)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61162)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61163)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61164)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61165)
+2014-10-14 07:30:50 [51885] [CRITICAL] WORKER TIMEOUT (pid:61166)
+2014-10-14 07:30:52,271 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,272 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,275 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,279 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,290 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,296 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,319 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,314 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,331 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,436 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,444 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,516 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,537 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,551 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,559 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,581 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 07:30:52,594 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61195)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61196)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61197)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61198)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61199)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61200)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61201)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61202)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61203)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61204)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61205)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61207)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61208)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61209)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61210)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61211)
+2014-10-14 08:29:35 [51885] [CRITICAL] WORKER TIMEOUT (pid:61212)
+2014-10-14 08:29:37,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,254 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,263 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,267 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,269 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,277 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,278 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,274 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,279 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,301 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,309 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,367 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,378 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,384 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,425 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,428 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 08:29:37,439 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61230)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61231)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61232)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61233)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61234)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61235)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61236)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61237)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61238)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61239)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61240)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61241)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61242)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61243)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61244)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61245)
+2014-10-14 09:08:56 [51885] [CRITICAL] WORKER TIMEOUT (pid:61246)
+2014-10-14 09:08:58,008 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,025 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,059 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,067 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,073 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,092 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,097 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,140 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,159 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,211 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,294 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,305 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,311 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,343 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,383 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,410 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 09:08:58,423 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,078 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,119 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,133 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,157 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,211 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,290 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,340 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,426 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,570 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,580 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,642 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,717 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,773 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,842 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,845 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,865 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:26:09,874 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:54,602 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:54,604 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:54,621 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:54,738 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:54,882 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,010 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,033 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,077 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,092 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,174 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,212 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,284 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,304 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,348 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,362 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,382 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 11:52:55,395 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,017 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,060 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,275 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,364 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,428 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,624 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,676 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,750 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,763 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,827 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,845 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,903 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,935 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,939 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,956 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,958 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 12:25:43,996 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:14,827 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:14,834 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:14,910 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:14,903 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,011 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,142 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,186 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,399 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,447 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,517 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,560 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,616 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,619 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,628 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,644 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,652 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:14:15,677 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,486 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,491 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,524 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,542 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,552 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,558 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,558 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,563 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,582 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,583 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,583 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,584 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,586 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,586 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,585 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,588 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 13:54:10,591 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,449 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,451 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,451 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,454 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,455 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,459 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,579 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,656 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,807 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,819 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,885 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,944 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:43,988 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:44,009 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:44,014 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:44,030 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:29:44,038 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,299 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,305 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,376 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,493 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,597 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,614 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,651 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,855 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:10,922 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,015 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,018 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,033 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,052 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,080 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,109 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,152 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:30:11,159 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:40,843 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:40,946 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,173 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,273 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,310 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,396 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,419 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,591 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,594 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,625 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,666 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,697 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,715 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,743 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,745 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,763 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:33:41,770 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,028 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,030 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,163 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,219 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,313 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,345 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,556 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,570 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,580 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,633 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,675 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,684 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,740 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,843 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,936 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:37,963 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:46:38,045 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:47:47 [69807] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:47:47 [69793] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:47:47 [69800] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:47:47 [69797] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:47:47 [69802] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:47:47 [69794] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 92, in handle
+    req = six.next(parser)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/parser.py", line 40, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.req_count)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 151, in __init__
+    super(Request, self).__init__(cfg, unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 51, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 163, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/message.py", line 154, in get_data
+    data = unreader.read()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 38, in read
+    d = self.chunk()
+  File "/Users/jsb/anaconda/lib/python2.7/site-packages/gunicorn/http/unreader.py", line 65, in chunk
+    return self.sock.recv(self.mxchunk)
+error: [Errno 4] Interrupted system call
+2014-10-14 15:50:59,245 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,365 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,637 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,714 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,732 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,831 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,951 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:50:59,997 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,060 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,181 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,222 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,261 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,263 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,300 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,336 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,359 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-14 15:51:00,403 /Users/jsb/anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
