@@ -38,7 +38,7 @@ def init_experiment():
 
     ## FREE VARS
     # experiment params
-    NROUND = 200
+    NROUND = 120
     COST2SAMPLE = 5
     COST2DRILL = 30
     STARTPOINTS = 0
