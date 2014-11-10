@@ -13,7 +13,7 @@ browser_exclude_rule = MSIE, mobile, tablet
 
 [Database Parameters]
 database_url = sqlite:///test.db
-table_name = TESTTABLE
+table_name = miopic_exp0
 
 [Server Parameters]
 host = localhost

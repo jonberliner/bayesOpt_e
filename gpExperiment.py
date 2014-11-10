@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.random import RandomState, randint
-from gpHelpers_cy import K_se, condition, sample
+from jbgp import K_se, condition, sample
 
 isInt = lambda x: x == round(x)
 
