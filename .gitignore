@@ -1,3 +1,6 @@
 .psiturk_history
 *.pyc
 test.db
+*.so
+*.c
+build
