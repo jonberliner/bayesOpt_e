@@ -38,7 +38,7 @@ def init_experiment():
 
     ## FREE VARS
     # experiment params
-    NROUND = 120
+    NROUND = 200
     COST2SAMPLE = 5
     COST2DRILL = 30
     STARTPOINTS = 0
@@ -47,7 +47,6 @@ def init_experiment():
     X = linspace(0, 1, nX)
     SIGVAR = 1.
     NOISEVAR2 = 1e-7
-    NROUND = 200
     NOBSPOOL = [2, 3, 4, 5, 6]
     ND2 = 4
     EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
