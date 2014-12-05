@@ -19,7 +19,6 @@ from numpy import linspace, array
 # load the configuration options
 config = PsiturkConfig()
 config.load_config()
-config.SECREY_KEY = 'my_secret_key'
 myauth = PsiTurkAuthorization(config)  # if you want to add a password protect route use this
 
 # explore the Blueprint
@@ -39,7 +38,6 @@ def init_experiment():
     ## FREE VARS
     # experiment params
     NROUND = 200
-    COST2SAMPLE = 5
     COST2DRILL = 30
     STARTPOINTS = 0
     # gp params
@@ -48,7 +46,7 @@ def init_experiment():
     SIGVAR = 1.
     NOISEVAR2 = 1e-7
     NOBSPOOL = [2, 3, 4, 5, 6]
-    ND2 = 4
+    ND3 = 4
     EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
     D2POOL = [(1.-(EDGEBUF*2.))/(2.**(n+1)) for n in xrange(ND2)]
     # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)

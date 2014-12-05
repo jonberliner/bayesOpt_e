@@ -24,6 +24,8 @@ DEMO['edgeBuf'] = 0.05
 
 # BEGIN DEFS
 def _make_nObsQueue(nObsPool, nRound, rng):
+    """returns a nRound long list of ints, with nRound/nObsPool of each entry
+    in nObsPool"""
     nPerNsam = nRound / len(nObsPool)
     assert isInt(nPerNsam)
     nObs_pool = np.repeat(nObsPool, nPerNsam)
@@ -102,3 +104,58 @@ def make_experiment(nRound, nObsPool, d2Pool, edgeBuf, x, lenscale, sigvar, nois
             'd2locsQueueY': d2locsQueueY,
             'D2L1Inds': D2L1Inds}
 
+
+from jbfunctions import jbgp
+import pandas as pd
+import numpy as np
+from numpy.random import RandomState
+rng = RandomState()
+from matplotlib import pyplot as plt
+
+def rank(array):
+    order = array.argsort()[::-1]
+    ranks = order.argsort()
+    return ranks
+
+NSAM = 3
+NTRIES = 10000
+
+X = np.linspace(0, 1, 1028)
+LENSCALEPOOL = [2**n for n in [-2, -4, -6]]
+NCOND = len(LENSCALEPOOL)
+SIGVAR = 1.
+NOISEVAR2 = 1e-7
+
+PRIOR_COVMATS = [jbgp.K_se(X,X,lenscale, SIGVAR) for lenscale in LENSCALEPOOL]
+PRIOR_MUS = [np.zeros_like(X) for _ in range(len(LENSCALEPOOL))]
+
+donesofar = 0
+def compare_mus(xObs, yObs):
+    conditioned_mus = [jbgp.conditioned_mu(X, xObs, yObs,
+                                           lenscale, SIGVAR, NOISEVAR2)
+                       for lenscale in LENSCALEPOOL]
+    imaxes = [mu.argmax() for mu in conditioned_mus]
+    xmaxes = [X[imax] for imax in imaxes]
+    ymaxes = [conditioned_mus[ils][imax] for ils, imax in enumerate(imaxes)]
+    ptpxhat = np.ptp(xmaxes)
+    return {'xObs': xObs,
+            'yObs': yObs,
+            'ihat': imaxes,
+            'xhat': xmaxes,
+            'yhat': ymaxes,
+            'ptpxhat': ptpxhat}
+
+out = []
+while donesofar < NTRIES:
+    good = False
+    xObs = rng.rand(NSAM)
+    while not good:
+        yObs = rng.randn(NSAM)
+        if yObs.max() > 0: good = True
+
+    out.append(compare_mus(xObs, yObs))
+    donesofar += 1
+
+out = pd.DataFrame(out)
+out['rank_ptpxhat'] = rank(out.ptpxhat.values)
+out.set_index(out.rank_ptpxhat, inplace=True)
