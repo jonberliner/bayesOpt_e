@@ -35,6 +35,8 @@ def _make_nObsQueue(nObsPool, nRound, rng):
     return nObs_queue
 
 
+def _make_d3locsQueue(edgeBuf, nPerD3)
+
 def _make_d2locsQueue(d2pool, edgeBuf, nPerD2, nPerNSam, rng):
     nD2 = len(d2pool)
     L1rawpool = np.linspace(0+edgeBuf, 1-edgeBuf, nPerD2)  # linspace of loc1 (will be scale in the for-loop)

@@ -98,7 +98,7 @@ def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):
         rectangulat 3-tensors of shape (nExp x nObs x nDim) )"""
     if not sigvar: sigvar=1.
     if not noisevar: noisevar=1e-7  # default noiseless
-    dimX = domain.shape[1]
+    dimX = domain.shape[-1]
 
     if len(xObs.shape)==2:  # need rank3 tensor of shape (nExp x nObs x nDim)
         xObs = npa([xObs])
@@ -107,27 +107,46 @@ def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):
     nExp, nObs, dimX0 = xObs.shape
     # pdb.set_trace()
     assert dimX0 == dimX
+    kDomain = K_se(domain, domain, lenscale, sigvar)
+    less_params_runner = lambda iexp: run_exp_i(iexp, xObs, yObs, domain, kDomain\
+                                                lenscale, sigvar, noisevar)
 
-    out = []
-    k = RBF(input_dim=dimX,
-            lengthscale=lenscale,
-            variance=sigvar)
-    for iExp in xrange(nExp):
-        if iExp % 100 == 0: print iExp
-        xObs0 = prep_for_gpy(xObs[iExp], dimX)
-        yObs0 = prep_for_gpy(yObs[iExp], 1)
-        model = GPRegression(xObs0, yObs0, k)
-        model['.*Gaussian_noise']=noisevar
-        postmu = model.predict(domain)[0]
-        imax = postmu.argmax()
-        out.append({'xmax': domain[imax],
-                    'fmax': postmu[imax],
-                    'imax': imax,
-                    'lenscale': lenscale,
-                    'xObs': xObs0,
-                    'yObs': yObs0,
-                    'iExp': iExp})
+    out = [run_exp_i(iexp, xObs, yObs, domain, kDomain, lenscale, sigvar, noisevar)
+           for iexp in xrange(nExp)]
+    # for iExp in xrange(nExp):
+    #     if iExp % 100 == 0: print iExp
+    #     xObs0 = prep_for_gpy(xObs[iExp], dimX)
+    #     yObs0 = prep_for_gpy(yObs[iExp], 1)
+
+    #     postmu = conditioned_mu(domain, xObs0, yObs0,\
+    #                             lenscale, sigvar, noisevar)
+    #     imax = postmu.argmax()
+    #     out.append({'xmax': domain[imax],
+    #                 'fmax': postmu[imax],
+    #                 'imax': imax,
+    #                 'lenscale': lenscale,
+    #                 'xObs': xObs0,
+    #                 'yObs': yObs0,
+    #                 'iExp': iExp})
     return out
+
+
+def run_exp_i(iExp, xObs, yObs, domain, kDomain,\
+              lenscale, sigvar, noisevar):
+    dimX = xObs.shape[-1]
+    xObs0 = prep_for_gpy(xObs[iExp], dimX)
+    yObs0 = prep_for_gpy(yObs[iExp], 1)
+
+    postmu = conditioned_mu(domain, xObs0, yObs0,\
+                            lenscale, sigvar, noisevar)
+    imax = postmu.argmax()
+    return {'xmax': domain[imax],
+            'fmax': postmu[imax],
+            'imax': imax,
+            'lenscale': lenscale,
+            'xObs': xObs0,
+            'yObs': yObs0,
+            'iExp': iExp}
 
 
 def get_ranked_dists(evmaxes, distType):
