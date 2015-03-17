@@ -1,20 +1,15 @@
 from numpy import zeros, linspace, atleast_2d, dot, ones, eye, nan
 import numpy.random as rng
+from numpy.random import RandomState
+rng = RandomState()
 from numpy cimport ndarray
 from timeit import timeit
 from numpy.linalg import cholesky, pinv
 from sys import maxint
 import pdb
 
-# numpy numpy as np
-# import numpy.linalg as npl
-# cimport numpy as np
-# float = np.float64
-# float_t = np.float64_t
-
-
-cdef int seed = rng.randint(1000000)
-rng.seed(seed)
+# cdef int seed = rng.randint(1000000)
+# rng.seed(seed)
 
 
 cdef extern from "math.h":

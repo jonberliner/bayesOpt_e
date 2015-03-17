@@ -1,4 +1,5 @@
 from numpy import asarray, prod, zeros, repeat
+from matplotlib.pyplot import get_cmap
 
 
 def ndm(*args):
@@ -67,3 +68,8 @@ def rank(array, descending=True):
     if descending: order = order[::-1]  # reverse array
     ranks = order.argsort()
     return ranks
+
+
+def cmap_discrete(N, cmap):
+    cm = get_cmap(cmap)
+    return [cm(1.*i/N) for i in xrange(N)]

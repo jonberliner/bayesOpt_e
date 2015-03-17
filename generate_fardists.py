@@ -1,17 +1,20 @@
 from scipy.spatial.distance import pdist
 from pandas import DataFrame, concat
 from numpy import array as npa
-from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate
+from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate,\
+                  empty, diag
 from numpy.random import RandomState
 rng = RandomState()
 from GPy.kern import RBF
 from GPy.models import GPRegression
-from jbutils import cartesian, rank
+from jbutils import cartesian, rank, cmap_discrete
+from jbgp import K_se, conditioned_mu, conditioned_covmat
 
+from matplotlib import pyplot as plt
 import pdb
 
 def demo():
-    DISTTYPE = 'x'
+    DISTTYPE = 'xXf'
     NEXP = 200
     NOBS = 3
     LENSCALEPOOL = [2.**-n for n in [2., 4., 6.]]
@@ -62,8 +65,14 @@ def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None):
     xObs = rng.uniform(size=(nExp, nObs, dimX))
     xObs *= rangeX
     xObs += minX
-
-    yObs = rng.normal(size=(nExp, nObs, 1))
+    yObs = empty(shape=(nExp, nObs))
+    for iexp in xrange(nExp):
+        good = False
+        while not good:
+            yObs0 = rng.normal(size=(nObs))
+            if yObs0.max() > 0: good = True
+        yObs[iexp, :] = yObs0
+    # yObs = rng.normal(size=(nExp, nObs, 1))
     yObs *= sigvar
 
     return {'x': xObs,
@@ -105,40 +114,20 @@ def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):
         yObs = npa([yObs])
 
     nExp, nObs, dimX0 = xObs.shape
-    # pdb.set_trace()
     assert dimX0 == dimX
     kDomain = K_se(domain, domain, lenscale, sigvar)
-    less_params_runner = lambda iexp: run_exp_i(iexp, xObs, yObs, domain, kDomain\
-                                                lenscale, sigvar, noisevar)
-
     out = [run_exp_i(iexp, xObs, yObs, domain, kDomain, lenscale, sigvar, noisevar)
            for iexp in xrange(nExp)]
-    # for iExp in xrange(nExp):
-    #     if iExp % 100 == 0: print iExp
-    #     xObs0 = prep_for_gpy(xObs[iExp], dimX)
-    #     yObs0 = prep_for_gpy(yObs[iExp], 1)
 
-    #     postmu = conditioned_mu(domain, xObs0, yObs0,\
-    #                             lenscale, sigvar, noisevar)
-    #     imax = postmu.argmax()
-    #     out.append({'xmax': domain[imax],
-    #                 'fmax': postmu[imax],
-    #                 'imax': imax,
-    #                 'lenscale': lenscale,
-    #                 'xObs': xObs0,
-    #                 'yObs': yObs0,
-    #                 'iExp': iExp})
     return out
 
 
 def run_exp_i(iExp, xObs, yObs, domain, kDomain,\
               lenscale, sigvar, noisevar):
-    dimX = xObs.shape[-1]
-    xObs0 = prep_for_gpy(xObs[iExp], dimX)
-    yObs0 = prep_for_gpy(yObs[iExp], 1)
-
-    postmu = conditioned_mu(domain, xObs0, yObs0,\
-                            lenscale, sigvar, noisevar)
+    if iExp % 1000 == 0: print iExp
+    xObs0 = xObs[iExp]
+    yObs0 = yObs[iExp]
+    postmu = conditioned_mu(domain, xObs0, yObs0, lenscale, sigvar, noisevar)
     imax = postmu.argmax()
     return {'xmax': domain[imax],
             'fmax': postmu[imax],
@@ -179,11 +168,14 @@ def get_ranked_dists(evmaxes, distType):
     # return as dict, not df
     usedFields = ['iExp', 'dist', 'rank', 'distType']
     iExps, dists, ranks, distTypes = [dfDists[f].values for f in usedFields]
-    out = {}
-    for ii, iExp in enumerate(iExps):
-        out[iExp] = {'dist': dists[ii],
-                     'rank': ranks[ii],
-                     'distType': distTypes[ii]}
+    out = {iExp: {'dist': dists[ii], 'rank': ranks[ii], 'distType':distTypes[ii]}
+           for ii, iExp in enumerate(iExps)}
+
+    # out = {}
+    # for ii, iExp in enumerate(iExps):
+    #     out[iExp] = {'dist': dists[ii],
+    #                  'rank': ranks[ii],
+    #                  'distType': distTypes[ii]}
     return out
 
 
@@ -201,124 +193,45 @@ def get_obsNTopFar(N, evmaxes, iExp_rankedByDist):
 
 
 def mu_lnnorm(v, n=2):
-    """v is a 1d array.  gives the average pair-wise l_n-norm distance between
-    all elts in v"""
+    """v is a 1d array_like.  gives the average pair-wise l_n-norm distance
+    between all elts in v"""
     assert type(v) is list or len(v.shape) == 1
     pairwise_dists = pdist(zip(v), p=n)
     return mean(pairwise_dists)
 
 
-def prep_for_gpy(x, dimX):
-    """def prep_for_gpy(x, dimX)
+def plot_fardists(domain, xObs, yObs, lenscalepool, sigvar=1., noisevar=1e-7, cmap='autumn'):
+    plt.plot(xObs, yObs,\
+            marker='o', color='black', mec='None', ls='None', alpha=0.3, markersize=10)
+    nls = len(lenscalepool)
+    cols = cmap_discrete(nls+2, cmap)
+    for ils in xrange(nls):
+        ls = lenscalepool[ils]
+        postmu = conditioned_mu(domain, xObs, yObs, ls, sigvar, noisevar)
+        kDomain = K_se(domain, domain, ls, sigvar)
+        postcv = conditioned_covmat(domain, kDomain, xObs, ls, sigvar, noisevar)
+        postsd = diag(postcv)
+        col = cols[ils+1]
+        plt.fill_between(domain.flatten(), postmu+postsd, postmu-postsd,\
+                         facecolor=col, edgecolor='None', alpha=0.1)
+        plt.plot(domain.flatten(), postmu, color=col)
+        imax = postmu.argmax()
+        xmax = domain[imax]
+        ymax = postmu[imax]
+        plt.plot(xmax, ymax,\
+                 marker='o', color=col, mec='None', alpha=0.5, markersize=8)
+    plt.show()
 
-    ensures obs matrix x, with expected input dim dimX, is properly
-    formatted to work with GPy"""
+# def prep_for_gpy(x, dimX):
+#     """def prep_for_gpy(x, dimX)
 
-    # prep observations if 1d
-    if dimX == 1:
-        x = atleast_2d(x)
-    assert len(x.shape)==2
-    if x.shape[1] != dimX: x = x.T
-    assert x.shape[1] == dimX
-    return x
-
-
-# def distsBtMaxWrtLenscale(domainBounds, xObs, yObs, lenscalepool,\
-#                           domainRes=100, SIGVAR=1., NOISEVAR2=1e-7):
-#     """returns how far maxes of a domain are given gps w lenscales in
-#     lenscalepool and same obs xObs and yObs."""
-#     dimX = len(domainBounds.shape)
-#     # get domain from bounds and res
-#     if isscalar(domainRes):
-#         # equal res if scalar
-#         domainRes = repeat(domainRes, dimX)
-#     else: assert len(domainRes) == dimX
-
-#     domain = npa([linspace(domainBounds[dim][0],
-#                            domainBounds[dim][1],
-#                            domainRes[dim])
-#                   for dim in xrange(xDim)])
+#     ensures obs matrix x, with expected input dim dimX, is properly
+#     formatted to work with GPy"""
 
 #     # prep observations if 1d
-#     if dimX = 1:
-#         xObs = atleast_2d(xObs)
-#         yObs = atleast_2d(yObs)
-#         if xObs.shape[1] != dimX: xObs = xObs.T
-#         if yObs.shape[1] != 1: yObs = yObs.T
-
-#     assert xObs.shape[1] == dimX
-#     assert yObs.shape[1] == 1
-
-#     kern = kern.RBF(input_dim=dimX,
-#                     lengthscale=lenscale,
-#                     variance=sigvar)
-
-#     model = GPRegression(kern, xObs, yObs)
-#     mupost = model.predict(domain)
-
-#     return {'mu': mupost[0],
-#             'var': mupost[1]}
-
-
-
-
-    # conditioned_mus = [jbgp.conditioned_mu(X, xObs, yObs,
-    #                                        lenscale, SIGVAR, NOISEVAR2)
-    #                    for lenscale in lenscalepool]
-    # imaxes = [mu.argmax() for mu in conditioned_mus]
-    # xmaxes = [X[imax] for imax in imaxes]
-    # ymaxes = [conditioned_mus[ils][imax] for ils, imax in enumerate(imaxes)]
-    # mud_x = mu_lnnorm(xmaxes, 2)
-    # mud_y = mu_lnnorm(ymaxes, 2)
-    # mud_xXy = mud_x * mud_y
-
-    # return {'xObs': xObs,
-    #         'yObs': yObs,
-    #         'ihat': imaxes,
-    #         'xhat': xmaxes,
-    #         'yhat': ymaxes,
-    #         'mud_x': mud_x,
-    #         'mud_y': mud_y,
-    #         'mu_xXy': mu_xXy}
-
-
-# def nsam_far(nsam, lenscalepool, ntries=10000):
-#     ncond = len(lenscalepool)
-#     # get valid x-y pairs to condition on
-#     xylenscalemu = []
-#     donesofar = 0
-#     while donesofar < ntries:
-#         good = False
-#         xObs = rng.rand(nsam)
-#         # assert that all yvals are positive (to assure max is not 0)
-#         while not good:
-#             yObs = rng.randn(nsam)
-#             if yObs.max() > 0: good = True
-#         # get the x-loc with best EV for all lss in lenscalepool
-#         xylenscalemu.append(get_and_compare_mus(xObs, yObs, lenscalepool))
-#         donesofar += 1
-
-#     xylenscalemu = pd.DataFrame(xylenscalemu)  # convert to df
-#     # rank how far the dists are
-#     xylenscalemu['rank_mu_l2norm'] = rank(xylenscalemu.mu_l2norm.values)
-#     xylenscalemu.set_index(xylenscalemu.rank_mu_l2norm, inplace=True)  # reindex
-#     # top = xylenscalemu[xylenscalemu.rank_mu_l2norm < ntop]  # get max dists
-#     return xylenscalemu
-
-
-# def plot_nsam_far(df, lenscalepool, i):
-#     """plot a test one"""
-#     dfi = df.loc[i]
-#     X = linspace(0, 1, 1028)
-#     ncond = len(lenscalepool)
-#     SIGVAR = 1.
-#     NOISEVAR2 = 1e-7
-#     conditioned_mus = [jbgp.conditioned_mu(X, dfi.xObs, dfi.yObs,
-#                                             lenscale, SIGVAR, NOISEVAR2)
-#                         for lenscale in lenscalepool]
-#     [plt.plot(X, mu) for mu in conditioned_mus]
-#     [plt.plot(dfi.xhat[i], dfi.yhat[i], 'ro', markersize=10, alpha=0.5)
-#             for i in range(ncond)]
-#     plt.plot(dfi.xObs, dfi.yObs, 'ko', markersize=8, alpha=0.4)
-#     plt.show()
-
+#     if dimX == 1:
+#         x = atleast_2d(x)
+#     assert len(x.shape)==2
+#     if x.shape[1] != dimX: x = x.T
+#     assert x.shape[1] == dimX
+#     return x
