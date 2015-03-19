@@ -14,7 +14,8 @@ from psiturk.models import Participant
 from json import dumps, loads
 
 # for basic experiment setup
-from numpy import linspace, array
+from numpy import linspace
+from numpy import array as npa
 
 # load the configuration options
 config = PsiturkConfig()
@@ -24,7 +25,40 @@ myauth = PsiTurkAuthorization(config)  # if you want to add a password protect r
 # explore the Blueprint
 custom_code = Blueprint('custom_code', __name__, template_folder='templates', static_folder='static')
 
-import gpExperiment as gpe
+import sam3experiment as s3e
+from jbutils import make_domain_grid
+
+## EXPERIMENT FREE VARS
+NROUND = 200
+COST2DRILL = 30
+STARTPOINTS = 0
+# gp params
+SIGVAR = 1.
+NOISEVAR2 = 1e-7
+NOBSPOOL = [2, 3, 4, 5, 6]
+# params for making sam3 queue
+assert NROUND % len(NOBSPOOL) == 0
+EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
+LENSCALEPOWSOF2 = [2., 4., 6.]
+LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
+# params for generating sam3 locs for far maxes for different lenscales
+DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
+NTOTEST = NROUND * 100
+DOMAINBOUNDS = [[0., 1.]]
+DOMAINRES = 1028
+DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES)
+
+XSAM_BOUNDS = DOMAINBOUNDS
+XSAM_BOUNDS[0][0] = EDGEBUF
+XSAM_BOUNDS[0][1] -= EDGEBUF
+
+NPERNOBS = NROUND / len(NOBSPOOL)
+# made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
+RNGSEEDPOOL =\
+    npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
+         951675775, 2101131205, 1792109879,  781776608, 2388543424,
+         2154736893, 2773127409, 3304953852,  678883645, 3097437001,
+         3696226994,  242457524,  991216532, 2747458246, 2432174005])
 
 ## LOAD GP STUFF INTO WORKSPACE
 @custom_code.route('/init_experiment', methods=['GET'])
@@ -32,48 +66,29 @@ def init_experiment():
     if not request.args.has_key('condition'):
         raise ExperimentError('improper_inputs')  # i don't like returning HTML to JSON requests...  maybe should change this
 
-    CONDITION = int(request.args['condition'])
-    COUNTERBALANCE = int(request.args['counterbalance'])
+    condition = int(request.args['condition'])
+    counterbalance = int(request.args['counterbalance'])
 
-    ## FREE VARS
-    # experiment params
-    NROUND = 200
-    COST2DRILL = 30
-    STARTPOINTS = 0
-    # gp params
-    nX = 1028
-    X = linspace(0, 1, nX)
-    SIGVAR = 1.
-    NOISEVAR2 = 1e-7
-    NOBSPOOL = [2, 3, 4, 5, 6]
-    ND3 = 4
-    EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
-    D2POOL = [(1.-(EDGEBUF*2.))/(2.**(n+1)) for n in xrange(ND2)]
-    # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
-    RNGSEEDPOOL =\
-        array([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
-                951675775, 2101131205, 1792109879,  781776608, 2388543424,
-            2154736893, 2773127409, 3304953852,  678883645, 3097437001,
-            3696226994,  242457524,  991216532, 2747458246, 2432174005])
-    LENSCALEPOWSOF2 = [2., 4., 6.]
-    LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
     ## END FREE VARS
-    LENSCALE = LENSCALEPOOL[CONDITION]
-    RNGSEED = RNGSEEDPOOL[COUNTERBALANCE]
-    # LENSCALE = LENSCALEPOOL[CONDITION % len(LENSCALEPOOL)]
-    # RNGSEED = RNGSEEDPOOL[CONDITION % len(RNGSEEDPOOL)]
+    lenscale = LENSCALEPOOL[condition]
+    rngseed = RNGSEEDPOOL[counterbalance]
 
-    experParams = {'x': X,
-                   'lenscale': LENSCALE,
+    experParams = {'domain': DOMAIN,
+                   'xSam_bounds': XSAM_BOUNDS,
+                   'lenscale': lenscale,
                    'sigvar': SIGVAR,
                    'noisevar2': NOISEVAR2,
-                   'rngseed': RNGSEED,
+                   'rngseed': rngseed,
                    'nRound': NROUND,
                    'nObsPool': NOBSPOOL,
-                   'd2Pool': D2POOL,
-                   'edgeBuf': EDGEBUF}
+                   'edgeBuf': EDGEBUF,
+                   'distType': DISTTYPE,
+                   'lenscalepool': LENSCALEPOOL,
+                   'nToTest': NTOTEST,
+                   'dir_sam3': DIR_SAM3,
+                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3}
 
-    subParams = gpe.make_experiment(**experParams)
+    subParams = s3e.make_experiment(**experParams)
     # bundle response to send
     resp = {}
     for f in subParams:
@@ -89,7 +104,7 @@ def init_experiment():
             resp[f] = experParams[f]
 
     resp['round'] = -1
-    resp['d2i'] = -1
+    resp['i_sam3'] = -1
     resp['nRound'] = NROUND
     resp['cost2sample'] = COST2SAMPLE
     resp['cost2drill'] = COST2DRILL
@@ -103,30 +118,26 @@ def get_nextTrial():
     # args:
     #   lenscale
     #   nObs
-    #   d2locsX
-    #   d2locsY
+    #   x_sam3
+    #   y_sam3
     args = request.args
     lenscale = float(args['lenscale'])
     nObs = float(args['nObs'])
-    if nObs==2:
-        d2locsX = args['d2locsX']
-        d2locsY = args['d2locsY']
-        d2locsX = loads(d2locsX)
-        d2locsY = loads(d2locsY)
-        d2locsX = map(float, d2locsX)
-        d2locsY = map(float, d2locsY)
-        d2locsX = array(d2locsX)
-        d2locsY = array(d2locsY)
+    if nObs==3:  # json to nparray
+        x_sam3 = args['x_sam3']
+        y_sam3 = args['y_sam3']
+        x_sam3 = loads(x_sam3)
+        y_sam3 = loads(y_sam3)
+        x_sam3 = map(float, x_sam3)
+        y_sam3 = map(float, y_sam3)
+        x_sam3 = npa(x_sam3)
+        y_sam3 = npa(y_sam3)
     else:
-        d2locsX = None
-        d2locsY = None
+        x_sam3 = None
+        y_sam3 = None
 
-    nX = 1028
-    X = linspace(0, 1, nX)
-    SIGVAR = 1.
-    NOISEVAR2 = 1e-7
-
-    thisTri = gpe.make_trial(nObs, X, lenscale, SIGVAR, NOISEVAR2, d2locsX, d2locsY)
+    thisTri = s3e.make_trial(nObs, DOMAIN, XSAM_BOUNDS, lenscale, SIGVAR, NOISEVAR2,\
+                             x_sam3, y_sam3)
 
     resp = {'sample': thisTri['sample'].tolist(),
             'xObs': thisTri['xObs'].tolist(),

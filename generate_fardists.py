@@ -4,12 +4,11 @@ from numpy import array as npa
 from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate,\
                   empty, diag
 from numpy.random import RandomState
-rng = RandomState()
 from GPy.kern import RBF
 from GPy.models import GPRegression
-from jbutils import cartesian, rank, cmap_discrete
+from jbutils import cartesian, rank, cmap_discrete, jbpickle, jbunpickle,\
+                    make_domain_grid
 from jbgp import K_se, conditioned_mu, conditioned_covmat
-
 from matplotlib import pyplot as plt
 import pdb
 
@@ -23,18 +22,23 @@ def demo():
     SIGVAR = 1.
     NOISEVAR = 1e-7
     NTOTEST = 10000
+    RNGSEED = None
 
     out = generate_fardists(DISTTYPE, NEXP, NOBS, LENSCALEPOOL, DOMAINBOUNDS,\
-                            DOMAINRES, SIGVAR, NOISEVAR, NTOTEST)
+                            DOMAINRES, SIGVAR, NOISEVAR, NTOTEST, RNGSEED)
     return out
 
 
-def generate_fardists(distType, nExp, nObs, lenscalepool, domainBounds, domainRes,\
-                      sigvar=None, noisevar=None, nToTest=None):
+def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
+                      sigvar=None, noisevar=None, nToTest=None, rngseed=None):
+
+    if not sigvar: sigvar = 1.
+    if not noisevar: noisevar = 1e-7
     if not nToTest: nToTest = nExp*100
 
     # generate random valid loc-val pairs for experiments
-    obs = generate_rand_obs(nToTest, nObs, domainBounds)
+
+    obs = generate_rand_obs(nToTest, nObs, xSam_bounds, rngseed)
     xObs = obs['x']
     yObs = obs['y']
 
@@ -49,13 +53,18 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domainBounds, domainRe
     iExp_rankedByDist = get_ranked_dists(evmaxes, distType)
 
     # take only the top n ranked dists
-    fardist_obs = get_obsNTopFar(nExp, evmaxes, iExp_rankedByDist)
-    return fardist_obs
+    obs_fardists = get_obsNTopFar(nExp, evmaxes, iExp_rankedByDist)
+
+    return obs_fardists
 
 
-def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None):
+def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rngseed=None):
     # create random sets of observations for each experiment
     if not sigvar: sigvar = 1.
+    if not rngseed:
+        rng = RandomState()
+    else:
+        rng = RandomState(rngseed)
 
     domainBounds = npa(domainBounds)
     dimX = domainBounds.shape[0]
@@ -77,29 +86,6 @@ def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None):
 
     return {'x': xObs,
             'y': yObs}
-
-
-def make_domain_grid(domainBounds, domainRes):
-    """takes domainBounds and domainRes for each dim of input space and grids
-    accordingly"""
-    #TODO: add sparse version with ndm
-
-    domainBounds = npa(domainBounds)
-    # get domain from bounds and res
-    dimX = domainBounds.shape[0]
-    if isscalar(domainRes):
-        # equal res if scalar
-        domainRes = repeat(domainRes, dimX)
-    else: assert len(domainRes) == dimX
-    domainRes = npa(domainRes)
-
-    domain = npa([linspace(domainBounds[dim][0],
-                           domainBounds[dim][1],
-                           domainRes[dim])
-                  for dim in xrange(dimX)])
-
-    domain = cartesian(domain)
-    return domain
 
 
 def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):

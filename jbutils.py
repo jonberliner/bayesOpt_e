@@ -1,6 +1,23 @@
-from numpy import asarray, prod, zeros, repeat
+from numpy import asarray, prod, zeros, repeat, linspace, isscalar
 from matplotlib.pyplot import get_cmap
+import cPickle
+from numpy import array as npa
 
+
+def jbpickle(obj, fname):
+    """obj is the session object you're saving.  fname is the file name"""
+    with open(fname, 'wb') as f:
+        cPickle.dump(obj, f)
+
+def jbunpickle(fname):
+    """fname is the file name.  you have to assign to an object.
+    e.g. unpickle('fname.py'), where file was saved as pickle(obj, 'fname.py')
+    will not put the object obj in your environment.  you need to do
+    obj = unpickle('fname.py')"""
+    with open(fname) as f:
+        obj = cPickle.load(f)
+
+    return obj
 
 def ndm(*args):
     """generates a sparse mesh from a list of numpy vecs.
@@ -73,3 +90,28 @@ def rank(array, descending=True):
 def cmap_discrete(N, cmap):
     cm = get_cmap(cmap)
     return [cm(1.*i/N) for i in xrange(N)]
+
+
+def make_domain_grid(domainBounds, domainRes):
+    """takes domainBounds and domainRes for each dim of input space and grids
+    accordingly"""
+    #TODO: add sparse version with ndm
+
+    domainBounds = npa(domainBounds)
+    # get domain from bounds and res
+    dimX = domainBounds.shape[0]
+    if isscalar(domainRes):
+        # equal res if scalar
+        domainRes = repeat(domainRes, dimX)
+    else:
+        assert len(domainRes) == dimX
+
+    domainRes = npa(domainRes)
+
+    domain = npa([linspace(domainBounds[dim][0],
+                           domainBounds[dim][1],
+                           domainRes[dim])
+                  for dim in xrange(dimX)])
+
+    domain = cartesian(domain)
+    return domain
