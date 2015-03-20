@@ -16,6 +16,7 @@ from json import dumps, loads
 # for basic experiment setup
 from numpy import linspace, fromstring
 from numpy import array as npa
+from numpy.random import RandomState
 
 # load the configuration options
 config = PsiturkConfig()
@@ -29,7 +30,7 @@ import sam3experiment as s3e
 from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
 
 ## EXPERIMENT FREE VARS
-NROUND = 200
+NTRIAL = 200
 COST2DRILL = 30
 STARTPOINTS = 0
 # gp params
@@ -37,12 +38,12 @@ SIGVAR = 1.
 NOISEVAR2 = 1e-7
 NOBSPOOL = [2, 3, 4, 5, 6]
 # params for making sam3 queue
-assert NROUND % len(NOBSPOOL) == 0
+assert NTRIAL % len(NOBSPOOL) == 0
 LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
 # params for generating sam3 locs for far maxes for different lenscales
 DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
-NTOTEST = NROUND * 100
+NTOTEST = NTRIAL * 100
 
 DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
@@ -52,13 +53,16 @@ XSAM_BOUNDS = DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
 
-NPERNOBS = NROUND / len(NOBSPOOL)
+NPERNOBS = NTRIAL / len(NOBSPOOL)
 # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
 RNGSEEDPOOL =\
     npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
          951675775, 2101131205, 1792109879,  781776608, 2388543424,
          2154736893, 2773127409, 3304953852,  678883645, 3097437001,
          3696226994,  242457524,  991216532, 2747458246, 2432174005])
+
+DIR_SAM3 = 'static/sam3queues/'
+FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
 
 ## LOAD GP STUFF INTO WORKSPACE
 @custom_code.route('/init_experiment', methods=['GET'])
@@ -72,21 +76,22 @@ def init_experiment():
     ## END FREE VARS
     lenscale = LENSCALEPOOL[condition]
     rngseed = RNGSEEDPOOL[counterbalance]
+    rng = RandomState(rngseed)
 
     experParams = {'domain': DOMAIN,
                    'xSam_bounds': XSAM_BOUNDS,
-                   'lenscale': lenscale,
                    'sigvar': SIGVAR,
                    'noisevar2': NOISEVAR2,
-                   'rngseed': rngseed,
-                   'nRound': NROUND,
+                   'rng': rng,
+                   'nTrial': NTRIAL,
                    'nObsPool': NOBSPOOL,
                    'edgeBuf': EDGEBUF,
                    'distType': DISTTYPE,
                    'lenscalepool': LENSCALEPOOL,
                    'nToTest': NTOTEST,
                    'dir_sam3': DIR_SAM3,
-                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3}
+                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
+                   'rngseed': rngseed}
 
     subParams = s3e.make_experiment(**experParams)
     # bundle response to send
@@ -105,10 +110,11 @@ def init_experiment():
 
     resp['round'] = -1
     resp['i_sam3'] = -1
-    resp['nRound'] = NROUND
+    resp['nTrial'] = NTRIAL
     resp['cost2sample'] = COST2SAMPLE
     resp['cost2drill'] = COST2DRILL
     resp['startPoints'] = STARTPOINTS
+    resp['lenscale'] = lenscale
 
     session['rngstate'] = pack_rngstate(rng.get_state())
 
@@ -153,4 +159,4 @@ def get_nextTrial():
 
 
 #  # set the secret key.  keep this really secret:
- custom_code.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+custom_code.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

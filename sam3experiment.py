@@ -2,6 +2,7 @@ from numpy import linspace, repeat, zeros, eye
 from numpy.random import RandomState
 from jbgp import K_se, conditioned_mu, sample
 from jbutils import jbunpickle, jbpickle
+from os.path import isfile
 
 ## EXAMPLE PARAMS
 DEMO = {}
@@ -20,33 +21,24 @@ DEMO['edgeBuf'] = 0.05
 # demoExp = gpExperiment.make_experiment(**gpExperiment.DEMO)
 ## END EXAMPLE PARAMS
 
-def make_experiment(domain, xSam_bounds, lenscale, sigvar, noisevar2, rng,\
+def make_experiment(domain, xSam_bounds, sigvar, noisevar2, rng,\
                     nTrial, nObsPool, edgeBuf, distType, lenscalepool, nToTest,\
-                    dir_sam3=None, fnameTemplate_sam3=None, rngseed=None):
+                    dir_sam3, fnameTemplate_sam3, rngseed):
 
-    assert bool(dir_sam3) == bool(fnameTemplate_sam3)  == bool(rngseed)  # all or nothing
-    save_sam3 = bool(dir_sam3)
     assert nTrial % len(nObsPool) == 0
     nPerNObs = nTrial / len(nObsPool)
 
     ## try loading sam3Queues
-    try:
-        obs_sam3Queue = jbunpickle(''.join([dir_sam3,
-                                       fnameTemplate_sam3,
-                                       str(rngseed),
-                                       '.pkl']))
+    fname = ''.join([dir_sam3, fnameTemplate_sam3, str(rngseed), '.pkl'])
+    if isfile(fname):
+        obs_sam3Queue = jbunpickle(fname)
     ## if not saved for this condition yet, build and save
-    except:
+    else:
         from generate_fardists import generate_fardists
         obs_sam3Queue = generate_fardists(distType, nPerNObs, 3, lenscalepool,\
-                                     domain, xSam_bounds, edgeBuf,\
+                                     domain, xSam_bounds,\
                                      sigvar, noisevar2, nToTest, rng)
-        if save_sam3:
-            fname = ''.join([dir_sam3,
-                             fnameTemplate_sam3,
-                             str(rngseed),
-                             '.pkl'])
-            jbpickle(obs_sam3Queue, fname)
+        jbpickle(obs_sam3Queue, fname)
 
     # load or make sam3 queues
     nObsQueue = make_nObsQueue(nObsPool, nTrial, rng)
@@ -88,10 +80,10 @@ def make_trial(nObs, domain,\
                 good = True
         yObs = sam[iObs]
 
-return {'sample': sam,
-        'xObs': xObs,
-        'yObs': yObs,
-        'iObs': iObs}
+    return {'sample': sam,
+            'xObs': xObs,
+            'yObs': yObs,
+            'iObs': iObs}
 
 
 def make_nObsQueue(nObsPool, nTrial, rng):

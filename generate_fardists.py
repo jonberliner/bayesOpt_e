@@ -2,7 +2,7 @@ from scipy.spatial.distance import pdist
 from pandas import DataFrame, concat
 from numpy import array as npa
 from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate,\
-                  empty, diag
+                  empty, diag, vstack
 from numpy.random import RandomState
 from GPy.kern import RBF
 from GPy.models import GPRegression
@@ -38,12 +38,9 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
 
     # generate random valid loc-val pairs for experiments
 
-    obs = generate_rand_obs(nToTest, nObs, xSam_bounds, rng)
+    obs = generate_rand_obs(nToTest, nObs, xSam_bounds, sigvar, rng)
     xObs = obs['x']
     yObs = obs['y']
-
-    # create domain
-    domain = make_domain_grid(domainBounds, domainRes)
 
     # get loc-val of maxev for each lengthscale for each experiment
     evmaxes = [get_evmax(xObs, yObs, domain, lenscale, sigvar, noisevar)
@@ -55,7 +52,13 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
     # take only the top n ranked dists
     obs_fardists = get_obsNTopFar(nExp, evmaxes, iExp_rankedByDist)
 
-    return obs_fardists
+    # put in matrix format
+    tmpdf = DataFrame(obs_sam3Queue)
+    xObs_queue = vstack([trial.T for trial in tmpdf.xObs.values])
+    yObs_queue = vstack([trial.T for trial in tmpdf.yObs.values])
+
+    return {'xObs': xObs_queue,
+            'yObs': yObs_queue}
 
 
 def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rng=None):
@@ -100,6 +103,7 @@ def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):
     nExp, nObs, dimX0 = xObs.shape
     assert dimX0 == dimX
     kDomain = K_se(domain, domain, lenscale, sigvar)
+
     out = [run_exp_i(iexp, xObs, yObs, domain, kDomain, lenscale, sigvar, noisevar)
            for iexp in xrange(nExp)]
 
