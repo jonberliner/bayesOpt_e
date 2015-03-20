@@ -1,5 +1,5 @@
 # this file imports custom routes into the experiment server
-from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app
+from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app, session
 from jinja2 import TemplateNotFound
 from functools import wraps
 from sqlalchemy import or_
@@ -14,7 +14,7 @@ from psiturk.models import Participant
 from json import dumps, loads
 
 # for basic experiment setup
-from numpy import linspace
+from numpy import linspace, fromstring
 from numpy import array as npa
 
 # load the configuration options
@@ -26,7 +26,7 @@ myauth = PsiTurkAuthorization(config)  # if you want to add a password protect r
 custom_code = Blueprint('custom_code', __name__, template_folder='templates', static_folder='static')
 
 import sam3experiment as s3e
-from jbutils import make_domain_grid
+from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
 
 ## EXPERIMENT FREE VARS
 NROUND = 200
@@ -38,16 +38,16 @@ NOISEVAR2 = 1e-7
 NOBSPOOL = [2, 3, 4, 5, 6]
 # params for making sam3 queue
 assert NROUND % len(NOBSPOOL) == 0
-EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
 LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
 # params for generating sam3 locs for far maxes for different lenscales
 DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
 NTOTEST = NROUND * 100
+
 DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
 DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES)
-
+EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
 XSAM_BOUNDS = DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
@@ -110,6 +110,8 @@ def init_experiment():
     resp['cost2drill'] = COST2DRILL
     resp['startPoints'] = STARTPOINTS
 
+    session['rngstate'] = pack_rngstate(rng.get_state())
+
     return jsonify(**resp)
 
 
@@ -120,24 +122,28 @@ def get_nextTrial():
     #   nObs
     #   x_sam3
     #   y_sam3
+
+    # load random number generator
+    assert 'rngstate' in session
+    rng = RandomState()
+    rng.set_state(unpack_rngstate([session['rgnstate']]))
+
+
     args = request.args
     lenscale = float(args['lenscale'])
     nObs = float(args['nObs'])
     if nObs==3:  # json to nparray
-        x_sam3 = args['x_sam3']
-        y_sam3 = args['y_sam3']
-        x_sam3 = loads(x_sam3)
-        y_sam3 = loads(y_sam3)
-        x_sam3 = map(float, x_sam3)
-        y_sam3 = map(float, y_sam3)
-        x_sam3 = npa(x_sam3)
-        y_sam3 = npa(y_sam3)
+        x_sam3 = jsonToNpa(args['x_sam3'], float)
+        y_sam3 = jsonToNpa(args['y_sam3'], float)
     else:
         x_sam3 = None
         y_sam3 = None
 
-    thisTri = s3e.make_trial(nObs, DOMAIN, XSAM_BOUNDS, lenscale, SIGVAR, NOISEVAR2,\
-                             x_sam3, y_sam3)
+    thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
+                             XSAM_BOUNDS, x_sam3, y_sam3, rng)
+
+    # save random number generator for next call
+    session['rngstate'] = pack_rngstate(rng.get_state())
 
     resp = {'sample': thisTri['sample'].tolist(),
             'xObs': thisTri['xObs'].tolist(),
@@ -146,21 +152,5 @@ def get_nextTrial():
     return jsonify(**resp)
 
 
-###########################################################
-#  serving warm, fresh, & sweet custom, user-provided routes
-#  add them here
-###########################################################
-
-#----------------------------------------------
-# example custom route
-#----------------------------------------------
-@custom_code.route('/my_custom_view')
-def my_custom_view():
-        try:
-                return render_template('custom.html')
-        except TemplateNotFound:
-                abort(404)
-
-
 #  # set the secret key.  keep this really secret:
-#  current_app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+ custom_code.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

@@ -30,7 +30,7 @@ def demo():
 
 
 def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
-                      sigvar=None, noisevar=None, nToTest=None, rngseed=None):
+                      sigvar=None, noisevar=None, nToTest=None, rng=None):
 
     if not sigvar: sigvar = 1.
     if not noisevar: noisevar = 1e-7
@@ -38,7 +38,7 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
 
     # generate random valid loc-val pairs for experiments
 
-    obs = generate_rand_obs(nToTest, nObs, xSam_bounds, rngseed)
+    obs = generate_rand_obs(nToTest, nObs, xSam_bounds, rng)
     xObs = obs['x']
     yObs = obs['y']
 
@@ -58,13 +58,11 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
     return obs_fardists
 
 
-def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rngseed=None):
+def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rng=None):
     # create random sets of observations for each experiment
     if not sigvar: sigvar = 1.
-    if not rngseed:
+    if not rng:
         rng = RandomState()
-    else:
-        rng = RandomState(rngseed)
 
     domainBounds = npa(domainBounds)
     dimX = domainBounds.shape[0]

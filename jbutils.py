@@ -1,7 +1,8 @@
-from numpy import asarray, prod, zeros, repeat, linspace, isscalar
+from numpy import asarray, prod, zeros, repeat, linspace, isscalar, fromstring, uint32
 from matplotlib.pyplot import get_cmap
 import cPickle
 from numpy import array as npa
+from json import loads, dumps
 
 
 def jbpickle(obj, fname):
@@ -115,3 +116,30 @@ def make_domain_grid(domainBounds, domainRes):
 
     domain = cartesian(domain)
     return domain
+
+
+def jsonToNpa(jstr, npa_type=float):
+    array = loads(jstr)
+    array = map(npa_type, array)
+    return npa(array)
+
+
+def pack_rngstate(rngstate):
+    json_rngstate = [rngstate[0],  # string
+                     str(rngstate[1].tolist()),  # npa(uint32) -> str
+                     rngstate[2],  # int
+                     rngstate[3],  # int
+                     rngstate[4]]  # float
+    json_rngstate = dumps(json_rngstate)
+    return json_rngstate
+
+
+def unpack_rngstate(json_rngstate):
+    jrs = loads(json_rngstate)
+    p0 = jrs[0].encode('ascii')  # numpy plays nice with ascii
+    #FIXME: get rid of eval statement here somehow
+    p1 = npa(eval(jrs[1])).astype(uint32)  # unpack into numpy uint32 array
+    p2 = int(jrs[2])
+    p3 = int(jrs[3])
+    p4 = float(jrs[4])
+    return (p0, p1, p2, p3, p4)  # rngstate
