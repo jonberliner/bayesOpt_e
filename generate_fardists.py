@@ -4,8 +4,6 @@ from numpy import array as npa
 from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate,\
                   empty, diag, vstack, arange
 from numpy.random import RandomState
-from GPy.kern import RBF
-from GPy.models import GPRegression
 from jbutils import cartesian, rank, cmap_discrete, jbpickle, jbunpickle,\
                     make_domain_grid
 from jbgp import K_se, conditioned_mu, conditioned_covmat
