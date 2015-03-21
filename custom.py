@@ -43,7 +43,6 @@ LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
 # params for generating sam3 locs for far maxes for different lenscales
 DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
-NTOTEST = NTRIAL * 100
 
 DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
@@ -54,6 +53,7 @@ XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
 
 NPERNOBS = NTRIAL / len(NOBSPOOL)
+NTOTEST = NPERNOBS * 100
 # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
 RNGSEEDPOOL =\
     npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,

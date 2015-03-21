@@ -126,7 +126,7 @@ def jsonToNpa(jstr, npa_type=float):
 
 def pack_rngstate(rngstate):
     json_rngstate = [rngstate[0],  # string
-                     str(rngstate[1].tolist()),  # npa(uint32) -> str
+                     rngstate[1].tolist(),  # npa(uint32) -> str
                      rngstate[2],  # int
                      rngstate[3],  # int
                      rngstate[4]]  # float
@@ -137,8 +137,7 @@ def pack_rngstate(rngstate):
 def unpack_rngstate(json_rngstate):
     jrs = loads(json_rngstate)
     p0 = jrs[0].encode('ascii')  # numpy plays nice with ascii
-    #FIXME: get rid of eval statement here somehow
-    p1 = npa(eval(jrs[1])).astype(uint32)  # unpack into numpy uint32 array
+    p1 = npa(jrs[1], dtype=uint32)  # unpack into numpy uint32 array
     p2 = int(jrs[2])
     p3 = int(jrs[3])
     p4 = float(jrs[4])

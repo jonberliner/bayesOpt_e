@@ -2,7 +2,7 @@ from scipy.spatial.distance import pdist
 from pandas import DataFrame, concat
 from numpy import array as npa
 from numpy import repeat, isscalar, atleast_2d, mean, linspace, concatenate,\
-                  empty, diag, vstack
+                  empty, diag, vstack, arange
 from numpy.random import RandomState
 from GPy.kern import RBF
 from GPy.models import GPRegression
@@ -29,12 +29,12 @@ def demo():
     return out
 
 
-def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
+def generate_fardists(distType, nToKeep, nObs, lenscalepool, domain, xSam_bounds,\
                       sigvar=None, noisevar=None, nToTest=None, rng=None):
 
     if not sigvar: sigvar = 1.
     if not noisevar: noisevar = 1e-7
-    if not nToTest: nToTest = nExp*100
+    if not nToTest: nToTest = nToKeep*100
 
     # generate random valid loc-val pairs for experiments
 
@@ -50,13 +50,10 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
     iExp_rankedByDist = get_ranked_dists(evmaxes, distType)
 
     # take only the top n ranked dists
-    obs_fardists = get_obsNTopFar(nExp, evmaxes, iExp_rankedByDist)
-
-    # put in matrix format
-    tmpdf = DataFrame(obs_sam3Queue)
-    xObs_queue = vstack([trial.T for trial in tmpdf.xObs.values])
-    yObs_queue = vstack([trial.T for trial in tmpdf.yObs.values])
-
+    usedExps = [iexp for iexp in iExp_rankedByDist
+                if iExp_rankedByDist[iexp]['rank'] < nToKeep]
+    xObs_queue = xObs[usedExps]
+    yObs_queue = yObs[usedExps]
     return {'xObs': xObs_queue,
             'yObs': yObs_queue}
 
@@ -64,8 +61,7 @@ def generate_fardists(distType, nExp, nObs, lenscalepool, domain, xSam_bounds,\
 def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rng=None):
     # create random sets of observations for each experiment
     if not sigvar: sigvar = 1.
-    if not rng:
-        rng = RandomState()
+    if not rng: rng = RandomState()
 
     domainBounds = npa(domainBounds)
     dimX = domainBounds.shape[0]
@@ -102,32 +98,36 @@ def get_evmax(xObs, yObs, domain, lenscale, sigvar=None, noisevar=None):
 
     nExp, nObs, dimX0 = xObs.shape
     assert dimX0 == dimX
-    kDomain = K_se(domain, domain, lenscale, sigvar)
 
-    out = [run_exp_i(iexp, xObs, yObs, domain, kDomain, lenscale, sigvar, noisevar)
-           for iexp in xrange(nExp)]
+    # get conditioned posteriors
+    print 'lenscale: ' + str(lenscale)
+    postmus = (conditioned_mu(domain, xObs[iexp], yObs[iexp],\
+                              lenscale, sigvar, noisevar)
+               for iexp in xrange(nExp))
+    # get maxes of posteriors
+    imaxes = []
+    xmaxes = []
+    fmaxes = []
+    for postmu in postmus:
+        imax = postmu.argmax()
+        imaxes.append(imax)# nExp x 1
+        xmaxes.append(domain[imax])  # nExp x 1
+        fmaxes.append(postmu[imax])  # nExp x 1
+    # add experiment metadata for call to get_ranked_dists
+    imaxes = npa(imaxes)
+    fmaxes = npa(fmaxes)
+    lenscales = [lenscale] * nExp
+    iExps = arange(nExp)
 
-    return out
-
-
-def run_exp_i(iExp, xObs, yObs, domain, kDomain,\
-              lenscale, sigvar, noisevar):
-    if iExp % 1000 == 0: print iExp
-    xObs0 = xObs[iExp]
-    yObs0 = yObs[iExp]
-    postmu = conditioned_mu(domain, xObs0, yObs0, lenscale, sigvar, noisevar)
-    imax = postmu.argmax()
-    return {'xmax': domain[imax],
-            'fmax': postmu[imax],
-            'imax': imax,
-            'lenscale': lenscale,
-            'xObs': xObs0,
-            'yObs': yObs0,
-            'iExp': iExp}
+    return {'xmax': xmaxes,
+            'fmax': fmaxes,
+            'imax': imaxes,
+            'lenscale': lenscales,
+            'iExp': iExps}
 
 
 def get_ranked_dists(evmaxes, distType):
-    """evmaxes is a lolodicts generated with get_evmaxes.
+    """evmaxes is a lodicts generated with [get_evmax(...,ls,...) for ls in lenscalepool].
     each evmaxes[i][j] must have keys [xmax, fmax, iExp].
     Returns dict with iExp and dist rank for iExp for each experimetn iExp,
     with distance metric determined by param distType in ['x', 'f', 'xXf']"""
@@ -142,10 +142,10 @@ def get_ranked_dists(evmaxes, distType):
     if distType=='x':
         dfcn = lambda df0: mu_lnnorm(concatenate(df0.xmax.values))
     elif distType=='f':
-        dfcn = lambda df0: mu_lnnorm(concatenate(df0.fmax.values))
+        dfcn = lambda df0: mu_lnnorm(df0.fmax.values)
     elif distType=='xXf':
         dfcn = lambda df0: mu_lnnorm(concatenate(df0.fmax.values)) *\
-                           mu_lnnorm(concatenate(df0.xmax.values))
+                           mu_lnnorm(df0.xmax.values)
 
     # get dist bt lenscale conds for each experiment iExp
     dfDists = evmaxes.groupby('iExp').apply(dfcn).reset_index()
@@ -183,7 +183,7 @@ def get_obsNTopFar(N, evmaxes, iExp_rankedByDist):
 def mu_lnnorm(v, n=2):
     """v is a 1d array_like.  gives the average pair-wise l_n-norm distance
     between all elts in v"""
-    assert type(v) is list or len(v.shape) == 1
+    assert len(v.shape) == 1
     pairwise_dists = pdist(zip(v), p=n)
     return mean(pairwise_dists)
 
