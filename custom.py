@@ -28,6 +28,7 @@ custom_code = Blueprint('custom_code', __name__, template_folder='templates', st
 
 import sam3experiment as s3e
 from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
+# with open('secretkey', 'r') as f: SECRETKEY = f.read().splitlines()[0]
 
 ## EXPERIMENT FREE VARS
 NTRIAL = 200
@@ -78,43 +79,42 @@ def init_experiment():
     rngseed = RNGSEEDPOOL[counterbalance]
     rng = RandomState(rngseed)
 
-    experParams = {'domain': DOMAIN,
-                   'xSam_bounds': XSAM_BOUNDS,
-                   'sigvar': SIGVAR,
-                   'noisevar2': NOISEVAR2,
-                   'rng': rng,
+    experParams = {
                    'nTrial': NTRIAL,
                    'nObsPool': NOBSPOOL,
-                   'edgeBuf': EDGEBUF,
-                   'distType': DISTTYPE,
-                   'lenscalepool': LENSCALEPOOL,
-                   'nToTest': NTOTEST,
+                   'rng': rng,
                    'dir_sam3': DIR_SAM3,
                    'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
-                   'rngseed': rngseed}
+                   'rngseed': rngseed
+                   }
 
     subParams = s3e.make_experiment(**experParams)
+
     # bundle response to send
     resp = {}
     for f in subParams:
-        try:
-            resp[f] = subParams[f].tolist()
-        except:
-            resp[f] = subParams[f]
+            try:
+                resp[f] = subParams[f].tolist()
+            except:
+                resp[f] = subParams[f]
 
     for f in experParams:
-        try:  # convet numpy array to list if possible
-            resp[f] = experParams[f].tolist()
-        except:
-            resp[f] = experParams[f]
+        if f is not 'rng':
+            try:  # convet numpy array to list if possible
+                resp[f] = experParams[f].tolist()
+            except:
+                resp[f] = experParams[f]
 
-    resp['round'] = -1
-    resp['i_sam3'] = -1
+    resp['trial'] = 0
+    resp['i_sam3'] = 0
     resp['nTrial'] = NTRIAL
-    resp['cost2sample'] = COST2SAMPLE
     resp['cost2drill'] = COST2DRILL
     resp['startPoints'] = STARTPOINTS
     resp['lenscale'] = lenscale
+    resp['distype'] = DISTTYPE
+    resp['domainbounds'] = DOMAINBOUNDS
+    resp['domainres'] = DOMAINRES
+    resp['edgebuf'] = EDGEBUF
 
     session['rngstate'] = pack_rngstate(rng.get_state())
 
@@ -156,7 +156,3 @@ def get_nextTrial():
             'yObs': thisTri['yObs'].tolist()}
 
     return jsonify(**resp)
-
-
-#  # set the secret key.  keep this really secret:
-custom_code.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

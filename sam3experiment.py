@@ -1,55 +1,31 @@
 from numpy import linspace, repeat, zeros, eye
 from numpy.random import RandomState
 from jbgp import K_se, conditioned_mu, sample
-from jbutils import jbunpickle, jbpickle
+from jbutils import jbunpickle
 from os.path import isfile
 
-## EXAMPLE PARAMS
-DEMO = {}
-DEMO['nObsPool'] = [2, 3, 4, 5, 6]
-DEMO_ND2 = 5  # number of dists bt 2 points when 2 sams shown
-DEMO['d2Pool'] = [1./2.**(n+1) for n in xrange(DEMO_ND2)]  # dists bt 2 sams when 2 shown
-DEMO['nTrial'] = 200  # n round in experiment
-DEMO['rngseed'] = 4245342523
-DEMO_NX = 1028
-DEMO['x'] = linspace(0, 1, DEMO_NX)
-DEMO['lenscale'] = 0.05
-DEMO['sigvar'] = 1.
-DEMO['noisevar2'] = 1e-7
-DEMO['edgeBuf'] = 0.05
-# get demo experiment with:
-# demoExp = gpExperiment.make_experiment(**gpExperiment.DEMO)
-## END EXAMPLE PARAMS
 
-def make_experiment(domain, xSam_bounds, sigvar, noisevar2, rng,\
-                    nTrial, nObsPool, edgeBuf, distType, lenscalepool, nToTest,\
-                    dir_sam3, fnameTemplate_sam3, rngseed):
-
+def make_experiment(nTrial, nObsPool, rng, dir_sam3, fnameTemplate_sam3, rngseed):
     assert nTrial % len(nObsPool) == 0
     nPerNObs = nTrial / len(nObsPool)
 
-    ## try loading sam3Queues
+    ## load sam3Queues make with prep_sam3_queues.py
     fname = ''.join([dir_sam3, fnameTemplate_sam3, str(rngseed), '.pkl'])
-    if isfile(fname):
-        obs_sam3Queue = jbunpickle(fname)
-    ## if not saved for this condition yet, build and save
-    else:
-        from generate_fardists import generate_fardists
-        obs_sam3Queue = generate_fardists(distType, nPerNObs, 3, lenscalepool,\
-                                     domain, xSam_bounds,\
-                                     sigvar, noisevar2, nToTest, rng)
-        jbpickle(obs_sam3Queue, fname)
+    assert isfile(fname)
+    obs_sam3Queue = jbunpickle(fname)
 
-    # load or make sam3 queues
+    # get queue of how many obs per round
     nObsQueue = make_nObsQueue(nObsPool, nTrial, rng)
+
+    # shuffle sam3 queues
+    order = rng.permutation(nPerNObs)
+    obs_sam3Queue['xObs'][:] = obs_sam3Queue['xObs'][order]
+    obs_sam3Queue['yObs'][:] = obs_sam3Queue['yObs'][order]
 
     # get all obs tuples for experiment
     return {'nObsQueue': nObsQueue,
             'xObs_sam3Queue': obs_sam3Queue['xObs'],
             'yObs_sam3Queue': obs_sam3Queue['yObs']}
-
-    # cmPrior = K_se(domain, domain, lenscale, sigvar)
-    # muPrior = zeros_like(domain)
 
 
 def make_trial(nObs, domain,\

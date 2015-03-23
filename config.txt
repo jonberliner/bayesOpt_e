@@ -25,6 +25,7 @@ debug = true
 login_username = examplename
 login_pw = examplepassword
 threads = auto
+secret_key = 'REPLACE_ME_WITH_A_REAL_SECRET_KEY_AT_LAUNCH'
 
 [Task Parameters]
 experiment_code_version = 1.0

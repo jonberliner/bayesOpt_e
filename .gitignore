@@ -5,3 +5,4 @@ test.db
 *.c
 build
 server.log
+secretkey

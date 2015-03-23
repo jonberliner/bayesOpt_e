@@ -2,10 +2,27 @@
 from numpy import linspace, fromstring
 from numpy import array as npa
 from numpy.random import RandomState
-import sam3experiment as s3e
-from jbutils import make_domain_grid
+from generate_fardists import generate_fardists
+from jbutils import make_domain_grid, jbpickle
 
-def prep_sam3_queues(rngseedpool):
+
+# WILL MAKE FARDIST QUEUES FOR ALL RNGSEEDS IN RNGSEEDPOOL
+# made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
+## run the sucker
+RNGSEEDPOOL =\
+    npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
+         951675775, 2101131205, 1792109879,  781776608, 2388543424,
+         2154736893, 2773127409, 3304953852,  678883645, 3097437001,
+         3696226994,  242457524,  991216532, 2747458246, 2432174005])
+# # for testing
+# RNGSEEDPOOL = npa([1903799985])
+
+# where to save the pickled results
+DIR_SAM3 = 'static/sam3queues/'
+FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
+
+
+def prep_sam3_queues(rngseedpool, dir_sam3, fnameTemplate_sam3):
     ## EXPERIMENT FREE VARS
     NTRIAL = 200
     COST2DRILL = 30
@@ -31,40 +48,30 @@ def prep_sam3_queues(rngseedpool):
 
     NPERNOBS = NTRIAL / len(NOBSPOOL)
     NTOTEST = NPERNOBS * 100
-    # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
-
-    DIR_SAM3 = 'static/sam3queues/'
-    FNAMETEMPLATE_SAM3 = 'TESTsam3queue_rngseed_'
 
     nrngseed = len(rngseedpool)
     for irs, rngseed in enumerate(rngseedpool):
-        print 'rngseed ' + str(irs) + ' of ' + str(nrngseed)
+        print 'rngseed ' + str(irs+1) + ' of ' + str(nrngseed)
         rng = RandomState(rngseed)
 
-        experParams = {'domain': DOMAIN,
+        fname = ''.join([dir_sam3, fnameTemplate_sam3, str(rngseed), '.pkl'])
+
+        experParams = {
+                       'distType': DISTTYPE,
+                       'nToKeep': NPERNOBS,
+                       'nObs': 3,
+                       'lenscalepool': LENSCALEPOOL,
+                       'domain': DOMAIN,
                        'xSam_bounds': XSAM_BOUNDS,
                        'sigvar': SIGVAR,
                        'noisevar2': NOISEVAR2,
-                       'rng': rng,
-                       'nTrial': NTRIAL,
-                       'nObsPool': NOBSPOOL,
-                       'edgeBuf': EDGEBUF,
-                       'distType': DISTTYPE,
-                       'lenscalepool': LENSCALEPOOL,
                        'nToTest': NTOTEST,
-                       'dir_sam3': DIR_SAM3,
-                       'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
-                       'rngseed': rngseed}
-        s3e.make_experiment(**experParams)
+                       'rng': rng
+                       }
+        # generate fardists
+        obs_sam3Queue = generate_fardists(**experParams)
+        # save
+        jbpickle(obs_sam3Queue, fname)
 
-## run the sucker
-# RNGSEEDPOOL =\
-#     npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
-#          951675775, 2101131205, 1792109879,  781776608, 2388543424,
-#          2154736893, 2773127409, 3304953852,  678883645, 3097437001,
-#          3696226994,  242457524,  991216532, 2747458246, 2432174005])
 
-# for testing
-RNGSEEDPOOL = npa([1903799985])
-
-prep_sam3_queues(RNGSEEDPOOL)
+prep_sam3_queues(RNGSEEDPOOL, DIR_SAM3, FNAMETEMPLATE_SAM3)
