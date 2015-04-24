@@ -1,6 +1,6 @@
 from numpy import linspace, repeat, zeros, eye
 from numpy.random import RandomState
-from jbgp import K_se, conditioned_mu, sample
+from jbgp import K_se, conditioned_mu, conditioned_covmat, sample
 from jbutils import jbunpickle
 from os.path import isfile
 
@@ -32,14 +32,14 @@ def make_trial(nObs, domain,\
                lenscale, sigvar, noisevar2,\
                xSam_bounds, xObs_sam3, yObs_sam3, rng):
 
-    assert bool(xObs_sam3) == bool(yObs_sam3)
-    assert bool(nObs==3) == bool(xObs_sam3)
+    assert bool(xObs_sam3 is None) == bool(yObs_sam3 is None)
+    assert bool(nObs==3) == bool(xObs_sam3 is not None)
 
     cardDomain = domain.shape[0]
     kDomain = K_se(domain, domain, lenscale, sigvar)
     if nObs == 3:  # draw random function passing through (xObs, yObs)
-        xObs = sam3locsX
-        yObs = sam3locsY
+        xObs = xObs_sam3
+        yObs = yObs_sam3
         muPost = conditioned_mu(domain, xObs, yObs, lenscale, sigvar, noisevar2)
         cmPost = conditioned_covmat(domain, kDomain, xObs, lenscale, sigvar, noisevar2)
         sam = sample_gp(domain, muPost, cmPost, noisevar2, rng)
@@ -51,7 +51,7 @@ def make_trial(nObs, domain,\
         good = False
         while not good:
             iObs = rng.randint(nX, size=nObs)
-            xObs = X[iObs]
+            xObs = domain[iObs]
             if (xObs > xSam_bounds[0][0] and xObs < xSam_bounds[0][1]):
                 good = True
         yObs = sam[iObs]
@@ -77,7 +77,7 @@ def make_nObsQueue(nObsPool, nTrial, rng):
 def sample_gp(domain, mu, covmat, noisevar2, rng=None):
     """sample over domain given mean mu and covmat covmat"""
     if not rng: rng = RandomState()
-    nI = X.shape[0]
+    nI = domain.shape[0]
     covmat += eye(nI) * noisevar2
     sample = rng.multivariate_normal(mu, covmat)
     return sample

@@ -8,23 +8,30 @@ from jbutils import cartesian, rank, cmap_discrete, jbpickle, jbunpickle,\
                     make_domain_grid
 from jbgp import K_se, conditioned_mu, conditioned_covmat
 from matplotlib import pyplot as plt
+from jbutils import make_domain_grid
 import pdb
 
 def demo():
-    DISTTYPE = 'xXf'
+    DISTTYPE = 'x'
     NEXP = 200
     NOBS = 3
     LENSCALEPOOL = [2.**-n for n in [2., 4., 6.]]
     DOMAINBOUNDS = [[0., 1.]]
     DOMAINRES = [100]
+    DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES)
+    EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
+    XSAM_BOUNDS = DOMAINBOUNDS
+    XSAM_BOUNDS[0][0] = EDGEBUF
+    XSAM_BOUNDS[0][1] -= EDGEBUF
     SIGVAR = 1.
     NOISEVAR = 1e-7
     NTOTEST = 10000
     RNGSEED = None
 
-    out = generate_fardists(DISTTYPE, NEXP, NOBS, LENSCALEPOOL, DOMAINBOUNDS,\
-                            DOMAINRES, SIGVAR, NOISEVAR, NTOTEST, RNGSEED)
-    return out
+    fardistobs = generate_fardists(DISTTYPE, NEXP, NOBS, LENSCALEPOOL, DOMAIN,\
+                                   XSAM_BOUNDS, SIGVAR, NOISEVAR, NTOTEST, RNGSEED)
+
+    return fardistobs
 
 
 def generate_fardists(distType, nToKeep, nObs, lenscalepool, domain, xSam_bounds,\
@@ -187,7 +194,8 @@ def mu_lnnorm(v, n=2):
 
 
 def plot_fardists(domain, xObs, yObs, lenscalepool, sigvar=1., noisevar=1e-7, cmap='autumn'):
-    plt.plot(xObs, yObs,\
+    fig, ax = plt.subplots()
+    ax.plot(xObs, yObs,\
             marker='o', color='black', mec='None', ls='None', alpha=0.3, markersize=10)
     nls = len(lenscalepool)
     cols = cmap_discrete(nls+2, cmap)
@@ -198,15 +206,38 @@ def plot_fardists(domain, xObs, yObs, lenscalepool, sigvar=1., noisevar=1e-7, cm
         postcv = conditioned_covmat(domain, kDomain, xObs, ls, sigvar, noisevar)
         postsd = diag(postcv)
         col = cols[ils+1]
-        plt.fill_between(domain.flatten(), postmu+postsd, postmu-postsd,\
+        ax.fill_between(domain.flatten(), postmu+postsd, postmu-postsd,\
                          facecolor=col, edgecolor='None', alpha=0.1)
-        plt.plot(domain.flatten(), postmu, color=col)
+        ax.plot(domain.flatten(), postmu, color=col)
         imax = postmu.argmax()
         xmax = domain[imax]
         ymax = postmu[imax]
-        plt.plot(xmax, ymax,\
+        ax.plot(xmax, ymax,\
                  marker='o', color=col, mec='None', alpha=0.5, markersize=8)
-    plt.show()
+    return (fig, ax)
+
+def plot_sam(domain, xObs, yObs, lenscalepool, sigvar=1., noisevar=1e-7, cmap='autumn'):
+    fig, ax = plt.subplots()
+    # ax.plot(xObs, yObs,\
+    #         marker='o', color='black', mec='None', ls='None', alpha=0.3, markersize=10)
+    nls = len(lenscalepool)
+    cols = cmap_discrete(nls+2, cmap)
+    for ils in [1]:
+        ls = lenscalepool[ils]
+        postmu = conditioned_mu(domain, xObs, yObs, ls, sigvar, noisevar)
+        kDomain = K_se(domain, domain, ls, sigvar)
+        postcv = conditioned_covmat(domain, kDomain, xObs, ls, sigvar, noisevar)
+        postsd = diag(postcv)
+        col = cols[ils+1]
+        ax.fill_between(domain.flatten(), postmu+postsd, postmu-postsd,\
+                         facecolor=col, edgecolor='None', alpha=0.1)
+        ax.plot(domain.flatten(), postmu, color=col)
+        imax = postmu.argmax()
+        xmax = domain[imax]
+        ymax = postmu[imax]
+        # ax.plot(xmax, ymax,\
+        #          marker='o', color=col, mec='None', alpha=0.5, markersize=8)
+    return (fig, ax)
 
 # def prep_for_gpy(x, dimX):
 #     """def prep_for_gpy(x, dimX)

@@ -218,11 +218,9 @@ var JSBPsiTurk = function(uniqueId, adServerLoc) {
 	};
 
 	// Add bonus to task data
-	self.customRoute = function(url, datahash, callback) {
+	self.get_customRoute = function(url, datahash, callback) {
         // auto-append id info to request
         datahash['uniqueId'] = self.taskdata.id;
-
-        // console.log("I was called");
 
 		$.ajax(url, {
             type: "GET",
@@ -230,6 +228,20 @@ var JSBPsiTurk = function(uniqueId, adServerLoc) {
             success: callback
         });
 	};
+
+    // Add bonus to task data
+    self.post_customRoute = function(url, datahash, callback) {
+        // auto-append id info to request
+        datahash['uniqueId'] = self.taskdata.id;
+
+        $.ajax(url, {
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(datahash),
+            success: callback
+        });
+    };
 
     // Add bonus to task data
     self.computeBonus = function(url, callback) {

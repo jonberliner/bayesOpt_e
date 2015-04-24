@@ -1,5 +1,5 @@
 # this file imports custom routes into the experiment server
-from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app, session
+from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app #, session
 from jinja2 import TemplateNotFound
 from functools import wraps
 from sqlalchemy import or_
@@ -33,7 +33,7 @@ from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
 ## EXPERIMENT FREE VARS
 NTRIAL = 200
 COST2DRILL = 30
-STARTPOINTS = 0
+INITSCORE = 0
 # gp params
 SIGVAR = 1.
 NOISEVAR2 = 1e-7
@@ -105,54 +105,60 @@ def init_experiment():
             except:
                 resp[f] = experParams[f]
 
-    resp['trial'] = 0
-    resp['i_sam3'] = 0
+    resp['inititrial'] = 0
+    resp['isam3'] = 0
     resp['nTrial'] = NTRIAL
     resp['cost2drill'] = COST2DRILL
-    resp['startPoints'] = STARTPOINTS
+    resp['initscore'] = INITSCORE
     resp['lenscale'] = lenscale
     resp['distype'] = DISTTYPE
     resp['domainbounds'] = DOMAINBOUNDS
     resp['domainres'] = DOMAINRES
     resp['edgebuf'] = EDGEBUF
 
-    session['rngstate'] = pack_rngstate(rng.get_state())
+    resp['rngstate'] = pack_rngstate(rng.get_state())
 
     return jsonify(**resp)
 
 
-@custom_code.route('/get_nextTrial', methods=['GET'])
-def get_nextTrial():
+@custom_code.route('/make_trial', methods=['POST'])
+def make_trial():
     # args:
     #   lenscale
     #   nObs
     #   x_sam3
     #   y_sam3
+    #   rngstate
 
-    # load random number generator
-    assert 'rngstate' in session
+    print '\n\nmake trial called'
+
+    params = request.json  # works when ajax request contentType specified as "applications/json"
+    # unpack random number generator
     rng = RandomState()
-    rng.set_state(unpack_rngstate([session['rgnstate']]))
+    rngstate = unpack_rngstate(params['rngstate'])
+    rng.set_state(rngstate)
 
 
-    args = request.args
-    lenscale = float(args['lenscale'])
-    nObs = float(args['nObs'])
-    if nObs==3:  # json to nparray
-        x_sam3 = jsonToNpa(args['x_sam3'], float)
-        y_sam3 = jsonToNpa(args['y_sam3'], float)
+    lenscale = float(params['lenscale'])
+    nObs = int(params['nObs'])
+    print 1
+
+    if nObs==3:  # params to nparray
+        xObs_sam3 = npa(params['xObs_sam3'])
+        yObs_sam3 = npa(params['yObs_sam3'])
     else:
-        x_sam3 = None
-        y_sam3 = None
+        xObs_sam3 = None
+        yObs_sam3 = None
 
+    print 2
     thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
-                             XSAM_BOUNDS, x_sam3, y_sam3, rng)
+                             XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
 
-    # save random number generator for next call
-    session['rngstate'] = pack_rngstate(rng.get_state())
-
+    print 3
     resp = {'sample': thisTri['sample'].tolist(),
             'xObs': thisTri['xObs'].tolist(),
-            'yObs': thisTri['yObs'].tolist()}
+            'yObs': thisTri['yObs'].tolist(),
+            'rngstate': pack_rngstate(rng.get_state())}
 
+    print 'MAKE_TRIAL WAS COMPLETE'
     return jsonify(**resp)
