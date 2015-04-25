@@ -20,6 +20,90 @@ var drillGame = function(){
     //     checkOnTick(event, tp, wp, EP, STYLE.startPoint.sp.radius);
     // });
 
+
+    //////// STYLE SHEETS FOR THE GAME
+    var STYLE = {};
+
+    // background.  should be purely cosmetic
+    STYLE.background = {};
+
+    STYLE.background.sky = [];
+    STYLE.background.sky.strokeSize = 5;
+    STYLE.background.sky.strokeColor = '#33CCCC';
+    STYLE.background.sky.fillColor = '#33CCCC';
+
+    STYLE.background.ground = {};
+    STYLE.background.ground.strokeSize = 5;
+    STYLE.background.ground.strokeColor = '#A0522D';
+    STYLE.background.ground.fillColor = '#A0522D';
+
+    // choiceSet is the abstract term for whatever objects you can click to make
+    // a choice.  in this case, we have a single arc, but can be arbitrary
+    STYLE.choiceSet = {};
+    STYLE.choiceSet.groundline = {};
+    STYLE.choiceSet.groundline.strokeColor = '#D9BAAB';
+    STYLE.choiceSet.groundline.fillColor = null;
+    STYLE.choiceSet.groundline.strokeSize = 10;
+
+    STYLE.choiceSet.groundline_glow = {};
+    STYLE.choiceSet.groundline_glow.strokeColor = '#EACDDC';
+    STYLE.choiceSet.groundline_glow.ratioGlowBigger = 1.5;
+
+    // feedback objects
+    STYLE.obs = {};
+    STYLE.obs.drill = {};
+    STYLE.obs.drill.strokeColor = 'red';
+    STYLE.obs.drill.fillColor = null;
+    STYLE.obs.drill.strokeSize = 4;
+    STYLE.obs.drill.radius = 12;
+
+    STYLE.obs.passive = {};
+    STYLE.obs.passive.strokeColor = 'white';
+    STYLE.obs.passive.fillColor = null;
+    STYLE.obs.passive.strokeSize = 3;
+    STYLE.obs.passive.radius = 8;
+
+    STYLE.obs.active = {};
+    for(var key in STYLE.obs.passive){
+        STYLE.obs.active[key] = STYLE.obs.passive[key];
+    }
+
+    // messages shown throughout game
+    STYLE.msgs = {};
+
+    STYLE.msgs.goToStart = {};
+    STYLE.msgs.goToStart.text = 'GO TO START';
+    STYLE.msgs.goToStart.color = '#AEAEAE';
+    STYLE.msgs.goToStart.font = '2em Helvetica';
+    STYLE.msgs.goToStart.textAlign = 'center';
+    STYLE.msgs.goToStart.x = WCANVAS / 2.;
+    STYLE.msgs.goToStart.y = HCANVAS / 20.;
+
+    STYLE.msgs.makeChoice = {};
+    STYLE.msgs.makeChoice.text = 'CLICK GROUNDLINE TO MAKE CHOICE';
+    STYLE.msgs.makeChoice.color = '#AEAEAE';
+    STYLE.msgs.makeChoice.font = '2em Helvetica';
+    STYLE.msgs.makeChoice.textAlign = 'center';
+    STYLE.msgs.makeChoice.x = WCANVAS / 2.;
+    STYLE.msgs.makeChoice.y = HCANVAS / 20.;
+
+    STYLE.msgs.totalScore = {};
+    STYLE.msgs.totalScore.color = '#AEAEAE';
+    STYLE.msgs.totalScore.font = '2em Helvetica';
+    STYLE.msgs.totalScore.regX = 0.;
+    STYLE.msgs.totalScore.regY = 0.;
+    STYLE.msgs.totalScore.textAlign = 'right';
+    STYLE.msgs.totalScore.x = WCANVAS - 10.;
+    STYLE.msgs.totalScore.y = 30.;
+
+    STYLE.msgs.trialFeedback = {};
+    STYLE.msgs.trialFeedback.x = WCANVAS/2.;
+    STYLE.msgs.trialFeedback.y = HCANVAS/2.;
+    STYLE.msgs.trialFeedback.color = '#AEAEAE';
+    STYLE.msgs.trialFeedback.font = '2em Helvetica';
+    STYLE.msgs.trialFeedback.textAlign = 'center';
+    STYLE.msgs.trialFeedback.visible = false;
+
     //////// INITIATE GAME
     var EP = {};  // params that stay constant through experiment
     var tp = {};  // params that change trial by trial
@@ -37,8 +121,8 @@ var drillGame = function(){
                  function(resp){  // once to get back resp from custom.py...
                     EP.RNGSEED = resp['rngseed'];
                     EP.INITSCORE = resp['initscore'];
-                    EP.MINDOMAIN = resp['domainbounds'][0];
-                    EP.MAXDOMAIN = resp['domainbounds'][1];
+                    EP.MINDOMAIN = resp['domainbounds'][0][0];
+                    EP.MAXDOMAIN = resp['domainbounds'][0][1];
                     EP.BOUNDSX = [EP.MINDOMAIN, EP.MAXDOMAIN];
                     EP.BOUNDSPX = [0, WCANVAS];
                     EP.NTRIAL = resp['ntrial'];
@@ -58,27 +142,21 @@ var drillGame = function(){
                     QUEUES.YOBS_SAM3 = resp['yObs_sam3Queue'];
                     QUEUES.NOBS = resp['nObsQueue'];
 
-                    tp.itrial = resp['inititrial'];
-                    tp.isam3 = resp['isam3'];
+                    tp.itrial = resp['itrial'];  // should start at -1
+                    tp.isam3 = resp['isam3'];  // should start at -1
                     tp.rngstate = resp['rngstate'];
-                    // tp.rngstate0 = resp['rngstate0'];
-                    // tp.rngstate1 = resp['rngstate1'];
-                    // tp.rngstate2 = resp['rngstate2'];
-                    // tp.rngstate3 = resp['rngstate3'];
 
-
-                    tp = set_itrialParams(tp.itrial, tp, QUEUES);
                     tsub.totalScore = EP.INITSCORE;
 
-                    obs_arrays = [];  // for all observations
+                    obs_arrays = {};  // for all observations
                     obs_arrays.passive = [];
                     obs_arrays.active = [];
                     obs_arrays.drill = [];
 
                     background = make_background(STYLE.background, WCANVAS, HCANVAS, YGROUNDLINE);
-                    a_background = [background.background];
+                    a_background = [background.ground, background.sky];
                     choiceSet = make_choiceSet(STYLE.choiceSet, WCANVAS, YGROUNDLINE);
-                    a_choiceSet = [choiceSet.arc_glow, choiceSet.arc];
+                    a_choiceSet = [choiceSet.groundline_glow, choiceSet.groundline];
                     msgs = make_messages(STYLE.msgs);
 
                     update_totalScore(tsub.totalScore);
@@ -170,32 +248,36 @@ var drillGame = function(){
 
     function setup_trial(itrial, tp, queues, stylecs){
         // set up things for trial itrial
-        tp = set_itrialParams(itrial, tp, queues);
-        // remove obs from stage and empty obs arrays
-        for(var obstype in obs_arrays){
-            unstageArray(obs_arrays[obstype]);
-            obs_arrays[obstype] = [];
-        }
-        // add new starting observations
-        for (var iobs=0; iobs<tp.nObs; iobs++){
-            add_obs(obs_arrays.passive, tp.pxObs[iobs], tp.pyObs, STYLE.obs.passive);
-        }
-        stageArray(obs_arrays.passive);
+        set_itrialParams(itrial, tp, queues,
+            function(){
+                // remove obs from stage and empty obs arrays
+                for(var obstype in obs_arrays){
+                    unstageArray(obs_arrays[obstype]);
+                    obs_arrays[obstype] = [];
+                }
+                // add new starting observations
 
-        setup_makeChoice();
-    }
+                for (var iobs=0; iobs<tp.nObs; iobs++){
+                    add_obs(obs_arrays.passive, tp.pxObs[iobs], tp.pyObs, STYLE.obs.passive);
+                }
+                stageArray(obs_arrays.passive);
+
+                setup_makeChoice();
+            }  // end callback function
+        );  // end set_itrialParams
+    }  // end setup_trial
 
 
-    function set_itrialParams(itrial, tp, queues){
+    function set_itrialParams(itrial, tp, queues, callback){
         // extract trial params for itrial itrial from the queues in queues
         // var tp = {};  // init trial params
 
         // see if this is a sam3 trial
         tp.nObs = queues.NOBS[itrial];
         if(tp.nObs===3){
+            tp.isam3 += 1;
             tp.xObs = queues.XOBS_SAM3[tp.isam3]
             tp.yObs = queues.YOBS_SAM3[tp.isam3]
-            tp.isam3 += 1;
         }
         else {
             tp.xObs_sam3 = 'None';
@@ -208,24 +290,19 @@ var drillGame = function(){
                      'xObs_sam3': tp.xObs,
                      'yObs_sam3': tp.yObs,
                      'rngstate': tp.rngstate
-                     // 'rngstate0': tp.rngstate0,
-                     // 'rngstate1': tp.rngstate1,
-                     // 'rngstate2': tp.rngstate2,
-                     // 'rngstate3': tp.rngstate3
                      },
                     function(resp){
-                        console.log(resp);
+                        console.log('make_trial callback was called');
+                        // set trial params
                         tp.yHidfcn = resp['sample'];
                         tp.xObs = resp['xObs'];
                         tp.yObs = resp['yObs'];
                         tp.pyHidfcn = normalize(tp.yHidfcn, EP.BOUNDSPY, EP.BOUNDSY);
                         tp.pxObs = normalize(tp.xObs, EP.BOUNDSPX, EP.BOUNDSX);
                         tp.pyObs = normalize(tp.yObs, EP.BOUNDSPY, EP.BOUNDSY);
+                        tp.itrial = itrial;
+                        callback();
                     });
-
-        tp.itrial = itrial;
-
-        return tp;
     }
 
 
@@ -262,7 +339,7 @@ var drillGame = function(){
 
 
     //// functions for saving and tearing down a trial
-    function add_obs(px, py, array, style){
+    function add_obs(array, px, py, style){
         // adds obs as loc (px,py) to array array with style style
         var obs = make_obs(px, py, style);
         array.push(obs);
@@ -279,7 +356,7 @@ var drillGame = function(){
         tsub.yDrill = normalize(pyDrill, EP.pYBOUNDS, EP.BOUNDSY);
         tsub.trialScore = yToScore(pyDrill); // get the reward
 
-        add_obs(pxDrill, pyDrill, drill_array, STYLE.drillObs);
+        add_obs(obs_arrays.drill, pxDrill, pyDrill, STYLE.drillObs);
 
         tsub.totalScore += tsub.trialScore;
         update_totalScore(tsub.totalScore);
@@ -329,27 +406,28 @@ var drillGame = function(){
 
 
     function make_background(stylebg, canvasW, canvasH, yGroundline){
-        var background_objs = [];
+        var background_objs = {};
         var ground = new createjs.Shape();
         var groundline2bottom = canvasH - yGroundline;
 
-        ground.graphics.s(stylebg.ground.STROKECOLOR).
-                    f(stylebg.ground.FILLCOLOR).
-                    ss(stylebg.ground.STROKESIZE, 0, 0).
+        ground.graphics.s(stylebg.ground.strokeColor).
+                    f(stylebg.ground.fillColor).
+                    ss(stylebg.ground.strokeSize, 0, 0).
                     r(0, yGroundline, canvasW, groundline2bottom);
         ground.visible = true;
 
         // sky Graphics
         var sky = new createjs.Shape();
-        sky.graphics.s(stylebg.sky.STROKECOLOR).
-                        f(stylebg.sky.FILLCOLOR).
-                        ss(stylebg.sky.STROKESIZE, 0, 0).
+        sky.graphics.s(stylebg.sky.strokeColor).
+                        f(stylebg.sky.fillColor).
+                        ss(stylebg.sky.strokeSize, 0, 0).
                         r(0, 0, canvasW, yGroundline);
         sky.visible = true;
 
 
         // add to background array
-        background_objs.background = background;
+        background_objs.ground = ground;
+        background_objs.sky = sky;
 
         return background_objs;
     }
@@ -370,8 +448,9 @@ var drillGame = function(){
         groundline.visible = true;
 
         var groundline_glow = new createjs.Shape();
+        var groundline_glow_ss = stylecs.groundline.strokeSize * stylecs.groundline_glow.ratioGlowBigger;
         groundline_glow.graphics.s(stylecs.groundline_glow.strokeColor).
-                            ss(stylecs.groundline_glow.strokeSize, 0, 0).
+                            ss(groundline_glow_ss, 0, 0).
                             mt(0, yGroundline). // GROUNDLINE HEIGHT
                             lt(canvasW, yGroundline);
         groundline_glow.visible = false;
@@ -665,94 +744,4 @@ var drillGame = function(){
         psiTurk.saveData();  // save to server side
         callback();
     }
-
-
-    //////// STYLE SHEETS FOR THE GAME
-    var STYLE = [];
-
-    // background.  should be purely cosmetic
-    STYLE.background = [];
-
-    STYLE.background.sky = [];
-    STYLE.background.sky.strokeSize = 5;
-    STYLE.background.sky.strokeColor = '#33CCCC';
-    STYLE.background.sky.fillColor = '#33CCCC';
-
-    STYLE.background.ground = [];
-    STYLE.background.ground.strokeSize = 5;
-    STYLE.background.ground.strokeColor = '#A0522D';
-    STYLE.background.ground.fillColor = '#A0522D';
-
-    // choiceSet is the abstract term for whatever objects you can click to make
-    // a choice.  in this case, we have a single arc, but can be arbitrary
-    STYLE.choiceSet = [];
-    STYLE.choiceSet.groundline = [];
-    STYLE.choiceSet.groundline.strokeColor = '#8B8B8B';
-    STYLE.choiceSet.groundline.fillColor = null;
-    STYLE.choiceSet.groundline.strokeSize = 10;
-
-    STYLE.choiceSet.groundline_glow = [];
-    STYLE.choiceSet.groundline_glow.strokeColor = '#AEAEAE';
-    STYLE.choiceSet.groundline_glow.ratioGlowBigger = 1.5;
-
-    // feedback objects
-    STYLE.obs = [];
-    STYLE.obs.drill = [];
-    STYLE.obs.drill.strokeColor = 'red';
-    STYLE.obs.drill.fillColor = null;
-    STYLE.obs.drill.strokeSize = 4;
-    STYLE.obs.drill.radius = 12;
-
-    STYLE.obs.passive = [];
-    STYLE.obs.passive.strokeColor = '#8B8B8B';
-    STYLE.obs.passive.fillColor = '#8B8B8B';
-    STYLE.obs.passive.strokeSize = 2;
-    STYLE.obs.passive.radius = 20;
-
-    STYLE.obs.active = [];
-    for(var key in STYLE.obs.passive){
-        STYLE.obs.active[key] = STYLE.obs.passive[key];
-    }
-
-    // messages shown throughout game
-    STYLE.msgs = [];
-
-    STYLE.msgs.goToStart = [];
-    STYLE.msgs.goToStart.text = 'GO TO START';
-    STYLE.msgs.goToStart.color = '#AEAEAE';
-    STYLE.msgs.goToStart.font = '2em Helvetica';
-    STYLE.msgs.goToStart.textAlign = 'center';
-    STYLE.msgs.goToStart.x = WCANVAS / 2.;
-    STYLE.msgs.goToStart.y = HCANVAS / 20.;
-
-    STYLE.msgs.makeChoice = [];
-    STYLE.msgs.makeChoice.text = 'CLICK RING TO MAKE CHOICE';
-    STYLE.msgs.makeChoice.color = '#AEAEAE';
-    STYLE.msgs.makeChoice.font = '2em Helvetica';
-    STYLE.msgs.makeChoice.textAlign = 'center';
-    STYLE.msgs.makeChoice.x = WCANVAS / 2.;
-    STYLE.msgs.makeChoice.y = HCANVAS / 20.;
-
-    STYLE.msgs.tooSlow = [];
-    STYLE.msgs.tooSlow.text = 'TOO SLOW';
-    STYLE.msgs.tooSlow.color = '#AEAEAE';
-    STYLE.msgs.tooSlow.font = '10em Helvetica';
-
-    STYLE.msgs.totalScore = [];
-    STYLE.msgs.totalScore.color = '#AEAEAE';
-    STYLE.msgs.totalScore.font = '2em Helvetica';
-    STYLE.msgs.totalScore.regX = 0.;
-    STYLE.msgs.totalScore.regY = 0.;
-    STYLE.msgs.totalScore.textAlign = 'left';
-    STYLE.msgs.totalScore.x = 10.;
-    STYLE.msgs.totalScore.y = HCANVAS - 40.;
-
-    STYLE.msgs.trialFeedback = [];
-    STYLE.msgs.trialFeedback.x = WCANVAS/2.;
-    STYLE.msgs.trialFeedback.y = HCANVAS/2.;
-    STYLE.msgs.trialFeedback.color = '#AEAEAE';
-    STYLE.msgs.trialFeedback.font = '2em Helvetica';
-    STYLE.msgs.trialFeedback.textAlign = 'center';
-    STYLE.msgs.trialFeedback.visible = false;
-
 };

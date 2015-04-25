@@ -28,6 +28,7 @@ custom_code = Blueprint('custom_code', __name__, template_folder='templates', st
 
 import sam3experiment as s3e
 from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
+from time import time
 # with open('secretkey', 'r') as f: SECRETKEY = f.read().splitlines()[0]
 
 ## EXPERIMENT FREE VARS
@@ -47,7 +48,7 @@ DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
 
 DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
-DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES)
+DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES).flatten()
 EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
 XSAM_BOUNDS = DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
@@ -105,8 +106,8 @@ def init_experiment():
             except:
                 resp[f] = experParams[f]
 
-    resp['inititrial'] = 0
-    resp['isam3'] = 0
+    resp['itrial'] = -1
+    resp['isam3'] = -1
     resp['nTrial'] = NTRIAL
     resp['cost2drill'] = COST2DRILL
     resp['initscore'] = INITSCORE
@@ -123,14 +124,13 @@ def init_experiment():
 
 @custom_code.route('/make_trial', methods=['POST'])
 def make_trial():
+    t0 = time()
     # args:
     #   lenscale
     #   nObs
-    #   x_sam3
-    #   y_sam3
+    #   xObs_sam3
+    #   yObs_sam3
     #   rngstate
-
-    print '\n\nmake trial called'
 
     params = request.json  # works when ajax request contentType specified as "applications/json"
     # unpack random number generator
@@ -141,24 +141,25 @@ def make_trial():
 
     lenscale = float(params['lenscale'])
     nObs = int(params['nObs'])
-    print 1
 
     if nObs==3:  # params to nparray
-        xObs_sam3 = npa(params['xObs_sam3'])
+        xObs_sam3 = npa(params['xObs_sam3']).flatten()
         yObs_sam3 = npa(params['yObs_sam3'])
     else:
         xObs_sam3 = None
         yObs_sam3 = None
 
-    print 2
+    print 'beging s3e.make_trial'
+    t1 = time()
     thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
                              XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
-
-    print 3
+    ts3e = time() - t1
+    print 's3e.make_trial time: ' + str(ts3e)
     resp = {'sample': thisTri['sample'].tolist(),
-            'xObs': thisTri['xObs'].tolist(),
+            'xObs': thisTri['xObs'].flatten().tolist(),
             'yObs': thisTri['yObs'].tolist(),
             'rngstate': pack_rngstate(rng.get_state())}
 
-    print 'MAKE_TRIAL WAS COMPLETE'
+    print 'make_trial complete'
+    print 'rest of make_trial time: ' + str(time() - t0 - ts3e)
     return jsonify(**resp)
