@@ -43,6 +43,7 @@ def make_trial(nObs, domain,\
     cardDomain = len(domain)
     t0 = time()
     kDomain = K_se(domain, domain, lenscale, sigvar)
+    print domain.shape
     print 'tkDomain: ' + str(time()-t0)
     if nObs == 3:  # draw random function passing through (xObs, yObs)
         xObs = xObs_sam3

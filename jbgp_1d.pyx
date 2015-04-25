@@ -78,7 +78,7 @@ cpdef ndarray[double, ndim=1] conditioned_mu(ndarray[double, ndim=1] X,
 
 
 cpdef ndarray[double, ndim=2] conditioned_covmat(ndarray[double, ndim=1] X,
-                                                ndarray[double, ndim=1] KX,
+                                                ndarray[double, ndim=2] KX,
                                                 ndarray[double, ndim=1] xObs,
                                                 double lenscale,
                                                 double sigvar,
