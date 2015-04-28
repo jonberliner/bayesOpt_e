@@ -33,7 +33,7 @@ from time import time
 
 ## EXPERIMENT FREE VARS
 NTRIAL = 200
-COST2DRILL = 30
+COSTTODRILL = 30
 INITSCORE = 0
 # gp params
 SIGVAR = 1.
@@ -50,7 +50,7 @@ DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
 DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES).flatten()
 EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
-XSAM_BOUNDS = DOMAINBOUNDS
+XSAM_BOUNDS = [dim[:] for dim in DOMAINBOUNDS]  # deep copy of DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
 
@@ -109,9 +109,10 @@ def init_experiment():
     resp['itrial'] = -1
     resp['isam3'] = -1
     resp['nTrial'] = NTRIAL
-    resp['cost2drill'] = COST2DRILL
+    resp['costToDrill'] = COSTTODRILL
     resp['initscore'] = INITSCORE
     resp['lenscale'] = lenscale
+    resp['sigvar'] = SIGVAR
     resp['distype'] = DISTTYPE
     resp['domainbounds'] = DOMAINBOUNDS
     resp['domainres'] = DOMAINRES
@@ -158,7 +159,11 @@ def make_trial():
     resp = {'sample': thisTri['sample'].tolist(),
             'xObs': thisTri['xObs'].flatten().tolist(),
             'yObs': thisTri['yObs'].tolist(),
+            'iObs': thisTri['iObs'],
             'rngstate': pack_rngstate(rng.get_state())}
+    if thisTri['iObs'] is not None:
+        resp['iObs'] = resp['iObs'].tolist()
+
 
     print 'make_trial complete'
     print 'rest of make_trial time: ' + str(time() - t0 - ts3e)
