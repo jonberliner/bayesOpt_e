@@ -11,7 +11,8 @@ from matplotlib import pyplot as plt
 from jbutils import make_domain_grid
 import pdb
 
-def demo():
+def demo(plot):
+    if not plot: plot=False
     DISTTYPE = 'x'
     NEXP = 200
     NOBS = 3
@@ -31,7 +32,19 @@ def demo():
     fardistobs = generate_fardists(DISTTYPE, NEXP, NOBS, LENSCALEPOOL, DOMAIN,\
                                    XSAM_BOUNDS, SIGVAR, NOISEVAR, NTOTEST, RNGSEED)
 
-    return fardistobs
+    if plot:
+        # plot
+        xobs = fardistobs['xObs']
+        yobs = fardistobs['yObs']
+
+        plotdemo = lambda iexp: plot_fardists(DOMAIN, xobs[iexp], yobs[iexp], LENSCALEPOOL)
+
+        resp = {'fardistobs': fardistobs,
+                'plotdemo': plotdemo}
+    else:
+        resp = fardistobs
+
+    return resp
 
 
 def generate_fardists(distType, nToKeep, nObs, lenscalepool, domain, xSam_bounds,\
@@ -69,12 +82,10 @@ def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rng=None):
     if not rng: rng = RandomState()
 
     domainBounds = npa(domainBounds)
-    dimX = domainBounds.shape[0]
-    assert dimX == 1, 'dimX must be 1'
     minX = domainBounds[:, 0]
     maxX = domainBounds[:, 1]
     rangeX = maxX - minX
-    xObs = rng.uniform(size=(nExp, nObs, dimX))
+    xObs = rng.uniform(size=(nExp, nObs))
     xObs *= rangeX
     xObs += minX
     yObs = empty(shape=(nExp, nObs))
@@ -87,7 +98,7 @@ def generate_rand_obs(nExp, nObs, domainBounds, sigvar=None, rng=None):
     # yObs = rng.normal(size=(nExp, nObs, 1))
     yObs *= sigvar
 
-    return {'x': xObs.flatten(),  # make 1d
+    return {'x': xObs,  # make 1d
             'y': yObs}
 
 
@@ -142,11 +153,11 @@ def get_ranked_dists(evmaxes, distType):
 
     # make distance function based on param distType
     if distType=='x':
-        dfcn = lambda df0: mu_lnnorm(concatenate(df0.xmax.values))
+        dfcn = lambda df0: mu_lnnorm(df0.xmax.values)
     elif distType=='f':
         dfcn = lambda df0: mu_lnnorm(df0.fmax.values)
     elif distType=='xXf':
-        dfcn = lambda df0: mu_lnnorm(concatenate(df0.fmax.values)) *\
+        dfcn = lambda df0: mu_lnnorm(df0.fmax.values) *\
                            mu_lnnorm(df0.xmax.values)
 
     # get dist bt lenscale conds for each experiment iExp

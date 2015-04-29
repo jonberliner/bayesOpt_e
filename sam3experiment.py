@@ -43,8 +43,8 @@ def make_trial(nObs, domain,\
     cardDomain = len(domain)
     t0 = time()
     kDomain = K_se(domain, domain, lenscale, sigvar)
-    print domain.shape
-    print 'tkDomain: ' + str(time()-t0)
+    # print domain.shape
+    # print 'tkDomain: ' + str(time()-t0)
     if nObs == 3:  # draw random function passing through (xObs, yObs)
         xObs = xObs_sam3
         yObs = yObs_sam3
@@ -55,9 +55,9 @@ def make_trial(nObs, domain,\
         tcm = time() - t0 - tmu
         sam = sample_gp(domain, muPost, cmPost, noisevar2, rng)
         tsam = time() - t0 - tmu - tcm
-        print 'tmu: ' + str(tmu)
-        print 'tcm: ' + str(tcm)
-        print 'tsam: ' + str(tsam)
+        # print 'tmu: ' + str(tmu)
+        # print 'tcm: ' + str(tcm)
+        # print 'tsam: ' + str(tsam)
         iObs = None
     else:  # draw random sample from prior and take random locations
         muPrior = zeros(cardDomain)
@@ -68,8 +68,9 @@ def make_trial(nObs, domain,\
             iObs = rng.randint(cardDomain, size=nObs)
             xObs = domain[iObs]
             if (xObs > xSam_bounds[0][0]).all() and (xObs < xSam_bounds[0][1]).all():
-                good = True
-        yObs = sam[iObs]
+                yObs = sam[iObs]
+                if (yObs.max() < (sigvar * 3.)) and (yObs.min() > (-sigvar * 3.)):
+                    good = True
 
     return {'sample': sam,
             'xObs': xObs,

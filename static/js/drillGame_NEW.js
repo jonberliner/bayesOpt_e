@@ -61,7 +61,7 @@ var drillGame = function(){
     STYLE.ulbutton.ulbutton.strokeSize = 5;
     STYLE.ulbutton.ulbutton.radius = 20;
     STYLE.ulbutton.ulbutton.x = STYLE.ulbutton.ulbutton.radius + 10;
-    STYLE.ulbutton.ulbutton.y = YGROUNDLINE / 2.;
+    STYLE.ulbutton.ulbutton.y = YGROUNDLINE / 2. - 4;
 
     STYLE.ulbutton.ulbutton_glow = {};
     STYLE.ulbutton.ulbutton_glow.strokeColor = 'green';
@@ -110,21 +110,29 @@ var drillGame = function(){
 
     STYLE.msgs = {};
 
-    STYLE.msgs.goToStart = {};
-    STYLE.msgs.goToStart.text = 'GO TO START';
-    STYLE.msgs.goToStart.color = '#ffffff';
-    STYLE.msgs.goToStart.font = '2em Helvetica';
-    STYLE.msgs.goToStart.textAlign = 'center';
-    STYLE.msgs.goToStart.x = WCANVAS / 2.;
-    STYLE.msgs.goToStart.y = HCANVAS / 20.;
+    // STYLE.msgs.goToStart = {};
+    // STYLE.msgs.goToStart.text = 'GO TO START';
+    // STYLE.msgs.goToStart.color = '#ffffff';
+    // STYLE.msgs.goToStart.font = '2em Helvetica';
+    // STYLE.msgs.goToStart.textAlign = 'center';
+    // STYLE.msgs.goToStart.x = WCANVAS / 2.;
+    // STYLE.msgs.goToStart.y = HCANVAS / 20.;
 
     STYLE.msgs.makeChoice = {};
-    STYLE.msgs.makeChoice.text = 'CLICK GROUNDLINE TO MAKE CHOICE';
+    STYLE.msgs.makeChoice.text = 'click ground line to make choice';
     STYLE.msgs.makeChoice.color = '#666';
-    STYLE.msgs.makeChoice.font = '2em Helvetica';
+    STYLE.msgs.makeChoice.font = '1.4em Helvetica';
     STYLE.msgs.makeChoice.textAlign = 'center';
     STYLE.msgs.makeChoice.x = WCANVAS / 2.;
-    STYLE.msgs.makeChoice.y = YGROUNDLINE / 4.;
+    STYLE.msgs.makeChoice.y = YGROUNDLINE / 3.;
+
+    STYLE.msgs.clickulbutton = {};
+    STYLE.msgs.clickulbutton.text = 'click ignition button to move to next area';
+    STYLE.msgs.clickulbutton.color = '#666';
+    STYLE.msgs.clickulbutton.font = '1.4em Helvetica';
+    STYLE.msgs.clickulbutton.textAlign = 'center';
+    STYLE.msgs.clickulbutton.x = WCANVAS / 2.;
+    STYLE.msgs.clickulbutton.y = YGROUNDLINE / 3.;
 
     STYLE.msgs.totalScore = {};
     STYLE.msgs.totalScore.color = '#666';
@@ -143,6 +151,15 @@ var drillGame = function(){
     STYLE.msgs.trialFeedback.textAlign = 'center';
     STYLE.msgs.trialFeedback.visible = false;
 
+    STYLE.msgs.loading = {};
+    STYLE.msgs.loading.text = 'LOADING EXPERIMENT.  PLEASE WAIT...';
+    STYLE.msgs.loading.x = WCANVAS/2.;
+    STYLE.msgs.loading.y = HCANVAS/2.;
+    STYLE.msgs.loading.color = '#AEAEAE';
+    STYLE.msgs.loading.font = '4em Helvetica';
+    STYLE.msgs.loading.textAlign = 'center';
+    STYLE.msgs.loading.visible = false;
+
     //////// INITIATE GAME
     var EP = {};  // params that stay constant through experiment
     var tp = {};  // params that change trial by trial
@@ -157,6 +174,12 @@ var drillGame = function(){
     var ulbutton;
     var QUEUES = {};  // queues containing trial params for each trial of experiment
     var LONOSAVE = ['yHidfcn', 'pyHidfcn', 'XHIDFCN', 'PXHIDFCN'];
+
+    msgs = make_messages(STYLE.msgs);
+    msgs.loading.visible = true;
+    stage.addChild(msgs.loading);
+    stage.update();
+
     get_customRoute('init_experiment',  // call init_experiment in custom.py...
                 {'condition': condition,  // w params condition adn counter...
                  'counterbalance': counterbalance},
@@ -209,7 +232,7 @@ var drillGame = function(){
                     a_choiceSet = [choiceSet.groundline_glow, choiceSet.groundline];
                     ulbutton = make_ulbutton(STYLE.ulbutton);
                     a_ulbutton = [ulbutton.ulbutton_glow, ulbutton.ulbutton];
-                    msgs = make_messages(STYLE.msgs);
+                    // msgs = make_messages(STYLE.msgs);
 
                     update_totalScore(tsub.totalScore);
                     msgs.totalScore.visible = true; // visible through whole game
@@ -220,6 +243,7 @@ var drillGame = function(){
                     stage.addChild(hidfcn);
                     stageObject(msgs, false);
                     msgs.totalScore.visible = true;  // totalScore always visible
+                    msgs.loading.visible = false;  // totalScore always visible
 
                     // let's get it started!
                     setup_nextTrial();
@@ -243,6 +267,7 @@ var drillGame = function(){
 
         // update messages
         msgs.trialFeedback.visible = false;
+        msgs.clickulbutton.visible = false;
         msgs.makeChoice.visible = true;
 
         stage.update();
@@ -279,6 +304,7 @@ var drillGame = function(){
         stageArray(obs_arrays.drill);
 
         msgs.trialFeedback.visible = true;
+        msgs.clickulbutton.visible = true;
         stage.addChild(msgs.trialFeedback);
 
 
@@ -436,6 +462,8 @@ var drillGame = function(){
 
     function yToScore(y, boundsY){
         var score = Math.ceil(normalize(y, [0., 100.], boundsY));
+        score = min([score, 100.])
+        score = max([score, 0.])
         return score;
     }
 
