@@ -67,6 +67,10 @@ DIR_SAM3 = 'static/sam3queues/'
 FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
 
 ## LOAD GP STUFF INTO WORKSPACE
+DIR_SAM3 = 'static/sam3queues/'
+FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
+
+## LOAD GP STUFF INTO WORKSPACE
 @custom_code.route('/init_experiment', methods=['GET'])
 def init_experiment():
     if not request.args.has_key('condition'):
@@ -83,13 +87,9 @@ def init_experiment():
     experParams = {
                    'nTrial': NTRIAL,
                    'nObsPool': NOBSPOOL,
-                   'lenscalepool': LENSCALEPOOL,
-                   'domain': DOMAIN,
-                   'xsam_bounds': XSAM_BOUNDS,
-                   'sigvar': SIGVAR,
-                   'noisevar': NOISEVAR2,
-                   'ntotest': NTOTEST,
                    'rng': rng,
+                   'dir_sam3': DIR_SAM3,
+                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
                    'rngseed': rngseed
                    }
 
