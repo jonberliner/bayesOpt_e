@@ -150,12 +150,12 @@ def make_trial():
         xObs_sam3 = None
         yObs_sam3 = None
 
-    print 'beging s3e.make_trial'
     t1 = time()
+    thing0 = pack_rngstate(rng.get_state())
     thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
                              XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
-    ts3e = time() - t1
-    print 's3e.make_trial time: ' + str(ts3e)
+    thing1 = pack_rngstate(rng.get_state())
+
     resp = {'sample': thisTri['sample'].tolist(),
             'xObs': thisTri['xObs'].flatten().tolist(),
             'yObs': thisTri['yObs'].tolist(),
@@ -164,7 +164,4 @@ def make_trial():
     if thisTri['iObs'] is not None:
         resp['iObs'] = resp['iObs'].tolist()
 
-
-    print 'make_trial complete'
-    print 'rest of make_trial time: ' + str(time() - t0 - ts3e)
     return jsonify(**resp)

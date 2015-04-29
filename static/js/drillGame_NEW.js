@@ -47,7 +47,7 @@ var drillGame = function(){
 
     STYLE.choiceSet.groundline_glow = {};
     STYLE.choiceSet.groundline_glow.strokeColor = '#EACDDC';
-    STYLE.choiceSet.groundline_glow.ratioGlowBigger = 1.5;
+    STYLE.choiceSet.groundline_glow.ratioGlowBigger = 2.;
 
     STYLE.hidfcn = {};
     STYLE.hidfcn.fillColor = null;
@@ -67,7 +67,7 @@ var drillGame = function(){
     STYLE.ulbutton.ulbutton_glow.strokeColor = 'green';
     STYLE.ulbutton.ulbutton_glow.fillColor = 'green';
     STYLE.ulbutton.ulbutton_glow.radius = 20;
-    STYLE.ulbutton.ulbutton_glow.ratioGlowBigger = 1.5;
+    STYLE.ulbutton.ulbutton_glow.ratioGlowBigger = 3;
     STYLE.ulbutton.ulbutton_glow.x = STYLE.ulbutton.ulbutton.x;
     STYLE.ulbutton.ulbutton_glow.y = STYLE.ulbutton.ulbutton.y;
 
@@ -112,7 +112,7 @@ var drillGame = function(){
 
     STYLE.msgs.goToStart = {};
     STYLE.msgs.goToStart.text = 'GO TO START';
-    STYLE.msgs.goToStart.color = '#AEAEAE';
+    STYLE.msgs.goToStart.color = '#ffffff';
     STYLE.msgs.goToStart.font = '2em Helvetica';
     STYLE.msgs.goToStart.textAlign = 'center';
     STYLE.msgs.goToStart.x = WCANVAS / 2.;
@@ -120,20 +120,20 @@ var drillGame = function(){
 
     STYLE.msgs.makeChoice = {};
     STYLE.msgs.makeChoice.text = 'CLICK GROUNDLINE TO MAKE CHOICE';
-    STYLE.msgs.makeChoice.color = '#AEAEAE';
+    STYLE.msgs.makeChoice.color = '#666';
     STYLE.msgs.makeChoice.font = '2em Helvetica';
     STYLE.msgs.makeChoice.textAlign = 'center';
     STYLE.msgs.makeChoice.x = WCANVAS / 2.;
-    STYLE.msgs.makeChoice.y = HCANVAS / 20.;
+    STYLE.msgs.makeChoice.y = YGROUNDLINE / 4.;
 
     STYLE.msgs.totalScore = {};
-    STYLE.msgs.totalScore.color = '#AEAEAE';
+    STYLE.msgs.totalScore.color = '#666';
     STYLE.msgs.totalScore.font = '2em Helvetica';
     STYLE.msgs.totalScore.regX = 0.;
     STYLE.msgs.totalScore.regY = 0.;
     STYLE.msgs.totalScore.textAlign = 'right';
     STYLE.msgs.totalScore.x = WCANVAS - 10.;
-    STYLE.msgs.totalScore.y = 30.;
+    STYLE.msgs.totalScore.y = YGROUNDLINE / 4.;
 
     STYLE.msgs.trialFeedback = {};
     STYLE.msgs.trialFeedback.x = WCANVAS/2.;
@@ -206,7 +206,7 @@ var drillGame = function(){
                     background = make_background(STYLE.background, WCANVAS, HCANVAS, YGROUNDLINE);
                     a_background = [background.ground, background.sky];
                     choiceSet = make_choiceSet(STYLE.choiceSet, WCANVAS, YGROUNDLINE);
-                    a_choiceSet = [choiceSet.groundline, choiceSet.groundline_glow];
+                    a_choiceSet = [choiceSet.groundline_glow, choiceSet.groundline];
                     ulbutton = make_ulbutton(STYLE.ulbutton);
                     a_ulbutton = [ulbutton.ulbutton_glow, ulbutton.ulbutton];
                     msgs = make_messages(STYLE.msgs);
@@ -216,7 +216,7 @@ var drillGame = function(){
 
                     stageArray(a_background);
                     stageArray(a_choiceSet);
-                    stageArray(a_ulbutton);
+                    stageArray(a_ulbutton, false);
                     stage.addChild(hidfcn);
                     stageObject(msgs, false);
                     msgs.totalScore.visible = true;  // totalScore always visible
@@ -237,6 +237,9 @@ var drillGame = function(){
         // update objects
         choiceSet.groundline_glow.visible = false;
         choiceSet.groundline.visible = true;
+
+        ulbutton.ulbutton_glow.visible = false;
+        ulbutton.ulbutton.visible = false;
 
         // update messages
         msgs.trialFeedback.visible = false;
@@ -276,7 +279,10 @@ var drillGame = function(){
         stageArray(obs_arrays.drill);
 
         msgs.trialFeedback.visible = true;
-        ulbutton.visible = true;
+        stage.addChild(msgs.trialFeedback);
+
+
+        ulbutton.ulbutton.visible = true;
 
         stage.update();
     }
@@ -336,14 +342,15 @@ var drillGame = function(){
         set_itrialParams(itrial, tp, queues,
             function(){
 
-                // make hidden function shape for this round
-                update_hidfcn(hidfcn, EP.PXHIDFCN, tp.pyHidfcn, STYLE.hidfcn);
-
                 // remove obs from stage and empty obs arrays
                 for(var obstype in obs_arrays){
                     unstageArray(obs_arrays[obstype]);
                     obs_arrays[obstype] = [];
                 }
+
+                // make hidden function shape for this round
+                update_hidfcn(hidfcn, EP.PXHIDFCN, tp.pyHidfcn, STYLE.hidfcn);
+
                 // add new starting observations
                 for (var iobs=0; iobs<tp.nObs; iobs++){
                     add_obs(obs_arrays.passive, tp.pxObs[iobs], tp.pyObs[iobs], STYLE.obs.passive);
@@ -386,6 +393,7 @@ var drillGame = function(){
                         tp.xObs = resp['xObs'];
                         tp.yObs = resp['yObs'];
                         tp.iObs = resp['iObs'];
+                        tp.rngstate = resp['rngstate'];
                         tp.pyHidfcn = normalize(tp.yHidfcn, EP.BOUNDSPY, EP.BOUNDSY);
                         tp.pxObs = normalize(tp.xObs, EP.BOUNDSPX, EP.BOUNDSX);
                         tp.pyObs = normalize(tp.yObs, EP.BOUNDSPY, EP.BOUNDSY);
