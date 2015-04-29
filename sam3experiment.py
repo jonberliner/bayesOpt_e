@@ -41,20 +41,20 @@ def make_trial(nObs, domain,\
     assert bool(nObs==3) == bool(xObs_sam3 is not None)
 
     cardDomain = len(domain)
-    t0 = time()
+    # t0 = time()
     kDomain = K_se(domain, domain, lenscale, sigvar)
     # print domain.shape
     # print 'tkDomain: ' + str(time()-t0)
     if nObs == 3:  # draw random function passing through (xObs, yObs)
         xObs = xObs_sam3
         yObs = yObs_sam3
-        t0 = time()
+        # t0 = time()
         muPost = conditioned_mu(domain, xObs, yObs, lenscale, sigvar, noisevar2)
-        tmu = time() - t0
+        # tmu = time() - t0
         cmPost = conditioned_covmat(domain, kDomain, xObs, lenscale, sigvar, noisevar2)
-        tcm = time() - t0 - tmu
+        # tcm = time() - t0 - tmu
         sam = sample_gp(domain, muPost, cmPost, noisevar2, rng)
-        tsam = time() - t0 - tmu - tcm
+        # tsam = time() - t0 - tmu - tcm
         # print 'tmu: ' + str(tmu)
         # print 'tcm: ' + str(tcm)
         # print 'tsam: ' + str(tsam)
