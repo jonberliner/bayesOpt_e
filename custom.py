@@ -83,9 +83,13 @@ def init_experiment():
     experParams = {
                    'nTrial': NTRIAL,
                    'nObsPool': NOBSPOOL,
+                   'lenscalepool': LENSCALEPOOL,
+                   'domain': DOMAIN,
+                   'xsam_bounds': XSAM_BOUNDS,
+                   'sigvar': SIGVAR,
+                   'noisevar': NOISEVAR2,
+                   'ntotest': NTOTEST,
                    'rng': rng,
-                   'dir_sam3': DIR_SAM3,
-                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
                    'rngseed': rngseed
                    }
 
@@ -125,43 +129,43 @@ def init_experiment():
 
 @custom_code.route('/make_trial', methods=['POST'])
 def make_trial():
-    t0 = time()
-    # args:
-    #   lenscale
-    #   nObs
-    #   xObs_sam3
-    #   yObs_sam3
-    #   rngstate
+    try:
+        t0 = time()
+        # args:
+        #   lenscale
+        #   nObs
+        #   xObs_sam3
+        #   yObs_sam3
+        #   rngstate
 
-    params = request.json  # works when ajax request contentType specified as "applications/json"
-    # unpack random number generator
-    rng = RandomState()
-    rngstate = unpack_rngstate(params['rngstate'])
-    rng.set_state(rngstate)
+        params = request.json  # works when ajax request contentType specified as "applications/json"
+        # unpack random number generator
+        rng = RandomState()
+        rngstate = unpack_rngstate(params['rngstate'])
+        rng.set_state(rngstate)
 
+        lenscale = float(params['lenscale'])
+        nObs = int(params['nObs'])
 
-    lenscale = float(params['lenscale'])
-    nObs = int(params['nObs'])
+        if nObs==3:  # params to nparray
+            xObs_sam3 = npa(params['xObs_sam3']).flatten()
+            yObs_sam3 = npa(params['yObs_sam3'])
+        else:
+            xObs_sam3 = None
+            yObs_sam3 = None
 
-    if nObs==3:  # params to nparray
-        xObs_sam3 = npa(params['xObs_sam3']).flatten()
-        yObs_sam3 = npa(params['yObs_sam3'])
-    else:
-        xObs_sam3 = None
-        yObs_sam3 = None
+        thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
+                                 XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
 
-    t1 = time()
-    thing0 = pack_rngstate(rng.get_state())
-    thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
-                             XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
-    thing1 = pack_rngstate(rng.get_state())
+        resp = {'sample': thisTri['sample'].tolist(),
+                'xObs': thisTri['xObs'].flatten().tolist(),
+                'yObs': thisTri['yObs'].tolist(),
+                'iObs': thisTri['iObs'],
+                'rngstate': pack_rngstate(rng.get_state())}
+        if thisTri['iObs'] is not None:
+            resp['iObs'] = resp['iObs'].tolist()
 
-    resp = {'sample': thisTri['sample'].tolist(),
-            'xObs': thisTri['xObs'].flatten().tolist(),
-            'yObs': thisTri['yObs'].tolist(),
-            'iObs': thisTri['iObs'],
-            'rngstate': pack_rngstate(rng.get_state())}
-    if thisTri['iObs'] is not None:
-        resp['iObs'] = resp['iObs'].tolist()
+    except:
+        raise ExperimentError('improper_inputs')  # i don't like returning HTML to JSON requests...  maybe should change this
 
     return jsonify(**resp)

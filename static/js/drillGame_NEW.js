@@ -152,9 +152,9 @@ var drillGame = function(){
     STYLE.msgs.trialFeedback.visible = false;
 
     STYLE.msgs.loading = {};
-    STYLE.msgs.loading.text = 'LOADING EXPERIMENT.  PLEASE WAIT...';
+    STYLE.msgs.loading.text = 'LOADING EXPERIMENT.\n\nPLEASE WAIT...';
     STYLE.msgs.loading.x = WCANVAS/2.;
-    STYLE.msgs.loading.y = HCANVAS/2.;
+    STYLE.msgs.loading.y = HCANVAS/2. - 20;
     STYLE.msgs.loading.color = '#AEAEAE';
     STYLE.msgs.loading.font = '4em Helvetica';
     STYLE.msgs.loading.textAlign = 'center';
@@ -190,11 +190,11 @@ var drillGame = function(){
                     EP.MAXDOMAIN = resp['domainbounds'][0][1];
                     EP.BOUNDSX = [EP.MINDOMAIN, EP.MAXDOMAIN];
                     EP.BOUNDSPX = [0, WCANVAS-1];
-                    EP.NTRIAL = resp['ntrial'];
+                    EP.NTRIAL = resp['nTrial'];
                     EP.LENSCALE = resp['lenscale'];
                     EP.SIGVAR = resp['sigvar'];
-                    EP.MINY = EP.SIGVAR * 3.;
-                    EP.MAXY = EP.SIGVAR * -3.;
+                    EP.MAXY = EP.SIGVAR * 3.;
+                    EP.MINY = EP.SIGVAR * -3.;
                     EP.BOUNDSY = [EP.MINY, EP.MAXY];
                     EP.BOUNDSPY = [YGROUNDLINE, HCANVAS];
                     EP.NOISEVAR2 = resp['noisevar2'];
@@ -314,6 +314,23 @@ var drillGame = function(){
     }
 
 
+    function setup_expSummary(){
+        wp.trialSection = 'expSummary';
+
+        // update messages
+        msgs.makeChoice.visible = false;
+
+        msgs.expSummary = update_msg_expSummary(tsub.totalScore, EP.NTRIAL);
+
+        msgs.expSummary.visible = true;
+        stage.addChild(msgs.expSummary);
+
+        ulbutton.ulbutton.visible = true;
+
+        stage.update();
+    }
+
+
     function update_hidfcn(hidfcn, pxHidfcn, pyHidfcn, stylehf){
         var ghf, px0, py0, prevx, prevy;
 
@@ -354,12 +371,31 @@ var drillGame = function(){
         return msg;
     }
 
+
+    function update_msg_expSummary(msg, totalScore, nTrial){
+        // show total feedback
+            msg.text = 'You explored ' +
+                nTrial.toString() +
+                ' areas\n\n and earned ' +
+                monify(totalScore) +
+                '\n\n' +
+                'Please click the ignition button to finish.';
+        return msg;
+    }
+
+
     //// functions for setting up a trial
     function setup_nextTrial(){
         // increment tp.itrial and setup the next trial
         tp.itrial += 1;
-        console.log('itrial ' + tp.itrial.toString());
-        setup_trial(tp.itrial, tp, QUEUES, STYLE.choiceSet);
+        if(tp.itrial < EP.NTRIAL){
+            console.log('itrial ' + tp.itrial.toString());
+            setup_trial(tp.itrial, tp, QUEUES, STYLE.choiceSet);
+        }
+        else {
+            setup_expSummary(tp.totalScore, EP.NTRIAL);
+
+        }  // end if <NROUND
     }
 
 
@@ -424,6 +460,7 @@ var drillGame = function(){
                         tp.pxObs = normalize(tp.xObs, EP.BOUNDSPX, EP.BOUNDSX);
                         tp.pyObs = normalize(tp.yObs, EP.BOUNDSPY, EP.BOUNDSY);
                         tp.itrial = itrial;
+
                         callback();
                     });
     }
@@ -562,7 +599,7 @@ var drillGame = function(){
 
         // ulbutton Actions
         ulbutton.addEventListener('mouseover', function(){
-            if(wp.trialSection==='showFeedback'){
+            if(['showFeedback', 'expSummary'].indexOf(wp.trialSection) > -1){
                 ulbutton_glow.visible = true;
                 stage.update();
             }
@@ -570,15 +607,18 @@ var drillGame = function(){
         });
 
         ulbutton.addEventListener('mouseout', function(){
-            if(wp.trialSection==='showFeedback'){
+            if(['showFeedback', 'expSummary'].indexOf(wp.trialSection) > -1){
                 ulbutton_glow.visible = false;
                 stage.update();
             }
         });
 
         ulbutton.addEventListener('click', function(){
-            if(wp.trialSection==='showFeedback'){
+            if(wp.trialSection === 'showFeedback'){
                 setup_nextTrial();
+            }
+            else if(wp.trialSection === 'expSummary'){
+                endExp();
             }
         });
 
@@ -806,75 +846,9 @@ var drillGame = function(){
     }
 
 
-    function rescale(a, tomusd, frommusd){
-        // takes aa, which lives in interval frombounds, and maps to interval tobounds
-        // default tobounds = [0,1]
-        tomusd = typeof tomusd !== 'undefined' ? tomusd : [0., 1.];
-        // default frombounds are the min and max of a
-        frommusd = typeof frommusd !== 'undefined' ? frommusd : [min(a), max(a)];
-
-        var fromlo = frombounds[0];
-        var fromhi = frombounds[1];
-        var tolo = tobounds[0];
-        var tohi = tobounds[1];
-        var fromrange = fromhi-fromlo;
-        var torange = tohi-tolo;
-
-        a = a.map(function(elt){return elt-fromlo;});
-        a = a.map(function(elt){return elt/fromrange;}); // now in 0, 1
-        a = a.map(function(elt){return elt*torange});
-        a = a.map(function(elt){return elt+tolo});
-
-        return a;
-    }
-
-
-    function get_dist(p1, p2){
-        return Math.sqrt(Math.pow(p1[0]-p2[0], 2.) +
-                         Math.pow(p1[1]-p2[1], 2.));
-    }
-
-    function withinRad(x, y, xOrigin, yOrigin, rad){
-        return get_dist([x, y], [xOrigin, yOrigin]) < rad;
-    }
-
-
-    function radToDeg(theta){
-        return mod(theta * (180./Math.PI), 360.);
-    }
-
-
-    function degToRad(deg){
-        return mod(deg, 360.) * (Math.PI/180.);
-    }
-
-
     // use instead of % b.c. javascript can't do negative mod
     function mod(a, b){return ((a%b)+b)%b;}
 
-
-    function rand(min, max){
-        min = typeof min !== 'undefined' ? min : 0;
-        max = typeof max !== 'undefined' ? max : 1;
-
-        var range = max - min;
-        return Math.random() * range + min;
-    }
-
-    function randn(mu, sd){
-        // generate gaussian rand fcns using box-mueller method
-        mu = typeof mu !== 'undefined' ? mu : 0;
-        sd = typeof sd !== 'undefined' ? sd : 1;
-
-        var x1, x2;
-        var w = 99.;
-        while(w >= 1.){
-            x1 = 2. * rand() - 1.;
-            x2 = 2 * rand() - 1;
-            w = x1*x1 + x2*x2;
-        }
-        return mu + (x1 * w * sd);
-    }
 
 
     function keys(obj, sorted){
