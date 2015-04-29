@@ -3,22 +3,19 @@ from numpy.random import RandomState
 from jbgp_1d import K_se, conditioned_mu, conditioned_covmat, sample
 from jbutils import jbunpickle
 from os.path import isfile
-from generate_fardists_1d import generate_fardists
 
 from time import time
 
 
-def make_experiment(nTrial, nObsPool, lenscalepool, domain, xsam_bounds,\
-                    sigvar, noisevar, ntotest, rng, rngseed):
+def make_experiment(nTrial, nObsPool, rng, dir_sam3, fnameTemplate_sam3, rngseed):
     assert nTrial % len(nObsPool) == 0
     nPerNObs = nTrial / len(nObsPool)
 
-    # generate far dist xobs
-    print 'begin gen fardist'
-    t0 = time()
-    obs_sam3Queue = generate_fardists('x', nPerNObs, 3, lenscalepool, domain,\
-                                      xsam_bounds, sigvar, noisevar, ntotest, rng)
-    print 'end gen fardist:' + str(time() - t0)
+    ## load sam3Queues make with prep_sam3_queues.py
+    fname = ''.join([dir_sam3, fnameTemplate_sam3, str(rngseed), '.pkl'])
+    assert isfile(fname)
+    obs_sam3Queue = jbunpickle(fname)
+
     # get queue of how many obs per round
     nObsQueue = make_nObsQueue(nObsPool, nTrial, rng)
 
@@ -44,20 +41,20 @@ def make_trial(nObs, domain,\
     assert bool(nObs==3) == bool(xObs_sam3 is not None)
 
     cardDomain = len(domain)
-    # t0 = time()
+    t0 = time()
     kDomain = K_se(domain, domain, lenscale, sigvar)
     # print domain.shape
     # print 'tkDomain: ' + str(time()-t0)
     if nObs == 3:  # draw random function passing through (xObs, yObs)
         xObs = xObs_sam3
         yObs = yObs_sam3
-        # t0 = time()
+        t0 = time()
         muPost = conditioned_mu(domain, xObs, yObs, lenscale, sigvar, noisevar2)
-        # tmu = time() - t0
+        tmu = time() - t0
         cmPost = conditioned_covmat(domain, kDomain, xObs, lenscale, sigvar, noisevar2)
-        # tcm = time() - t0 - tmu
+        tcm = time() - t0 - tmu
         sam = sample_gp(domain, muPost, cmPost, noisevar2, rng)
-        # tsam = time() - t0 - tmu - tcm
+        tsam = time() - t0 - tmu - tcm
         # print 'tmu: ' + str(tmu)
         # print 'tcm: ' + str(tcm)
         # print 'tsam: ' + str(tsam)
