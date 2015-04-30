@@ -173,7 +173,7 @@ var drillGame = function(){
     var hidfcn; // visual display of the hidden function
     var ulbutton;
     var QUEUES = {};  // queues containing trial params for each trial of experiment
-    var LONOSAVE = ['yHidfcn', 'pyHidfcn', 'XHIDFCN', 'PXHIDFCN'];
+    var LONOSAVE = ['yHidfcn', 'pyHidfcn', 'XHIDFCN', 'PXHIDFCN', 'rngstate'];
 
     msgs = make_messages(STYLE.msgs);
     msgs.loading.visible = true;
