@@ -53,7 +53,7 @@ def make_trial(nObs, domain,\
         # tmu = time() - t0
         cmPost = conditioned_covmat(domain, kDomain, xObs, lenscale, sigvar, noisevar2)
         # tcm = time() - t0 - tmu
-        sam = sample_gp(domain, muPost, cmPost, noisevar2, rng)
+        sam = sample(domain, muPost, cmPost, noisevar2)
         # tsam = time() - t0 - tmu - tcm
         # print 'tmu: ' + str(tmu)
         # print 'tcm: ' + str(tcm)
@@ -61,7 +61,7 @@ def make_trial(nObs, domain,\
         iObs = None
     else:  # draw random sample from prior and take random locations
         muPrior = zeros(cardDomain)
-        sam = sample_gp(domain, muPrior, kDomain, noisevar2, rng)
+        sam = sample(domain, muPrior, kDomain, noisevar2)
         # get valid samples
         good = False
         while not good:
@@ -90,10 +90,10 @@ def make_nObsQueue(nObsPool, nTrial, rng):
     return nObs_queue
 
 
-def sample_gp(domain, mu, covmat, noisevar2, rng=None):
-    """sample over domain given mean mu and covmat covmat"""
-    if not rng: rng = RandomState()
-    nI = domain.shape[0]
-    covmat += eye(nI) * noisevar2
-    sample = rng.multivariate_normal(mu, covmat)
-    return sample
+# def sample_gp(domain, mu, covmat, noisevar2, rng=None):
+#     """sample over domain given mean mu and covmat covmat"""
+#     if not rng: rng = RandomState()
+#     nI = domain.shape[0]
+#     covmat += eye(nI) * noisevar2
+#     sample = rng.multivariate_normal(mu, covmat)
+#     return sample
