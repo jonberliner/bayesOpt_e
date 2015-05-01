@@ -21,7 +21,6 @@ var pages = [ // add as a list as many pages as you like
     INS_FOLDER + "/instr_5.html",
     INS_FOLDER + "/instr_6.html",
     INS_FOLDER + "/instr_7.html",
-    INS_FOLDER + "/instr_8.html",
     INS_FOLDER + "/instr_ready.html",
     "stage.html",
     "debriefing.html"
@@ -36,7 +35,6 @@ var instructionPages = [ // add as a list as many pages as you like
     INS_FOLDER + "/instr_5.html",
     INS_FOLDER + "/instr_6.html",
     INS_FOLDER + "/instr_7.html",
-    INS_FOLDER + "/instr_8.html",
     INS_FOLDER + "/instr_ready.html",
 ];
 
