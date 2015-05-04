@@ -26,7 +26,7 @@ myauth = PsiTurkAuthorization(config)  # if you want to add a password protect r
 # explore the Blueprint
 custom_code = Blueprint('custom_code', __name__, template_folder='templates', static_folder='static')
 
-import sam3experiment as s3e
+import bayesOptExperiment as boe
 from jbutils import make_domain_grid, jsonToNpa, unpack_rngstate, pack_rngstate
 from time import time
 # with open('secretkey', 'r') as f: SECRETKEY = f.read().splitlines()[0]
@@ -38,18 +38,19 @@ INITSCORE = 0
 # gp params
 SIGVAR = 1.
 NOISEVAR2 = 1e-7
-NOBSPOOL = [2, 3, 4, 5, 6]
+NPASSIVEPOOL = [2, 3, 4, 5, 6]  # how many obs you start with
+NACTIVEPOOL = [2, 3, 4, 5, 6]  # how many more samples subj takes before interrogation
 # params for making sam3 queue
-assert NTRIAL % len(NOBSPOOL) == 0
+NTRIALTYPE = NACTIVEPOOL * NPASSIVEPOOL
+assert NTRIAL % len(NTRIALTYPE) == 0  # assert equal amount of every trial type
 LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
-# params for generating sam3 locs for far maxes for different lenscales
-DISTTYPE = 'x'  # must be in ['x', 'f', 'xXf']
 
 DOMAINBOUNDS = [[0., 1.]]
 DOMAINRES = 1028
 DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES).flatten()
 EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
+# how close to domain edges passive observations can occur
 XSAM_BOUNDS = [dim[:] for dim in DOMAINBOUNDS]  # deep copy of DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
@@ -62,13 +63,6 @@ RNGSEEDPOOL =\
          951675775, 2101131205, 1792109879,  781776608, 2388543424,
          2154736893, 2773127409, 3304953852,  678883645, 3097437001,
          3696226994,  242457524,  991216532, 2747458246, 2432174005])
-
-DIR_SAM3 = 'static/sam3queues/'
-FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
-
-## LOAD GP STUFF INTO WORKSPACE
-DIR_SAM3 = 'static/sam3queues/'
-FNAMETEMPLATE_SAM3 = 'sam3queue_rngseed_'
 
 ## LOAD GP STUFF INTO WORKSPACE
 @custom_code.route('/init_experiment', methods=['GET'])
@@ -86,14 +80,12 @@ def init_experiment():
 
     experParams = {
                    'nTrial': NTRIAL,
-                   'nObsPool': NOBSPOOL,
-                   'rng': rng,
-                   'dir_sam3': DIR_SAM3,
-                   'fnameTemplate_sam3': FNAMETEMPLATE_SAM3,
-                   'rngseed': rngseed
+                   'nPassivePool': NPASSIVEPOOL,
+                   'nActivePool': NACTIVEPOOL,
+                   'rng': rng
                    }
 
-    subParams = s3e.make_experiment(**experParams)
+    subParams = boe.make_experiment(**experParams)
 
     # bundle response to send
     resp = {}
@@ -130,7 +122,7 @@ def init_experiment():
 @custom_code.route('/make_trial', methods=['POST'])
 def make_trial():
     try:
-        t0 = time()
+        # t0 = time()
         # args:
         #   lenscale
         #   nObs
@@ -145,25 +137,15 @@ def make_trial():
         rng.set_state(rngstate)
 
         lenscale = float(params['lenscale'])
-        nObs = int(params['nObs'])
+        nPassiveObs = int(params['nPassiveObs'])
 
-        if nObs==3:  # params to nparray
-            xObs_sam3 = npa(params['xObs_sam3']).flatten()
-            yObs_sam3 = npa(params['yObs_sam3'])
-        else:
-            xObs_sam3 = None
-            yObs_sam3 = None
-
-        thisTri = s3e.make_trial(nObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2,\
-                                 XSAM_BOUNDS, xObs_sam3, yObs_sam3, rng)
+        thisTri = boe.make_trial(nPassiveObs, DOMAIN, lenscale, SIGVAR, NOISEVAR2, XSAM_BOUNDS, rng)
 
         resp = {'sample': thisTri['sample'].tolist(),
                 'xObs': thisTri['xObs'].flatten().tolist(),
                 'yObs': thisTri['yObs'].tolist(),
                 'iObs': thisTri['iObs'],
                 'rngstate': pack_rngstate(rng.get_state())}
-        if thisTri['iObs'] is not None:
-            resp['iObs'] = resp['iObs'].tolist()
 
     except:
         raise ExperimentError('improper_inputs')  # i don't like returning HTML to JSON requests...  maybe should change this

@@ -1,33 +1,29 @@
 from numpy import linspace, repeat, zeros, eye
 from numpy.random import RandomState
 from jbgp_1d import K_se, conditioned_mu, conditioned_covmat, sample
-from jbutils import jbunpickle
+from jbutils import cartesian
 from os.path import isfile
 
 from time import time
 
 
-def make_experiment(nTrial, nObsPool, rng, dir_sam3, fnameTemplate_sam3, rngseed):
-    assert nTrial % len(nObsPool) == 0
-    nPerNObs = nTrial / len(nObsPool)
+def make_experiment(nTrial, nPassivePool, nActivePool, rng):
+    nTrialType = nPassivePool * nActivePool
+    assert nTrial % len(nTrialType) == 0
+    nPerNPassive = nTrial / len(nPassivePool)
+    nPerNActive = nTrial / len(nActivePool)
+    nPerTrialType = nTrial / nTrialType
 
-    ## load sam3Queues make with prep_sam3_queues.py
-    fname = ''.join([dir_sam3, fnameTemplate_sam3, str(rngseed), '.pkl'])
-    assert isfile(fname)
-    obs_sam3Queue = jbunpickle(fname)
+    # col 0 is nPassive, col 1 is nActive
+    trialTypeTuples = cartesian([nPassivePool, nActivePool])
 
     # get queue of how many obs per round
-    nObsQueue = make_nObsQueue(nObsPool, nTrial, rng)
+    trialParamsQueue = make_nObsQueue(trialTypeTuples, nTrial, rng)
+    nPassiveQueue = trialParamsQueue[0]
+    nActiveQueue = trialParamsQueue[1]
 
-    # shuffle sam3 queues
-    order = rng.permutation(nPerNObs)
-    obs_sam3Queue['xObs'][:] = obs_sam3Queue['xObs'][order]
-    obs_sam3Queue['yObs'][:] = obs_sam3Queue['yObs'][order]
-
-    # get all obs tuples for experiment
-    return {'nObsQueue': nObsQueue,
-            'xObs_sam3Queue': obs_sam3Queue['xObs'],
-            'yObs_sam3Queue': obs_sam3Queue['yObs']}
+    return {'nPassiveQueue': nPassiveQueue,
+            'nActiveQueue': nActiveQueue}
 
 
 def make_trial(nObs, domain,\
@@ -83,7 +79,7 @@ def make_nObsQueue(nObsPool, nTrial, rng):
     in nObsPool"""
     assert nTrial % len(nObsPool) == 0
     nPerNsam = nTrial / len(nObsPool)
-    nObs_pool = repeat(nObsPool, nPerNsam)
+    nObs_pool = repeat(nObsPool, nPerNsam, axis=0)
     nObs_order = rng.permutation(range(nTrial))
     nObs_queue = nObs_pool[nObs_order]
 
