@@ -32,17 +32,19 @@ from time import time
 # with open('secretkey', 'r') as f: SECRETKEY = f.read().splitlines()[0]
 
 ## EXPERIMENT FREE VARS
-NTRIAL = 200
-COSTTODRILL = 30
+COSTTODRILL = 50
 INITSCORE = 0
 # gp params
 SIGVAR = 1.
 NOISEVAR2 = 1e-7
-NPASSIVEPOOL = [2, 3, 4, 5, 6]  # how many obs you start with
-NACTIVEPOOL = [2, 3, 4, 5, 6]  # how many more samples subj takes before interrogation
-# params for making sam3 queue
-NTRIALTYPE = NACTIVEPOOL * NPASSIVEPOOL
-assert NTRIAL % len(NTRIALTYPE) == 0  # assert equal amount of every trial type
+NPASSIVEPOOL = [0, 1, 2, 3, 4]  # how many obs you start with
+NACTIVEPOOL = [0, 1, 2, 3, 4]  # how many more samples subj takes before interrogation
+NTRIALTYPE = len(NACTIVEPOOL) * len(NPASSIVEPOOL)
+NPERTRIALTYPE = 13
+
+NTRIAL = NTRIALTYPE * NPERTRIALTYPE
+
+assert NTRIAL % NTRIALTYPE == 0  # assert equal amount of every trial type
 LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
 
@@ -55,8 +57,6 @@ XSAM_BOUNDS = [dim[:] for dim in DOMAINBOUNDS]  # deep copy of DOMAINBOUNDS
 XSAM_BOUNDS[0][0] = EDGEBUF
 XSAM_BOUNDS[0][1] -= EDGEBUF
 
-NPERNOBS = NTRIAL / len(NOBSPOOL)
-NTOTEST = NPERNOBS * 100
 # made with numpy.random.randint(4294967295, size=20)  # (number is max allowed on amazon linux)
 RNGSEEDPOOL =\
     npa([1903799985, 1543581047, 1218602148,  764353219, 1906699770,
@@ -96,7 +96,7 @@ def init_experiment():
                 resp[f] = subParams[f]
 
     for f in experParams:
-        if f is not 'rng':
+        if f is not 'rng':  # don't pass the random number generator
             try:  # convet numpy array to list if possible
                 resp[f] = experParams[f].tolist()
             except:
@@ -109,7 +109,6 @@ def init_experiment():
     resp['initscore'] = INITSCORE
     resp['lenscale'] = lenscale
     resp['sigvar'] = SIGVAR
-    resp['distype'] = DISTTYPE
     resp['domainbounds'] = DOMAINBOUNDS
     resp['domainres'] = DOMAINRES
     resp['edgebuf'] = EDGEBUF
@@ -125,9 +124,7 @@ def make_trial():
         # t0 = time()
         # args:
         #   lenscale
-        #   nObs
-        #   xObs_sam3
-        #   yObs_sam3
+        #   nPassiveObs
         #   rngstate
 
         params = request.json  # works when ajax request contentType specified as "applications/json"
