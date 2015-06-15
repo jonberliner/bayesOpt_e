@@ -82,8 +82,8 @@ var drillGame = function(){
     STYLE.obs.best = {};
     STYLE.obs.best.strokeColor = 'red';
     STYLE.obs.best.fillColor = null;
-    STYLE.obs.best.strokeSize = 4;
-    STYLE.obs.best.radius = 12;
+    STYLE.obs.best.strokeSize = 6;
+    STYLE.obs.best.radius = 16;
 
     STYLE.obs.passive = {};
     STYLE.obs.passive.strokeColor = 'white';
@@ -316,6 +316,13 @@ var drillGame = function(){
         stage.addChild(msgs.trialFeedback);
 
 
+        
+        
+        var posnulb = valid_rand_ulbutton_posn();
+        ulbutton.ulbutton.x = posnulb['x'];
+        ulbutton.ulbutton.y = posnulb['y'];
+        ulbutton.ulbutton_glow.x = posnulb['x'];
+        ulbutton.ulbutton_glow.y = posnulb['y'];
         ulbutton.ulbutton.visible = true;
 
         stage.update();
@@ -414,7 +421,6 @@ var drillGame = function(){
         // increment tp.itrial and setup the next trial
         tp.itrial += 1;
         if(tp.itrial < EP.NTRIAL){
-            console.log('itrial ' + tp.itrial.toString());
             
             // clear previous trial's decisions
             for(var field in tsub){
@@ -509,7 +515,6 @@ var drillGame = function(){
 
     function activeObs_made(px){
         // what happens after an active obs is made
-        console.log('activeObs_made called');
         tsub.choiceRT = getTime() - wp.tActiveObsStarted;
         var pxActiveObs = px;
         // JBEDIT: this only works when the choice set is a horizontal line spanning the whole canvas.
@@ -947,9 +952,22 @@ var drillGame = function(){
         return a;
     }
 
+    // logical XOR
+    function xor(a,b){
+        return ( a ? !b : b);
+    }
+
 
     // use instead of % b.c. javascript can't do negative mod
     function mod(a, b){return ((a%b)+b)%b;}
+
+    function rand(min, max){
+        min = typeof min !== 'undefined' ? min : 0; // default
+        max = typeof max !== 'undefined' ? max : 1; // default
+        assert(max - min >= 0., 'min must be <= max');
+        var range = max - min;
+        return Math.random() * range  + min;
+    }
 
 
 
@@ -969,6 +987,22 @@ var drillGame = function(){
     function objToArray(obj){
         return keys(obj).map(function(k){return obj[k]});
     }
+
+
+    function valid_rand_ulbutton_posn(){
+        // returns a posn to randomly place start button that won't intersect feedback message
+            var good = false;
+            while(!good){
+                var x = rand(20, WCANVAS - 20);
+                var y = rand(YGROUNDLINE + 20, HCANVAS - 20);
+                var xpercent = x / WCANVAS;
+                var ypercent = (y - YGROUNDLINE) / GROUNDLINE2BOTTOM;
+                good = xor((xpercent < 1./3 || xpercent > 2./3),
+                           (ypercent < 1./3 || ypercent > 2./3));
+            }
+            return {'x': x,
+                    'y': y};
+        }
 
 
     function jsb_recordTurkData(loObj, loNoSave, callback){
