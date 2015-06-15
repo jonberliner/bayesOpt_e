@@ -283,7 +283,8 @@ var drillGame = function(){
 
     function update_msg_trialFeedback(msg, trialGross, cost2drill){
         var trialNet = trialGross - cost2drill;
-        msg.text = '        ' +
+        msg.text = 'You\'re drilling crew has arrived!\n\n' +
+                   '        ' +
                                  monify(trialGross) +
                                  ' earned drilling\n \n' +
                                 '      - ' +
