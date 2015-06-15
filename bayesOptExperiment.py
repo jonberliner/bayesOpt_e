@@ -25,8 +25,8 @@ def make_experiment(nTrial, nPassivePool, nActivePool, rng):
     nPassiveQueue = trialParamsQueue[:, 0]
     nActiveQueue = trialParamsQueue[:, 1]
 
-    return {'nPassiveQueue': nPassiveQueue,
-            'nActiveQueue': nActiveQueue}
+    return {'nPassiveObsQueue': nPassiveQueue,
+            'nActiveObsQueue': nActiveQueue}
 
 
 def make_trial(nPassiveObs, domain, lenscale, sigvar, noisevar2, xSam_bounds, rng):

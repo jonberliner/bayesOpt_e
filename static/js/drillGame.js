@@ -73,11 +73,17 @@ var drillGame = function(){
 
     // feedback objects
     STYLE.obs = {};
-    STYLE.obs.drill = {};
-    STYLE.obs.drill.strokeColor = 'red';
-    STYLE.obs.drill.fillColor = null;
-    STYLE.obs.drill.strokeSize = 4;
-    STYLE.obs.drill.radius = 12;
+    // STYLE.obs.drill = {};
+    // STYLE.obs.drill.strokeColor = 'red';
+    // STYLE.obs.drill.fillColor = null;
+    // STYLE.obs.drill.strokeSize = 4;
+    // STYLE.obs.drill.radius = 12;
+
+    STYLE.obs.best = {};
+    STYLE.obs.best.strokeColor = 'red';
+    STYLE.obs.best.fillColor = null;
+    STYLE.obs.best.strokeSize = 4;
+    STYLE.obs.best.radius = 12;
 
     STYLE.obs.passive = {};
     STYLE.obs.passive.strokeColor = 'white';
@@ -110,13 +116,6 @@ var drillGame = function(){
 
     STYLE.msgs = {};
 
-    // STYLE.msgs.goToStart = {};
-    // STYLE.msgs.goToStart.text = 'GO TO START';
-    // STYLE.msgs.goToStart.color = '#ffffff';
-    // STYLE.msgs.goToStart.font = '2em Helvetica';
-    // STYLE.msgs.goToStart.textAlign = 'center';
-    // STYLE.msgs.goToStart.x = WCANVAS / 2.;
-    // STYLE.msgs.goToStart.y = HCANVAS / 20.;
 
     STYLE.msgs.makeChoice = {};
     STYLE.msgs.makeChoice.text = 'click ground line to make choice';
@@ -203,6 +202,7 @@ var drillGame = function(){
                     EP.EDGEBUF = resp['edgebuf'];
                     EP.DISTTYPE = resp['disttype'];
                     EP.COSTTODRILL = resp['costToDrill'];
+                    EP.COSTTOSAMPLE = resp['costToSample'];
                     EP.DOMAINRES = resp['domainres'];
                     EP.DDOMAIN = (EP.MAXDOMAIN - EP.MINDOMAIN) / EP.DOMAINRES;
                     // make x domain locations
@@ -212,21 +212,25 @@ var drillGame = function(){
                     }
                     EP.PXHIDFCN = normalize(EP.XHIDFCN, EP.BOUNDSPX, EP.BOUNDSX);
 
-                    QUEUES.XOBS_SAM3 = resp['xObs_sam3Queue'];
-                    QUEUES.YOBS_SAM3 = resp['yObs_sam3Queue'];
-                    QUEUES.NOBS = resp['nObsQueue'];
+                    QUEUES.NACTIVEOBS = resp['nActiveObsQueue'];
+                    QUEUES.NPASSIVEOBS = resp['nPassiveObsQueue'];
 
                     tp.itrial = resp['itrial'];  // should start at -1
-                    tp.isam3 = resp['isam3'];  // should start at -1
                     tp.rngstate = resp['rngstate'];
                     hidfcn = new createjs.Shape();
 
                     tsub.totalScore = EP.INITSCORE;
+                    // init drill arrays
+                    tsub.xActiveObs = [];
+                    tsub.yActiveObs = [];
+                    tsub.pxActiveObs = [];
+                    tsub.pyActiveObs = [];
 
                     obs_arrays = {};  // for all observations
                     obs_arrays.passive = [];
                     obs_arrays.active = [];
-                    obs_arrays.drill = [];
+                    // obs_arrays.drill = [];
+                    obs_arrays.best = [];
 
                     background = make_background(STYLE.background, WCANVAS, HCANVAS, YGROUNDLINE);
                     a_background = [background.ground, background.sky];
@@ -298,12 +302,13 @@ var drillGame = function(){
         // update messages
         msgs.makeChoice.visible = false;
 
-        msgs.trialFeedback = update_msg_trialFeedback(msgs.trialFeedback, tsub.trialGross, EP.COSTTODRILL);
+        msgs.trialFeedback = update_msg_trialFeedback(msgs.trialFeedback, tsub.trialGross, EP.COSTTODRILL, EP.COSTTOSAMPLE);
 
         // show hidden function
         hidfcn.visible = true;
         // show drill choice
-        stageArray(obs_arrays.drill);
+        // stageArray(obs_arrays.drill);
+        stageArray(obs_arrays.best);
 
         msgs.trialFeedback.visible = true;
         msgs.clickulbutton.visible = true;
@@ -359,17 +364,34 @@ var drillGame = function(){
     }
 
 
-    function update_msg_trialFeedback(msg, trialGross, costToDrill){
+    function update_msg_trialFeedback(msg, trialGross, costToDrill, costToSample){
         var trialNet = trialGross - costToDrill;
-        msg.text = '        ' +
-                                 monify(trialGross) +
-                                 ' earned drilling\n \n' +
-                                '      - ' +
-                                monify(costToDrill) +
-                                ' spent drilling\n \n' +
-                                '__________________\n \n     '+
-                                monify(trialNet) +
-                                ' earned this round';
+        if(costToSample <= 0){  
+            msg.text = '        ' +
+                        monify(trialGross) +
+                        ' earned drilling\n \n' +
+                        '      - ' +
+                        monify(costToDrill) +
+                        ' spent drilling\n \n' +
+                        '__________________\n \n     '+
+                        monify(trialNet) +
+                        ' earned this round';
+        }
+        else{  // show sample cost if sample cost
+            var spentSampling = wp.iActiveObs * EP.COSTTOSAMPLE;
+            msg.text = '        ' +
+                monify(trialGross) +
+                ' earned drilling\n \n' +
+                '      - ' +
+                monify(costToSample) +
+                ' spent sampling\n \n' +
+                '      - ' +
+                monify(costToDrill) +
+                ' spent drilling\n \n' +
+                '__________________\n \n     '+
+                monify(trialNet) +
+                ' earned this round';
+        }
         return msg;
     }
 
@@ -392,6 +414,15 @@ var drillGame = function(){
         tp.itrial += 1;
         if(tp.itrial < EP.NTRIAL){
             console.log('itrial ' + tp.itrial.toString());
+            
+            // clear previous trial's decisions
+            for(var field in tsub){
+                if(field !== 'totalScore'){
+                    tsub[field] = null;    
+                }
+            }
+
+            // set up this trial
             setup_trial(tp.itrial, tp, QUEUES, STYLE.choiceSet);
         }
         else {
@@ -403,23 +434,31 @@ var drillGame = function(){
 
     function setup_trial(itrial, tp, queues, stylecs){
         // set up things for trial itrial
-        set_itrialParams(itrial, tp, queues,
+        set_itrialParams(itrial, tp, queues, 
             function(){
-
+                tsub.pxActiveObs = [];
+                tsub.pyActiveObs = [];
+                tsub.xActiveObs = [];
+                tsub.yActiveObs = [];
                 // remove obs from stage and empty obs arrays
                 for(var obstype in obs_arrays){
                     unstageArray(obs_arrays[obstype]);
                     obs_arrays[obstype] = [];
                 }
 
+
                 // make hidden function shape for this round
                 update_hidfcn(hidfcn, EP.PXHIDFCN, tp.pyHidfcn, STYLE.hidfcn);
 
                 // add new starting observations
-                for (var iobs=0; iobs<tp.nObs; iobs++){
-                    add_obs(obs_arrays.passive, tp.pxObs[iobs], tp.pyObs[iobs], STYLE.obs.passive);
+                for (var iobs=0; iobs<tp.nPassiveObs; iobs++){
+                    add_obs(obs_arrays.passive, tp.pxPassiveObs[iobs], tp.pyPassiveObs[iobs], STYLE.obs.passive);
                 }
                 stageArray(obs_arrays.passive);
+
+                // restart activeObs counter
+                tp.trialNet = 0;
+                wp.iActiveObs = 0;
 
                 setup_makeChoice();
             }  // end callback function
@@ -432,35 +471,26 @@ var drillGame = function(){
         // var tp = {};  // init trial params
 
         // see if this is a sam3 trial
-        tp.nObs = queues.NOBS[itrial];
-        if(tp.nObs===3){
-            tp.isam3 += 1;
-            tp.xObs_sam3 = queues.XOBS_SAM3[tp.isam3]
-            tp.yObs_sam3 = queues.YOBS_SAM3[tp.isam3]
-        }
-        else {
-            tp.xObs_sam3 = 'None';
-            tp.yObs_sam3 = 'None';
-        }
+        tp.nActiveObs = queues.NACTIVEOBS[itrial];
+        tp.nPassiveObs = queues.NACTIVEOBS[itrial];
+        
         // generate hidden function and obs server side
         post_customRoute('make_trial',
                     {'lenscale': EP.LENSCALE,
-                     'nObs': tp.nObs,
-                     'xObs_sam3': tp.xObs_sam3,
-                     'yObs_sam3': tp.yObs_sam3,
+                     'nPassiveObs': tp.nPassiveObs,
                      'rngstate': tp.rngstate
                      },
                     function(resp){
                         console.log('make_trial callback was called');
                         // set trial params
                         tp.yHidfcn = resp['sample'];
-                        tp.xObs = resp['xObs'];
-                        tp.yObs = resp['yObs'];
-                        tp.iObs = resp['iObs'];
+                        tp.xPassiveObs = resp['xObs'];
+                        tp.yPassiveObs = resp['yObs'];
+                        tp.iPassiveObs = resp['iObs'];
                         tp.rngstate = resp['rngstate'];
                         tp.pyHidfcn = normalize(tp.yHidfcn, EP.BOUNDSPY, EP.BOUNDSY);
-                        tp.pxObs = normalize(tp.xObs, EP.BOUNDSPX, EP.BOUNDSX);
-                        tp.pyObs = normalize(tp.yObs, EP.BOUNDSPY, EP.BOUNDSY);
+                        tp.pxPassiveObs = normalize(tp.xPassiveObs, EP.BOUNDSPX, EP.BOUNDSX);
+                        tp.pyPassiveObs = normalize(tp.yPassiveObs, EP.BOUNDSPY, EP.BOUNDSY);
                         tp.itrial = itrial;
 
                         callback();
@@ -476,26 +506,73 @@ var drillGame = function(){
     }
 
 
-    function choice_made(px){
-        // what happens after a choice is made
-        console.log('choice_made called');
-        tsub.choiceRT = getTime() - wp.tChoiceStarted;
-        tsub.pxDrill = px;
+    function activeObs_made(px){
+        // what happens after an active obs is made
+        console.log('activeObs_made called');
+        tsub.choiceRT = getTime() - wp.tActiveObsStarted;
+        var pxActiveObs = px;
         // JBEDIT: this only works when the choice set is a horizontal line spanning the whole canvas.
         //         This is not an abstracted way to map choice -> value
-        tsub.yDrill = tp.yHidfcn[px];
-        tsub.xDrill = normalize(px, EP.BOUNDSX, EP.BOUNDSPX);
-        tsub.pyDrill = normalize(tsub.yDrill, EP.BOUNDSPY, EP.BOUNDSY);
+        var yActiveObs = tp.yHidfcn[px];
+        var xActiveObs = normalize(px, EP.BOUNDSX, EP.BOUNDSPX);
+        var pyActiveObs = normalize(yActiveObs, EP.BOUNDSPY, EP.BOUNDSY);
 
-        tsub.trialGross = yToScore(tsub.yDrill, EP.BOUNDSY); // get the reward
-        tsub.trialNet = tsub.trialGross - EP.COSTTODRILL;
+        // add obs to drill array
+        tsub.pxActiveObs.push(pxActiveObs);
+        tsub.pyActiveObs.push(pyActiveObs);
+        tsub.xActiveObs.push(xActiveObs);
+        tsub.yActiveObs.push(yActiveObs);
 
-        add_obs(obs_arrays.drill, tsub.pxDrill, tsub.pyDrill, STYLE.obs.drill);
 
-        tsub.totalScore += tsub.trialNet;
+        // subtract sample cost
+        tsub.trialNet -= EP.SAMPLECOST;
+
+        // add obs to canvas
+        add_obs(obs_arrays.active, pxActiveObs, pyActiveObs, STYLE.obs.active);
+        stageArray(obs_arrays.active);
+
+//         // add new starting observations
+//         for (var iobs=0; iobs<tp.nPassiveObs; iobs++){
+//             add_obs(obs_arrays.passive, tp.pxPassiveObs[iobs], tp.pyPassiveObs[iobs], STYLE.obs.passive);
+//         }
+//         stageArray(obs_arrays.passive);
+
+        // update score
+        tsub.trialNet -= EP.COSTTOSAMPLE;
+        tsub.totalScore -= EP.COSTTOSAMPLE;
         update_totalScore(tsub.totalScore);
 
-        store_thisTrial(setup_showFeedback);
+        wp.iActiveObs += 1;  // inc activeObs counter
+
+        // if time to collect best discovered this round
+        if (wp.iActiveObs === tp.nActiveObs){  
+
+            // maintain list of all samples on screen
+            tsub.xAllObs = tsub.xActiveObs.concat(tp.xPassiveObs);  // get score
+            tsub.yAllObs = tsub.yActiveObs.concat(tp.yPassiveObs);  // get score
+            tsub.pxAllObs = tsub.pxActiveObs.concat(tp.pxPassiveObs);  // get score
+            tsub.pyAllObs = tsub.pyActiveObs.concat(tp.pyPassiveObs);  // get score
+
+            var iBest = argmax(tsub.yAllObs);
+            tsub.xBest = tsub.xAllObs[iBest];
+            tsub.pxBest = tsub.pxAllObs[iBest];
+            tsub.yBest = tsub.yAllObs[iBest];
+            tsub.pyBest = tsub.pyAllObs[iBest];
+
+            tsub.trialGross = yToScore(tsub.yBest, EP.BOUNDSY);
+
+            // add best obs to canvas
+            add_obs(obs_arrays.best, tsub.pxBest, tsub.pyBest, STYLE.obs.best);
+
+            tsub.totalScore += tsub.trialGross;
+            tsub.totalScore -= EP.COSTTODRILL;
+            update_totalScore(tsub.totalScore);
+
+            //TODO: figure out if earned should be xDrill or not
+            tsub.trialNet += tsub.trialGross;
+            tsub.trialNet -= EP.COSTTODRILL;
+            store_thisTrial(setup_showFeedback);
+        }
     }
 
 
@@ -672,8 +749,8 @@ var drillGame = function(){
 
         groundline.addEventListener('click', function(){
             if(wp.trialSection==='makeChoice'){
-                var pxDrill = stage.mouseX;
-                choice_made(pxDrill);
+                var pxActiveObs = stage.mouseX;
+                activeObs_made(pxActiveObs);
             }
         });
 
@@ -790,11 +867,33 @@ var drillGame = function(){
         return Math.min.apply(Math, array);
     }
 
+    function argmin(array) {
+        var argmin = 0;
+        var bestSoFar = array[0];
+        for(var i=0; i<array.length; i++){
+            if (min([array[i], bestSoFar]) < bestSoFar){
+                bestSoFar = array[i];
+                argmin = i;
+            }
+        }
+        return argmin;
+    }
+
+    function argmax(array) {
+        var argmax = 0;
+        var bestSoFar = array[0];
+        for(var i=0; i<array.length; i++){
+            if (max([array[i], bestSoFar]) > bestSoFar){
+                bestSoFar = array[i];
+                argmax = i;
+            }
+        }
+        return argmax;
+    }
 
     function getTime(){
         return new Date().getTime();
     }
-
 
     function mean(array){
         var N = array.length;

@@ -33,6 +33,7 @@ from time import time
 
 ## EXPERIMENT FREE VARS
 COSTTODRILL = 50
+COSTTOSAMPLE = 0
 INITSCORE = 0
 # gp params
 SIGVAR = 1.
@@ -106,6 +107,7 @@ def init_experiment():
     resp['isam3'] = -1
     resp['nTrial'] = NTRIAL
     resp['costToDrill'] = COSTTODRILL
+    resp['costToSample'] = COSTTOSAMPLE
     resp['initscore'] = INITSCORE
     resp['lenscale'] = lenscale
     resp['sigvar'] = SIGVAR
@@ -141,7 +143,7 @@ def make_trial():
         resp = {'sample': thisTri['sample'].tolist(),
                 'xObs': thisTri['xObs'].flatten().tolist(),
                 'yObs': thisTri['yObs'].tolist(),
-                'iObs': thisTri['iObs'],
+                'iObs': thisTri['iObs'].tolist(),
                 'rngstate': pack_rngstate(rng.get_state())}
 
     except:
