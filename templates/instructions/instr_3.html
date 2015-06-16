@@ -6,12 +6,14 @@
 
   <div class="instructions well">
 
-    <!-- <img src="../static/images/instruct-jb-3_flip.png" alt="intructions page 3" width="514" height="384"> -->
-    <img src="../static/images/instr_3.png" alt="intructions page 3" width="514" height="384">
+    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
+    <img src="../tmp/images/sample1.png" alt="intructions page 3">
+    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
+    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
+    
       <p> When you arrive at a new area, you will not know where the deepest mineral deposits are. </p>
       <p> Instead, you will only see a few SAMPLES (the white circles on the ground) telling how deep the mineral line is at certain locations. </p>
-      <p> When you arrive, you will continue sampling in an attempt to find as deep an area as you can before your drilling crew arrives. </p>
-
+      <p> Upon arrival, you will continue sampling in an attempt to find as deep an area as you can before your drilling crew arrives. </p>
   </div>
 
   <hr>
@@ -35,3 +37,12 @@
     </div>
 
   </div>
+
+<script type="text/javascript">
+    var index=0;
+    function changeBanner(){ 
+      [].forEach.call(document.images,function (v,i) { document.images[i].hidden = i!==index});
+      index = (index+1) % document.images.length;
+    }
+    window.onload = function () {setInterval(changeBanner, 1000)};
+</script>

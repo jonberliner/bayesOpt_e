@@ -144,11 +144,23 @@ var drillGame = function(){
 
     STYLE.msgs.trialFeedback = {};
     STYLE.msgs.trialFeedback.x = WCANVAS/2.;
-    STYLE.msgs.trialFeedback.y = HCANVAS/2.;
-    STYLE.msgs.trialFeedback.color = '#AEAEAE';
-    STYLE.msgs.trialFeedback.font = '2em Helvetica';
+    function percentGROUNDLINE2BOTTOM_to_py(percent){
+        assert(percent >= 0 && percent <= 1, 'percent must be between 0 and 1');
+        return (percent * GROUNDLINE2BOTTOM) + YGROUNDLINE;
+    }
+    STYLE.msgs.trialFeedback.y = percentGROUNDLINE2BOTTOM_to_py(0.4) ;
+    STYLE.msgs.trialFeedback.color = '#DEDEDE';
+    STYLE.msgs.trialFeedback.font = 'bold 2em Helvetica';
     STYLE.msgs.trialFeedback.textAlign = 'center';
     STYLE.msgs.trialFeedback.visible = false;
+
+    STYLE.msgs.trialFeedback_outline = {};
+    for(var field in STYLE.msgs.trialFeedback){
+        STYLE.msgs.trialFeedback_outline[field] = STYLE.msgs.trialFeedback[field];
+    }
+    STYLE.msgs.trialFeedback.font = 'bold 2em Helvetica';
+    STYLE.msgs.trialFeedback_outline.color = '#000000';
+    STYLE.msgs.trialFeedback_outline.outline = 2;
 
     STYLE.msgs.loading = {};
     STYLE.msgs.loading.text = 'LOADING EXPERIMENT.\n\nPLEASE WAIT...';
@@ -245,9 +257,9 @@ var drillGame = function(){
 
                     stageArray(a_background);
                     stageArray(a_choiceSet);
-                    stageArray(a_ulbutton, false);
                     stage.addChild(hidfcn);
                     stageObject(msgs, false);
+                    stageArray(a_ulbutton, false);
                     msgs.totalScore.visible = true;  // totalScore always visible
                     msgs.loading.visible = false;  // totalScore always visible
 
@@ -273,6 +285,7 @@ var drillGame = function(){
 
         // update messages
         msgs.trialFeedback.visible = false;
+        msgs.trialFeedback_outline.visible = false;
         msgs.clickulbutton.visible = false;
         msgs.makeChoice.visible = true;
 
@@ -280,20 +293,6 @@ var drillGame = function(){
         wp.tChoiceStarted = getTime();  // start choice timer
     }
 
-
-    function update_msg_trialFeedback(msg, trialGross, cost2drill){
-        var trialNet = trialGross - cost2drill;
-        msg.text = 'You\'re drilling crew has arrived!\n\n' +
-                   '        ' +
-                                 monify(trialGross) +
-                                 ' earned drilling\n \n' +
-                                '      - ' +
-                                monify(cost2drill) +
-                                ' spent drilling\n \n' +
-                                '__________________\n \n     '+
-                                monify(trialNet) +
-                                ' earned this round';
-    }
 
 
     function setup_showFeedback(){
@@ -304,6 +303,7 @@ var drillGame = function(){
         msgs.makeChoice.visible = false;
 
         msgs.trialFeedback = update_msg_trialFeedback(msgs.trialFeedback, tsub.trialGross, EP.COSTTODRILL, EP.COSTTOSAMPLE);
+        msgs.trialFeedback_outline = update_msg_trialFeedback(msgs.trialFeedback_outline, tsub.trialGross, EP.COSTTODRILL, EP.COSTTOSAMPLE);
 
         // show hidden function
         hidfcn.visible = true;
@@ -312,8 +312,10 @@ var drillGame = function(){
         stageArray(obs_arrays.best);
 
         msgs.trialFeedback.visible = true;
+        msgs.trialFeedback_outline.visible = true;
         msgs.clickulbutton.visible = true;
         stage.addChild(msgs.trialFeedback);
+        stage.addChild(msgs.trialFeedback_outline);
 
 
         
@@ -324,6 +326,8 @@ var drillGame = function(){
         ulbutton.ulbutton_glow.x = posnulb['x'];
         ulbutton.ulbutton_glow.y = posnulb['y'];
         ulbutton.ulbutton.visible = true;
+
+        choiceSet.groundline_glow.visible = false;
 
         stage.update();
     }
@@ -375,19 +379,21 @@ var drillGame = function(){
     function update_msg_trialFeedback(msg, trialGross, costToDrill, costToSample){
         var trialNet = trialGross - costToDrill;
         if(costToSample <= 0){  
-            msg.text = '        ' +
+            msg.text = 'You\'re drilling crew has arrived!\n\n' +
+                       '        ' +
                         monify(trialGross) +
                         ' earned drilling\n \n' +
                         '      - ' +
                         monify(costToDrill) +
-                        ' spent drilling\n \n' +
+                        ' spent drilling\n' +
                         '__________________\n \n     '+
                         monify(trialNet) +
                         ' earned this round';
         }
         else{  // show sample cost if sample cost
             var spentSampling = wp.iActiveObs * EP.COSTTOSAMPLE;
-            msg.text = '        ' +
+            msg.text = 'You\'re drilling crew has arrived!\n\n' +
+                '        ' +
                 monify(trialGross) +
                 ' earned drilling\n \n' +
                 '      - ' +
@@ -396,7 +402,7 @@ var drillGame = function(){
                 '      - ' +
                 monify(costToDrill) +
                 ' spent drilling\n \n' +
-                '__________________\n \n     '+
+                '__________________\n'+
                 monify(trialNet) +
                 ' earned this round';
         }
@@ -997,8 +1003,8 @@ var drillGame = function(){
                 var y = rand(YGROUNDLINE + 20, HCANVAS - 20);
                 var xpercent = x / WCANVAS;
                 var ypercent = (y - YGROUNDLINE) / GROUNDLINE2BOTTOM;
-                good = xor((xpercent < 1./3 || xpercent > 2./3),
-                           (ypercent < 1./3 || ypercent > 2./3));
+                good = xor((xpercent < 1./4 || xpercent > 3./4),
+                           (ypercent < 1./4 || ypercent > 3./4));
             }
             return {'x': x,
                     'y': y};
