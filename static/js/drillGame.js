@@ -388,7 +388,7 @@ var drillGame = function(){
     function update_msg_trialFeedback(msg, trialGross, costToDrill, costToSample){
         var trialNet = trialGross - costToDrill;
         if(costToSample <= 0){  
-            msg.text = 'You\'re drilling crew has arrived!\n\n' +
+            msg.text = 'Your drilling crew has arrived!\n\n' +
                        '        ' +
                         monify(trialGross) +
                         ' earned drilling\n \n' +
