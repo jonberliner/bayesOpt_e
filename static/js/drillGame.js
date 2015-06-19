@@ -523,6 +523,7 @@ var drillGame = function(){
     function activeObs_made(px){
         // what happens after an active obs is made
         tsub.choiceRT = getTime() - wp.tActiveObsStarted;
+        px = min([px, tp.yHidfcn.length-1]);
         var pxActiveObs = px;
         // JBEDIT: this only works when the choice set is a horizontal line spanning the whole canvas.
         //         This is not an abstracted way to map choice -> value
