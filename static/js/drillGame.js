@@ -133,6 +133,14 @@ var drillGame = function(){
     STYLE.msgs.clickulbutton.x = WCANVAS / 2.;
     STYLE.msgs.clickulbutton.y = YGROUNDLINE / 3.;
 
+    STYLE.msgs.expSummary = {};
+    STYLE.msgs.expSummary.text = 'click ignition button to move to next area';
+    STYLE.msgs.expSummary.color = '#666';
+    STYLE.msgs.expSummary.font = '1.4em Helvetica';
+    STYLE.msgs.expSummary.textAlign = 'center';
+    STYLE.msgs.expSummary.x = WCANVAS / 2.;
+    STYLE.msgs.expSummary.y = YGROUNDLINE / 3.;
+
     STYLE.msgs.totalScore = {};
     STYLE.msgs.totalScore.color = '#666';
     STYLE.msgs.totalScore.font = '2em Helvetica';
@@ -340,7 +348,7 @@ var drillGame = function(){
         // update messages
         msgs.makeChoice.visible = false;
 
-        msgs.expSummary = update_msg_expSummary(tsub.totalScore, EP.NTRIAL);
+        msgs.expSummary = update_msg_expSummary(msgs.expSummary, tsub.totalScore, EP.NTRIAL);
 
         msgs.expSummary.visible = true;
         stage.addChild(msgs.expSummary);
