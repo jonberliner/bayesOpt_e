@@ -6,14 +6,17 @@
 
   <div class="instructions well">
 
-    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
-    <img src="../tmp/images/sample1.png" alt="intructions page 3">
-    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
-    <img src="../tmp/images/sample0_glow_aboutToSample.png" alt="intructions page 3">
+    <div id='ss1' class='slideshow'>
+      <img class='instrimg' src="../static/images/sample0_glow_aboutToSample.png">
+      <img class='instrimg'src="../static/images/sample1.png">
+      <img class='instrimg'src="../static/images/sample2.png">
+    </div>
     
-      <p> When you arrive at a new area, you will not know where the deepest mineral deposits are. </p>
-      <p> Instead, you will only see a few SAMPLES (the white circles on the ground) telling how deep the mineral line is at certain locations. </p>
+    <div class="instrtxt right">
+      <p> When you arrive at a new area, you will not know the locations of the deepest mineral deposits. </p>
+      <p> Instead, you will see only a few SAMPLES (the white circles in the ground) indicating how deep the mineral line is at those locations. </p>
       <p> Upon arrival, you will continue sampling in an attempt to find as deep an area as you can before your drilling crew arrives. </p>
+    </div>
   </div>
 
   <hr>
@@ -38,11 +41,9 @@
 
   </div>
 
-<script type="text/javascript">
-    var index=0;
-    function changeBanner(){ 
-      [].forEach.call(document.images,function (v,i) { document.images[i].hidden = i!==index});
-      index = (index+1) % document.images.length;
-    }
-    window.onload = function () {setInterval(changeBanner, 1000)};
-</script>
+  <script type='text/javascript'>
+    $('#ss1').cycle({
+      fit: 1,
+      timeout: 1500,
+      speed: 500});
+  </script>

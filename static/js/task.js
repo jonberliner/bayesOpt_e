@@ -14,13 +14,13 @@ var mycounterbalance = counterbalance;  // they tell you which condition you hav
 var INS_FOLDER = 'instructions';
 
 var pages = [ // add as a list as many pages as you like
-    // INS_FOLDER + "/instr_1.html",
-    // INS_FOLDER + "/instr_2.html",
-    // INS_FOLDER + "/instr_3.html",
-    // INS_FOLDER + "/instr_4.html",
-    // INS_FOLDER + "/instr_5.html",
-    // INS_FOLDER + "/instr_6.html",
-    // INS_FOLDER + "/instr_7.html",
+    INS_FOLDER + "/instr_1.html",
+    INS_FOLDER + "/instr_2.html",
+    INS_FOLDER + "/instr_3.html",
+    INS_FOLDER + "/instr_4.html",
+    INS_FOLDER + "/instr_5.html",
+    INS_FOLDER + "/instr_6.html",
+    INS_FOLDER + "/instr_7.html",
     INS_FOLDER + "/instr_ready.html",
     "stage.html",
     "debriefing.html"
@@ -28,13 +28,13 @@ var pages = [ // add as a list as many pages as you like
 
 psiTurk.preloadPages(pages);
 var instructionPages = [ // add as a list as many pages as you like
-    // INS_FOLDER + "/instr_1.html",
-    // INS_FOLDER + "/instr_2.html",
-    // INS_FOLDER + "/instr_3.html",
-    // INS_FOLDER + "/instr_4.html",
-    // INS_FOLDER + "/instr_5.html",
-    // INS_FOLDER + "/instr_6.html",
-    // INS_FOLDER + "/instr_7.html",
+    INS_FOLDER + "/instr_1.html",
+    INS_FOLDER + "/instr_2.html",
+    INS_FOLDER + "/instr_3.html",
+    INS_FOLDER + "/instr_4.html",
+    INS_FOLDER + "/instr_5.html",
+    INS_FOLDER + "/instr_6.html",
+    INS_FOLDER + "/instr_7.html",
     INS_FOLDER + "/instr_ready.html",
 ];
 
@@ -60,7 +60,7 @@ var instructionPages = [ // add as a list as many pages as you like
  // Task object to keep track of the current phase
 var currentview;
 $(window).load( function(){
-    width = 1028;
+    width = 1024;
     height = 768;
     var buffer = 100;
     window.resizeTo(width + buffer, height + buffer);

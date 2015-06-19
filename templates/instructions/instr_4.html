@@ -5,13 +5,15 @@
   <hr>
 
   <div class="instructions well">
+    <div id='ss1' class='slideshow'>
+      <img class='instrimg' src="../static/images/sample0_glow.png" alt="intructions page 5">
+    </div>
 
-    <img src="../tmp/images/sample0_glow.png" alt="intructions page 5" width="514" height="384">
-        <p> To sample, you must click on the ground line where ever you think it will best help you find as deep an area as possible. </p>
-        <p> <strong>To sample mineral line depth at a location, click the ground (tan stripe)</strong></p>
-        <p> You can tell you can click becuse the ground will glow when you hover your mouse over it.</p>
-        <p> Note that it will cost a significant amount of money to drill at each location once the crew arrives,
-            so be sure to choose where to sample wisely! </p>
+    <div class='instrtxt right'>
+        <p> You should sample where ever you think it will best help you find as deep an area as you can. </p>
+        <p> <strong>To sample mineral line depth at a location, click the ground-line (tan stripe)</strong></p>
+        <p> You will know you are able to click because the ground will glow when you hover your mouse over it.</p>
+    </div>
 
   </div>
 
@@ -35,3 +37,9 @@
     </div>
 
   </div>
+<script type='text/javascript'>
+    $('#ss1').cycle({
+      fit: 1,
+      timeout: 2500,
+      speed: 500});
+</script>

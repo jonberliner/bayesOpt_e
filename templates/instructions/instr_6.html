@@ -2,12 +2,16 @@
   <h1>Instructions</h1>
   <hr>
   <div class="instructions well">
-    <!-- <img src="../static/images/instruct-jb-8_flip_sam4.png" alt="intructions page 8" width="514" height="384"> -->
-    <img src="../static/images/instr_6.png" alt="intructions page 8" width="514" height="384">
+    
+    <div id='ss1' class='slideshow'>
+      <img class='instrimg' src="../static/images/feedback_glow.png" alt="intructions page 8">
+    </div>
+    <div class='instrtxt right'>
       <p> Along with feedback, a blue ignition button will also appear on the screen in a random location.
           It will glow green when you hover your mouse over the button.</p>
       <p> When you are ready, click the blue ignition button to move on the the next area,
           where you again perform the sampling process before your drilling crew arrives. </p>
+    </div>
   </div>
   <hr>
     <div class="instructionsnav">
@@ -28,3 +32,9 @@
     </div>
 
   </div>
+<script type='text/javascript'>
+    $('#ss1').cycle({
+      fit: 1,
+      timeout: 2500,
+      speed: 500});
+</script>

@@ -59,14 +59,14 @@ var drillGame = function(){
     STYLE.ulbutton.ulbutton.strokeColor = 'gray';
     STYLE.ulbutton.ulbutton.fillColor = 'blue';
     STYLE.ulbutton.ulbutton.strokeSize = 5;
-    STYLE.ulbutton.ulbutton.radius = 20;
+    STYLE.ulbutton.ulbutton.radius = 30;
     STYLE.ulbutton.ulbutton.x = STYLE.ulbutton.ulbutton.radius + 10;
     STYLE.ulbutton.ulbutton.y = YGROUNDLINE / 2. - 4;
 
     STYLE.ulbutton.ulbutton_glow = {};
     STYLE.ulbutton.ulbutton_glow.strokeColor = 'green';
     STYLE.ulbutton.ulbutton_glow.fillColor = 'green';
-    STYLE.ulbutton.ulbutton_glow.radius = 20;
+    STYLE.ulbutton.ulbutton_glow.radius = 30;
     STYLE.ulbutton.ulbutton_glow.ratioGlowBigger = 3;
     STYLE.ulbutton.ulbutton_glow.x = STYLE.ulbutton.ulbutton.x;
     STYLE.ulbutton.ulbutton_glow.y = STYLE.ulbutton.ulbutton.y;
@@ -118,7 +118,7 @@ var drillGame = function(){
 
 
     STYLE.msgs.makeChoice = {};
-    STYLE.msgs.makeChoice.text = 'click ground line to make choice';
+    STYLE.msgs.makeChoice.text = 'click ground line to sample';
     STYLE.msgs.makeChoice.color = '#666';
     STYLE.msgs.makeChoice.font = '1.4em Helvetica';
     STYLE.msgs.makeChoice.textAlign = 'center';
@@ -317,15 +317,16 @@ var drillGame = function(){
         stage.addChild(msgs.trialFeedback);
         stage.addChild(msgs.trialFeedback_outline);
 
-
-        
-        
         var posnulb = valid_rand_ulbutton_posn();
         ulbutton.ulbutton.x = posnulb['x'];
         ulbutton.ulbutton.y = posnulb['y'];
         ulbutton.ulbutton_glow.x = posnulb['x'];
         ulbutton.ulbutton_glow.y = posnulb['y'];
         ulbutton.ulbutton.visible = true;
+        var zulb = stage.getNumChildren() - 1;
+        var zulb_glow = zulb - 1;
+        stage.setChildIndex(ulbutton.ulbutton, zulb);
+        stage.setChildIndex(ulbutton.ulbutton_glow, zulb_glow);
 
         choiceSet.groundline_glow.visible = false;
 

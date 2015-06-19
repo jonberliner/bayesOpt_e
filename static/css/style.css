@@ -62,6 +62,13 @@ canvas {
     background: white;
 }
 
+/* .instructions-well{
+/*     position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto; */
+}
+ */
 #container-consent, #container-exp, #container-debrief {  /* override padding to fit long consent forms and exp display*/
   padding: 10px;
   padding-left: 20px;
@@ -112,6 +119,28 @@ canvas {
 }
 
 .instrimg {
-  width: 80%;
+  width: 400px;
+  height: auto;
+}
+
+.instrtxt {
+  
+}
+
+.right {
+  padding-left: 500px;
+}
+
+.slideshow{
+  position: absolute;
+  padding-right: 100px;
+  width: 400px;
   margin: 0 auto;
 }
+
+.well{
+  min-height: 500px;
+}
+/* 
+.fadein { position:relative; width:50%; height:332px; }
+.fadein img { position:absolute; left:0; top:0; margin: 0 auto;} */

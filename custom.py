@@ -50,7 +50,7 @@ LENSCALEPOWSOF2 = [2., 4., 6.]
 LENSCALEPOOL = [1./2.**n for n in LENSCALEPOWSOF2]
 
 DOMAINBOUNDS = [[0., 1.]]
-DOMAINRES = 1028
+DOMAINRES = 1024
 DOMAIN = make_domain_grid(DOMAINBOUNDS, DOMAINRES).flatten()
 EDGEBUF = 0.05 # samples for 2sams wont be closer than EDGEBUF from screen edge
 # how close to domain edges passive observations can occur
