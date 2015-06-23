@@ -116,6 +116,13 @@ var drillGame = function(){
 
     STYLE.msgs = {};
 
+    STYLE.msgs.settingUpTrial = {};
+    STYLE.msgs.settingUpTrial.text = 'moving to next area...'
+    STYLE.msgs.settingUpTrial.color = '#666';
+    STYLE.msgs.settingUpTrial.font = '1.4em Helvetica';
+    STYLE.msgs.settingUpTrial.textAlign = 'center';
+    STYLE.msgs.settingUpTrial.x = WCANVAS / 2.;
+    STYLE.msgs.settingUpTrial.y = YGROUNDLINE / 3.;
 
     STYLE.msgs.makeChoice = {};
     STYLE.msgs.makeChoice.text = 'click ground line to sample';
@@ -298,6 +305,8 @@ var drillGame = function(){
         msgs.clickulbutton.visible = false;
         msgs.makeChoice.visible = true;
 
+        msgs.settingUpTrial.visible = false;
+
         stage.update();
         wp.tChoiceStarted = getTime();  // start choice timer
     }
@@ -452,12 +461,14 @@ var drillGame = function(){
         else {
             setup_expSummary(tp.totalScore, EP.NTRIAL);
         }  // end if <NROUND
-        wp.trialSection = 'makeChoice';
     }
 
 
     function setup_trial(itrial, tp, queues, stylecs){
         // set up things for trial itrial
+        msgs.settingUpTrial.visible = true;
+        msgs.clickulbutton.visible = false;
+        stage.update();
         set_itrialParams(itrial, tp, queues, 
             function(){
                 tsub.pxActiveObs = [];
@@ -469,7 +480,6 @@ var drillGame = function(){
                     unstageArray(obs_arrays[obstype]);
                     obs_arrays[obstype] = [];
                 }
-
 
                 // make hidden function shape for this round
                 update_hidfcn(hidfcn, EP.PXHIDFCN, tp.pyHidfcn, STYLE.hidfcn);
@@ -601,9 +611,11 @@ var drillGame = function(){
 
 
     function yToScore(y, boundsY){
+        var miny = boundsY[0];
+        var maxy = boundsY[1];
+        y = max([y, miny]);
+        y = min([y, maxy]);
         var score = Math.ceil(normalize(y, [0., 100.], boundsY));
-        score = min([score, 100.])
-        score = max([score, 0.])
         return score;
     }
 
@@ -894,8 +906,8 @@ var drillGame = function(){
     function argmin(array) {
         var argmin = 0;
         var bestSoFar = array[0];
-        for(var i=0; i<array.length; i++){
-            if (min([array[i], bestSoFar]) < bestSoFar){
+        for(var i=1; i<array.length; i++){
+            if (array[i] < bestSoFar){
                 bestSoFar = array[i];
                 argmin = i;
             }
@@ -906,8 +918,8 @@ var drillGame = function(){
     function argmax(array) {
         var argmax = 0;
         var bestSoFar = array[0];
-        for(var i=0; i<array.length; i++){
-            if (max([array[i], bestSoFar]) > bestSoFar){
+        for(var i=1; i<array.length; i++){
+            if (array[i] > bestSoFar){
                 bestSoFar = array[i];
                 argmax = i;
             }
