@@ -65,6 +65,8 @@ RNGSEEDPOOL =\
          2154736893, 2773127409, 3304953852,  678883645, 3097437001,
          3696226994,  242457524,  991216532, 2747458246, 2432174005])
 
+print 'all this gunk was called'
+
 ## LOAD GP STUFF INTO WORKSPACE
 @custom_code.route('/init_experiment', methods=['GET'])
 def init_experiment():

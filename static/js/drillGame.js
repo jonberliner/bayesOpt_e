@@ -199,6 +199,7 @@ var drillGame = function(){
     stage.addChild(msgs.loading);
     stage.update();
 
+    wp.trialSection = 'makeChoice';
     get_customRoute('init_experiment',  // call init_experiment in custom.py...
                 {'condition': condition,  // w params condition adn counter...
                  'counterbalance': counterbalance},
@@ -433,6 +434,7 @@ var drillGame = function(){
 
     //// functions for setting up a trial
     function setup_nextTrial(){
+        wp.trialSection = 'settingUp';
         // increment tp.itrial and setup the next trial
         tp.itrial += 1;
         if(tp.itrial < EP.NTRIAL){
@@ -449,8 +451,8 @@ var drillGame = function(){
         }
         else {
             setup_expSummary(tp.totalScore, EP.NTRIAL);
-
         }  // end if <NROUND
+        wp.trialSection = 'makeChoice';
     }
 
 
