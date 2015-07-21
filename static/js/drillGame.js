@@ -206,7 +206,7 @@ var drillGame = function(){
     stage.addChild(msgs.loading);
     stage.update();
 
-    wp.trialSection = 'makeChoice';
+    wp.trialSection = 'settingUpTrial';
     get_customRoute('init_experiment',  // call init_experiment in custom.py...
                 {'condition': condition,  // w params condition adn counter...
                  'counterbalance': counterbalance},
@@ -637,6 +637,7 @@ var drillGame = function(){
 
     function store_thisTrial(callback){
         // store things from this trial and then run callback
+        wp.trialSection = 'saving'
         jsb_recordTurkData([EP, tp, tsub], LONOSAVE, callback);
     }
 
