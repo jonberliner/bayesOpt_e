@@ -506,7 +506,7 @@ var drillGame = function(){
 
         // see if this is a sam3 trial
         tp.nActiveObs = queues.NACTIVEOBS[itrial];
-        tp.nPassiveObs = queues.NACTIVEOBS[itrial];
+        tp.nPassiveObs = queues.NPASSIVEOBS[itrial];
         
         // generate hidden function and obs server side
         post_customRoute('make_trial',

@@ -39,7 +39,9 @@ INITSCORE = 0
 # gp params
 SIGVAR = 1.
 NOISEVAR2 = 1e-7
-NPASSIVEPOOL = [0, 1, 2, 3, 4]  # how many obs you start with
+#JBEDIT: was supposed to be the commented out one orig, but is now 2-6
+# NPASSIVEPOOL = [0, 1, 2, 3, 4]  # how many obs you start with
+NPASSIVEPOOL = [2, 3, 4, 5, 6]  # how many obs you start with
 NACTIVEPOOL = [2, 3, 4, 5, 6]  # how many more samples subj takes before interrogation
 NTRIALTYPE = len(NACTIVEPOOL) * len(NPASSIVEPOOL)
 NPERTRIALTYPE = 5
